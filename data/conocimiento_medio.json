@@ -1,24 +1,25 @@
 {
-  "asignatura": "Ciencias Sociales y Naturales",
+  "asignatura": "Conocimiento del Medio",
   "curso": "4º Primaria",
   "editorial": "Anaya - Edudynamic Dual Focus",
   "comunidad": "Andalucía",
-  "version": "1.0",
+  "version": "2.0",
   "unidades": [
     {
       "id_unidad": "cono_01",
       "numero": 1,
-      "titulo": "El cuerpo humano: aparatos y sistemas",
-      "resumen": "Estudiamos los principales aparatos y sistemas del cuerpo humano: locomotor, digestivo, respiratorio, circulatorio y excretor. Aprendemos su función y sus órganos más importantes.",
-      "resumen_simple": "Nuestro cuerpo está formado por muchas partes que trabajan juntas. Los huesos y músculos nos ayudan a movernos, el corazón bombea la sangre y los pulmones nos ayudan a respirar.",
-      "conceptos_clave": ["aparato locomotor", "aparato digestivo", "aparato respiratorio", "aparato circulatorio", "aparato excretor", "órgano", "sistema", "esqueleto", "músculo"],
-      "habilidades": ["identificar los aparatos del cuerpo", "nombrar órganos principales", "explicar la función de cada aparato", "relacionar hábitos saludables con el cuerpo"],
+      "titulo": "Hagamos vida sana",
+      "resumen": "Estudiamos los aparatos y sistemas del cuerpo humano: locomotor, digestivo, respiratorio, circulatorio y excretor. Aprendemos sus órganos principales y los hábitos de vida saludable.",
+      "resumen_simple": "Nuestro cuerpo tiene muchas partes que trabajan juntas. Los huesos y músculos nos mueven, los pulmones nos ayudan a respirar y el corazón bombea la sangre. ¡Hacer vida sana cuida todos esos aparatos!",
+      "conceptos_clave": ["aparato locomotor", "aparato digestivo", "aparato respiratorio", "aparato circulatorio", "aparato excretor", "órgano", "hábitos saludables", "alimentación equilibrada", "ejercicio físico"],
+      "habilidades": ["identificar los aparatos del cuerpo", "nombrar sus órganos principales", "explicar la función de cada aparato", "relacionar hábitos saludables con la salud"],
       "repaso_clave": [
         "Aparato locomotor: huesos + músculos → nos movemos",
         "Aparato digestivo: boca → esófago → estómago → intestinos",
         "Aparato respiratorio: nariz → tráquea → pulmones",
-        "Aparato circulatorio: corazón + vasos sanguíneos → transporta sangre",
-        "Aparato excretor: elimina residuos del cuerpo"
+        "Aparato circulatorio: corazón + vasos sanguíneos → transporta la sangre",
+        "Aparato excretor: riñones → eliminan residuos por la orina",
+        "Hábitos saludables: dormir bien, comer sano, ejercicio, higiene"
       ],
       "ejercicios_templates": [
         {
@@ -27,106 +28,140 @@
           "variables": {
             "aparato": { "tipo": "lista", "opciones": ["locomotor", "digestivo", "respiratorio", "circulatorio", "excretor"] }
           },
-          "respuesta": "funcion_de(aparato)",
+          "respuesta_esperada": [
+            "Nos permite movernos gracias a huesos y músculos",
+            "Transforma los alimentos en nutrientes",
+            "Lleva oxígeno al cuerpo y expulsa CO2",
+            "Transporta la sangre con nutrientes y oxígeno",
+            "Elimina los residuos del cuerpo por la orina"
+          ],
           "dificultad": "facil"
         },
         {
-          "tipo": "identificar_organo",
+          "tipo": "organo_a_aparato",
           "enunciado": "¿A qué aparato pertenece el órgano '{organo}'?",
           "variables": {
-            "organo": { "tipo": "lista", "opciones": ["pulmón", "corazón", "estómago", "fémur", "riñón", "intestino delgado", "tráquea", "bíceps"] }
+            "organo": { "tipo": "lista", "opciones": ["pulmón", "corazón", "estómago", "fémur", "riñón", "intestino delgado", "tráquea", "bíceps", "arteria", "diafragma"] }
           },
-          "respuesta_esperada": ["respiratorio", "circulatorio", "digestivo", "locomotor", "excretor", "digestivo", "respiratorio", "locomotor"],
-          "respuesta": "aparato_de(organo)",
+          "respuesta_esperada": ["respiratorio", "circulatorio", "digestivo", "locomotor", "excretor", "digestivo", "respiratorio", "locomotor", "circulatorio", "respiratorio"],
           "dificultad": "medio"
         },
         {
+          "tipo": "habito_saludable",
+          "enunciado": "¿Es '{habito}' un hábito saludable? Escribe Sí o No.",
+          "variables": {
+            "habito": { "tipo": "lista", "opciones": [
+              "hacer deporte cada día",
+              "comer fruta y verdura",
+              "dormir menos de 6 horas",
+              "lavarse las manos antes de comer",
+              "pasar más de 4 horas seguidas con pantallas",
+              "beber agua en lugar de refrescos",
+              "comer muchos dulces cada día"
+            ]}
+          },
+          "respuesta_esperada": ["Sí", "Sí", "No", "Sí", "No", "Sí", "No"],
+          "dificultad": "facil"
+        },
+        {
           "tipo": "orden_digestion",
-          "enunciado": "Ordena los pasos de la digestión: estómago, boca, intestino grueso, esófago, intestino delgado. Escribe el número del orden.",
+          "enunciado": "Ordena los pasos de la digestión del 1 al 5: estómago, boca, intestino grueso, esófago, intestino delgado.",
           "variables": {},
-          "respuesta": "1-boca, 2-esófago, 3-estómago, 4-intestino_delgado, 5-intestino_grueso",
+          "respuesta": "1-Boca, 2-Esófago, 3-Estómago, 4-Intestino delgado, 5-Intestino grueso",
           "dificultad": "medio"
         }
       ],
       "test_templates": [
         {
           "tipo": "test_aparato",
-          "enunciado": "¿Qué aparato se encarga de transportar la sangre por el cuerpo?",
+          "enunciado": "¿Qué aparato transporta la sangre por el cuerpo?",
           "opciones": ["locomotor", "digestivo", "circulatorio", "respiratorio"],
           "respuesta": "circulatorio",
           "dificultad": "facil"
         },
         {
-          "tipo": "test_organo",
+          "tipo": "test_organo_principal",
           "enunciado": "¿Cuál es el órgano principal del aparato respiratorio?",
           "opciones": ["corazón", "estómago", "pulmón", "riñón"],
           "respuesta": "pulmón",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "test_hueso",
+          "enunciado": "¿A qué aparato pertenecen los huesos?",
+          "opciones": ["circulatorio", "locomotor", "digestivo", "excretor"],
+          "respuesta": "locomotor",
           "dificultad": "facil"
         }
       ],
       "actividades_templates": [
         {
-          "tipo": "habitos_saludables",
-          "enunciado": "Escribe 3 hábitos saludables que cuiden el aparato {aparato}.",
-          "variables": {
-            "aparato": { "tipo": "lista", "opciones": ["respiratorio", "circulatorio", "locomotor", "digestivo"] }
-          },
-          "respuesta": "texto_libre_habitos",
+          "tipo": "mi_dia_saludable",
+          "enunciado": "Escribe cómo sería tu día perfecto saludable: qué comerías en cada comida, cuánto deporte harías y cuántas horas dormirías.",
+          "variables": {},
+          "respuesta": "Ver corrección manual",
           "dificultad": "medio"
         }
       ],
-      "fichas_templates": [
-        {
-          "tipo": "ficha_silueta_cuerpo",
-          "descripcion": "Silueta del cuerpo humano para señalar y etiquetar los principales órganos",
-          "variables": {}
-        }
-      ]
+      "fichas_templates": []
     },
     {
       "id_unidad": "cono_02",
       "numero": 2,
-      "titulo": "Los seres vivos: clasificación",
-      "resumen": "Estudiamos la clasificación de los seres vivos en cinco reinos: animales, plantas, hongos, bacterias y protistas. Profundizamos en vertebrados e invertebrados, y en las plantas.",
-      "resumen_simple": "Todos los seres vivos están clasificados en grupos. Los animales se dividen en vertebrados (con columna vertebral) e invertebrados. Las plantas fabrican su propio alimento gracias al sol.",
-      "conceptos_clave": ["ser vivo", "reino animal", "reino vegetal", "vertebrado", "invertebrado", "mamífero", "ave", "reptil", "anfibio", "pez", "fotosíntesis"],
-      "habilidades": ["clasificar animales en vertebrados e invertebrados", "reconocer los grupos de vertebrados", "explicar la fotosíntesis", "distinguir plantas y hongos"],
+      "titulo": "Cuidemos la naturaleza",
+      "resumen": "Estudiamos los seres vivos: la clasificación en reinos, los vertebrados e invertebrados, las plantas y sus partes, y las relaciones entre los seres vivos (cadenas alimentarias).",
+      "resumen_simple": "Todos los seres vivos están clasificados en grupos. Los animales pueden ser vertebrados (con columna) o invertebrados. Las plantas fabrican su alimento con la fotosíntesis. ¡Tenemos que cuidarlos a todos!",
+      "conceptos_clave": ["ser vivo", "vertebrado", "invertebrado", "mamífero", "ave", "reptil", "anfibio", "pez", "fotosíntesis", "cadena alimentaria", "ecosistema", "biodiversidad"],
+      "habilidades": ["clasificar animales en vertebrados e invertebrados", "identificar grupos de vertebrados", "explicar la fotosíntesis", "construir cadenas alimentarias"],
       "repaso_clave": [
         "Vertebrados: mamíferos, aves, reptiles, anfibios, peces",
-        "Mamíferos: tienen pelo, dan leche a sus crías",
-        "Aves: tienen plumas y pico",
-        "Reptiles: tienen escamas, son de sangre fría",
-        "Fotosíntesis: las plantas usan agua, CO2 y luz solar para fabricar alimento"
+        "Mamíferos: pelo, sangre caliente, crías que maman",
+        "Aves: plumas, pico, ponen huevos",
+        "Reptiles: escamas, sangre fría",
+        "Anfibios: viven en agua y tierra",
+        "Fotosíntesis: agua + CO2 + luz solar → alimento + oxígeno",
+        "Cadena alimentaria: productor → consumidor → descomponedor"
       ],
       "ejercicios_templates": [
         {
-          "tipo": "vertebrado_o_invertebrado",
+          "tipo": "vertebrado_invertebrado",
           "enunciado": "¿Es el '{animal}' un vertebrado o un invertebrado?",
           "variables": {
-            "animal": { "tipo": "lista", "opciones": ["perro", "mariposa", "delfín", "pulpo", "serpiente", "hormiga", "águila", "medusa", "rana", "caracol"] }
+            "animal": { "tipo": "lista", "opciones": ["lince ibérico", "mariposa", "delfín", "pulpo", "serpiente", "hormiga", "águila", "medusa", "rana", "caracol", "lobo", "cangrejo"] }
           },
-          "respuesta_esperada": ["vertebrado", "invertebrado", "vertebrado", "invertebrado", "vertebrado", "invertebrado", "vertebrado", "invertebrado", "vertebrado", "invertebrado"],
-          "respuesta": "clasificar_vertebrado(animal)",
+          "respuesta_esperada": ["vertebrado", "invertebrado", "vertebrado", "invertebrado", "vertebrado", "invertebrado", "vertebrado", "invertebrado", "vertebrado", "invertebrado", "vertebrado", "invertebrado"],
           "dificultad": "facil"
         },
         {
           "tipo": "grupo_vertebrado",
           "enunciado": "¿A qué grupo de vertebrados pertenece el '{animal}'?",
           "variables": {
-            "animal": { "tipo": "lista", "opciones": ["ballena", "paloma", "cocodrilo", "rana", "salmón", "murciélago", "loro", "tortuga", "salamandra", "tiburón"] }
+            "animal": { "tipo": "lista", "opciones": ["lince", "cigüeña", "cocodrilo", "salamandra", "trucha", "murciélago", "cotorra", "tortuga", "tritón", "atún"] }
           },
           "respuesta_esperada": ["mamífero", "ave", "reptil", "anfibio", "pez", "mamífero", "ave", "reptil", "anfibio", "pez"],
-          "respuesta": "grupo_vertebrado(animal)",
           "dificultad": "medio"
         },
         {
-          "tipo": "fotosintesis_elementos",
-          "enunciado": "En la fotosíntesis, las plantas necesitan {elemento}. ¿Verdadero o falso?",
+          "tipo": "fotosintesis_si_no",
+          "enunciado": "En la fotosíntesis, ¿las plantas necesitan '{elemento}'? Escribe Sí o No.",
           "variables": {
-            "elemento": { "tipo": "lista", "opciones": ["luz solar", "dióxido de carbono", "oxígeno", "agua", "calor del suelo"] }
+            "elemento": { "tipo": "lista", "opciones": ["luz solar", "dióxido de carbono", "oxígeno", "agua", "nutrientes del suelo"] }
           },
-          "respuesta_esperada": [true, true, false, true, false],
-          "respuesta": "elemento_en_fotosintesis(elemento)",
+          "respuesta_esperada": ["Sí", "Sí", "No", "Sí", "Sí"],
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "cadena_alimentaria",
+          "enunciado": "Ordena esta cadena alimentaria: {ser_c} · {ser_b} · {ser_a}",
+          "variables": {
+            "cadena": { "tipo": "lista", "opciones": [
+              "hierba / conejo / águila",
+              "algas / pez pequeño / delfín",
+              "trigo / ratón / zorro",
+              "hierba / ciervo / lince"
+            ]}
+          },
+          "respuesta": "Ver corrección manual",
           "dificultad": "medio"
         }
       ],
@@ -134,24 +169,25 @@
         {
           "tipo": "test_mamifero",
           "enunciado": "¿Cuál de estos animales es un mamífero?",
-          "opciones": ["paloma", "tortuga", "delfín", "rana"],
-          "respuesta": "delfín",
+          "opciones": ["cigüeña", "tortuga", "lince ibérico", "rana"],
+          "respuesta": "lince ibérico",
           "dificultad": "facil"
+        },
+        {
+          "tipo": "test_fotosintesis",
+          "enunciado": "¿Qué producen las plantas durante la fotosíntesis?",
+          "opciones": ["CO2 y agua", "oxígeno y alimento", "luz y calor", "minerales y sal"],
+          "respuesta": "oxígeno y alimento",
+          "dificultad": "medio"
         }
       ],
       "actividades_templates": [
         {
-          "tipo": "cadena_alimentaria",
-          "enunciado": "Ordena estos seres vivos para formar una cadena alimentaria: {ser_a}, {ser_b}, {ser_c}.",
-          "variables": {
-            "cadenas": { "tipo": "lista", "opciones": [
-              "hierba → conejo → zorro",
-              "algas → pez pequeño → delfín",
-              "trigo → ratón → halcón"
-            ]}
-          },
-          "respuesta": "cadena_correcta",
-          "dificultad": "medio"
+          "tipo": "animal_en_peligro",
+          "enunciado": "El lince ibérico es un animal en peligro de extinción que vive en Andalucía. Explica qué crees que podemos hacer para protegerlo y por qué es importante cuidar la naturaleza.",
+          "variables": {},
+          "respuesta": "Ver corrección manual",
+          "dificultad": "dificil"
         }
       ],
       "fichas_templates": []
@@ -159,62 +195,83 @@
     {
       "id_unidad": "cono_03",
       "numero": 3,
-      "titulo": "La materia y sus estados",
-      "resumen": "Estudiamos la materia, sus propiedades y sus tres estados: sólido, líquido y gaseoso. Aprendemos los cambios de estado: fusión, solidificación, evaporación y condensación.",
-      "resumen_simple": "La materia es todo lo que podemos tocar o pesar. Puede estar en estado sólido (como el hielo), líquido (como el agua) o gaseoso (como el vapor). Cuando la calentamos o enfriamos, puede cambiar de estado.",
-      "conceptos_clave": ["materia", "sólido", "líquido", "gas", "fusión", "solidificación", "evaporación", "condensación", "propiedades de la materia", "masa", "volumen"],
-      "habilidades": ["clasificar materiales por su estado", "describir cambios de estado", "identificar propiedades de la materia", "dar ejemplos de cada estado"],
+      "titulo": "Descubrimos las rocas y el relieve terrestre",
+      "resumen": "Estudiamos las rocas y los minerales, los tipos de relieve (montaña, meseta, llanura, valle, costa), y el relieve de España y Andalucía con sus principales sistemas montañosos y ríos.",
+      "resumen_simple": "La Tierra tiene formas muy distintas: montañas, llanuras, valles y costas. También está formada por rocas y minerales. En esta unidad exploramos el relieve de España y de Andalucía.",
+      "conceptos_clave": ["roca", "mineral", "relieve", "montaña", "sierra", "meseta", "llanura", "valle", "cabo", "golfo", "sistema montañoso", "cordillera", "río", "cuenca fluvial"],
+      "habilidades": ["identificar tipos de rocas y minerales", "reconocer formas del relieve", "localizar en el mapa accidentes geográficos de España y Andalucía", "describir el relieve de Andalucía"],
       "repaso_clave": [
-        "Sólido: forma y volumen propios (mesa, hielo, piedra)",
-        "Líquido: volumen propio, toma la forma del recipiente",
-        "Gas: sin forma ni volumen propio, llena el espacio",
-        "Fusión: sólido → líquido (el hielo se derrite)",
-        "Evaporación: líquido → gas (el agua se evapora)",
-        "Condensación: gas → líquido (el vapor forma gotas)"
+        "Las rocas están formadas por minerales",
+        "Rocas sedimentarias, magmáticas y metamórficas",
+        "Sistema Central: separa la Meseta Norte y Sur",
+        "Sierra Nevada: pico más alto de la Península (Mulhacén, 3478 m)",
+        "Río Guadalquivir: río principal de Andalucía, desemboca en el Atlántico",
+        "Las Béticas recorren el sur de Andalucía"
       ],
       "ejercicios_templates": [
         {
-          "tipo": "estado_materia",
-          "enunciado": "¿En qué estado de la materia está '{objeto}'? (sólido, líquido o gas)",
+          "tipo": "tipo_relieve",
+          "enunciado": "¿Qué forma de relieve es '{descripcion}'?",
           "variables": {
-            "objeto": { "tipo": "lista", "opciones": ["madera", "leche", "aire", "plastilina", "zumo", "vapor de agua", "piedra", "aceite", "oxígeno", "mantequilla derretida"] }
+            "descripcion": { "tipo": "lista", "opciones": [
+              "elevación natural del terreno con cimas altas y pendientes pronunciadas",
+              "extensión de terreno llana y elevada",
+              "extensión de terreno llana y baja",
+              "depresión alargada entre montañas por donde suele discurrir un río",
+              "saliente de tierra que se adentra en el mar",
+              "entrada del mar en la costa con forma cóncava"
+            ]}
           },
-          "respuesta_esperada": ["sólido", "líquido", "gas", "sólido", "líquido", "gas", "sólido", "líquido", "gas", "líquido"],
-          "respuesta": "estado_de(objeto)",
+          "respuesta_esperada": ["montaña", "meseta", "llanura", "valle", "cabo", "golfo"],
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "accidente_comunidad",
+          "enunciado": "¿En qué comunidad autónoma se encuentra '{accidente}'?",
+          "variables": {
+            "accidente": { "tipo": "lista", "opciones": ["Sierra Nevada", "los Picos de Europa", "los Pirineos", "la Sierra de Grazalema", "Sierra Morena"] }
+          },
+          "respuesta_esperada": ["Andalucía", "Asturias y Cantabria", "Aragón y Cataluña", "Andalucía", "Andalucía y Castilla-La Mancha"],
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "rio_andalucia",
+          "enunciado": "¿Cómo se llama el río más importante de Andalucía y en qué océano o mar desemboca?",
+          "variables": {},
+          "respuesta": "Guadalquivir, Océano Atlántico",
           "dificultad": "facil"
         },
         {
-          "tipo": "cambio_estado",
-          "enunciado": "¿Qué cambio de estado ocurre cuando {descripcion_cambio}?",
-          "variables": {
-            "descripcion_cambio": { "tipo": "lista", "opciones": [
-              "el hielo se convierte en agua",
-              "el agua se convierte en vapor",
-              "el vapor se convierte en agua",
-              "el agua se convierte en hielo"
-            ]}
-          },
-          "respuesta_esperada": ["fusión", "evaporación", "condensación", "solidificación"],
-          "respuesta": "nombre_cambio(descripcion_cambio)",
+          "tipo": "tipo_roca",
+          "enunciado": "¿Qué tipo de roca se forma al enfriarse el magma volcánico?",
+          "variables": {},
+          "respuesta": "magmática o volcánica",
           "dificultad": "medio"
         }
       ],
       "test_templates": [
         {
-          "tipo": "test_estado",
-          "enunciado": "¿Qué estado tiene forma propia y volumen propio?",
-          "opciones": ["sólido", "líquido", "gas", "plasma"],
-          "respuesta": "sólido",
+          "tipo": "test_pico_alto",
+          "enunciado": "¿Cuál es el pico más alto de la Península Ibérica?",
+          "opciones": ["Teide", "Mulhacén", "Aneto", "Montserrat"],
+          "respuesta": "Mulhacén",
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "test_rio_andalucia",
+          "enunciado": "¿Cuál es el río más largo de Andalucía?",
+          "opciones": ["Ebro", "Tajo", "Guadalquivir", "Genil"],
+          "respuesta": "Guadalquivir",
           "dificultad": "facil"
         }
       ],
       "actividades_templates": [
         {
-          "tipo": "experimento_agua",
-          "enunciado": "Describe qué le pasa al agua cuando la metemos en el congelador durante varias horas. ¿Qué cambio de estado se produce?",
+          "tipo": "describir_relieve_andalucia",
+          "enunciado": "Describe el relieve de Andalucía mencionando al menos: dos sierras, un río y una llanura o vega importantes.",
           "variables": {},
-          "respuesta": "descripcion_solidificacion_agua",
-          "dificultad": "medio"
+          "respuesta": "Ver corrección manual",
+          "dificultad": "dificil"
         }
       ],
       "fichas_templates": []
@@ -222,61 +279,82 @@
     {
       "id_unidad": "cono_04",
       "numero": 4,
-      "titulo": "El relieve de España y Andalucía",
-      "resumen": "Estudiamos las principales formas del relieve: montañas, mesetas, llanuras, valles y costas. Identificamos los sistemas montañosos y ríos más importantes de España y, en especial, de Andalucía.",
-      "resumen_simple": "El relieve es cómo es la superficie de la Tierra: hay montañas muy altas, llanuras planas, valles entre montañas y costas junto al mar. España tiene muchas formas diferentes de relieve.",
-      "conceptos_clave": ["relieve", "montaña", "sierra", "meseta", "llanura", "valle", "cabo", "golfo", "península", "sistema montañoso", "cordillera"],
-      "habilidades": ["identificar formas del relieve", "localizar montañas y ríos en el mapa", "describir el relieve de Andalucía", "distinguir relieve interior y costero"],
+      "titulo": "Las fuerzas y las máquinas",
+      "resumen": "Estudiamos qué son las fuerzas, sus efectos (movimiento, deformación), los tipos de fuerzas (contacto y a distancia), las máquinas simples (palanca, plano inclinado, polea) y las máquinas compuestas.",
+      "resumen_simple": "Las fuerzas hacen que las cosas se muevan o cambien de forma. Las máquinas simples como las palancas y las poleas nos ayudan a hacer el trabajo más fácil. ¡Las usamos todos los días!",
+      "conceptos_clave": ["fuerza", "empuje", "tracción", "gravedad", "fricción", "magnetismo", "máquina simple", "palanca", "plano inclinado", "polea", "rueda", "máquina compuesta"],
+      "habilidades": ["identificar tipos de fuerzas", "reconocer los efectos de las fuerzas", "clasificar máquinas simples", "explicar para qué sirve cada máquina simple"],
       "repaso_clave": [
-        "Sistema Central: separa la meseta norte y sur",
-        "Sierra Nevada (Andalucía): el pico más alto de la Península (Mulhacén)",
-        "Ríos principales de Andalucía: Guadalquivir, Genil, Guadalhorce",
-        "Meseta Central: ocupa el centro de España",
-        "Cordillera Cantábrica: norte de España"
+        "La fuerza puede mover, parar, deformar o cambiar la dirección de los objetos",
+        "Fuerzas de contacto: rozamiento, tensión, elástica",
+        "Fuerzas a distancia: gravedad, magnetismo, eléctrica",
+        "Palanca: barra rígida apoyada en un punto de apoyo (fulcro)",
+        "Plano inclinado: superficie inclinada que reduce el esfuerzo",
+        "Polea: rueda con cuerda que cambia la dirección de la fuerza"
       ],
       "ejercicios_templates": [
         {
-          "tipo": "definir_relieve",
-          "enunciado": "¿Qué es {forma_relieve}?",
+          "tipo": "tipo_fuerza",
+          "enunciado": "¿Qué tipo de fuerza actúa cuando '{situacion}'?",
           "variables": {
-            "forma_relieve": { "tipo": "lista", "opciones": ["una montaña", "un valle", "una meseta", "una llanura", "un cabo", "un golfo"] }
+            "situacion": { "tipo": "lista", "opciones": [
+              "un imán atrae un clavo sin tocarlo",
+              "empujas una puerta para abrirla",
+              "una pelota cae al suelo",
+              "frotas las manos y se calientan",
+              "una goma elástica se estira"
+            ]}
           },
-          "respuesta": "definicion_de(forma_relieve)",
-          "dificultad": "facil"
-        },
-        {
-          "tipo": "localizar_accidente",
-          "enunciado": "¿En qué comunidad autónoma está {accidente_geografico}?",
-          "variables": {
-            "accidente_geografico": { "tipo": "lista", "opciones": ["Sierra Nevada", "los Picos de Europa", "el río Guadalquivir", "la meseta central", "los Pirineos"] }
-          },
-          "respuesta": "comunidad_de(accidente_geografico)",
+          "respuesta_esperada": ["magnetismo (a distancia)", "fuerza de contacto (empuje)", "gravedad (a distancia)", "rozamiento (contacto)", "fuerza elástica (contacto)"],
           "dificultad": "medio"
         },
         {
-          "tipo": "rio_andalucia",
-          "enunciado": "¿Cuál es el río más importante de Andalucía y en qué mar desemboca?",
+          "tipo": "maquina_simple",
+          "enunciado": "¿Qué máquina simple se usa cuando '{uso}'?",
+          "variables": {
+            "uso": { "tipo": "lista", "opciones": [
+              "subes una carga pesada por una rampa",
+              "abres una lata con un abridor",
+              "subes un cubo de agua de un pozo",
+              "cortas papel con unas tijeras"
+            ]}
+          },
+          "respuesta_esperada": ["plano inclinado", "palanca", "polea", "palanca"],
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "efecto_fuerza",
+          "enunciado": "Cuando chutamos un balón parado, la fuerza produce un efecto de... ¿movimiento, deformación o cambio de dirección?",
           "variables": {},
-          "respuesta": "Guadalquivir, Océano Atlántico",
+          "respuesta": "movimiento",
           "dificultad": "facil"
         }
       ],
       "test_templates": [
         {
-          "tipo": "test_pico_mas_alto",
-          "enunciado": "¿Cuál es el pico más alto de la Península Ibérica?",
-          "opciones": ["Teide", "Mulhacén", "Picos de Europa", "Montserrat"],
-          "respuesta": "Mulhacén",
+          "tipo": "test_gravedad",
+          "enunciado": "¿Qué tipo de fuerza es la gravedad?",
+          "opciones": ["de contacto", "a distancia", "de rozamiento", "elástica"],
+          "respuesta": "a distancia",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "test_palanca",
+          "enunciado": "¿Cuál de estos objetos es una palanca?",
+          "opciones": ["una rampa", "unas tijeras", "una polea", "una rueda"],
+          "respuesta": "unas tijeras",
           "dificultad": "medio"
         }
       ],
       "actividades_templates": [
         {
-          "tipo": "describir_andalucia",
-          "enunciado": "Describe el relieve de Andalucía mencionando al menos: una sierra, un río y una llanura.",
-          "variables": {},
-          "respuesta": "texto_libre_relieve_andalucia",
-          "dificultad": "dificil"
+          "tipo": "maquinas_en_casa",
+          "enunciado": "Busca en casa {n} ejemplos de máquinas simples. Para cada una escribe: qué es, qué tipo de máquina simple es y para qué sirve.",
+          "variables": {
+            "n": { "tipo": "numero", "min": 3, "max": 5 }
+          },
+          "respuesta": "Ver corrección manual",
+          "dificultad": "medio"
         }
       ],
       "fichas_templates": []
@@ -284,43 +362,215 @@
     {
       "id_unidad": "cono_05",
       "numero": 5,
-      "titulo": "La organización política de España",
-      "resumen": "Estudiamos la organización territorial y política de España: municipio, provincia, comunidad autónoma y Estado. Conocemos las instituciones de gobierno y la Constitución Española.",
-      "resumen_simple": "España está organizada en municipios (pueblos y ciudades), provincias y comunidades autónomas. Tenemos un gobierno para toda España y gobiernos propios en cada comunidad, como la Junta de Andalucía.",
-      "conceptos_clave": ["municipio", "ayuntamiento", "provincia", "diputación", "comunidad autónoma", "parlamento autonómico", "Estado", "Cortes Generales", "Constitución", "monarquía parlamentaria"],
-      "habilidades": ["identificar las divisiones territoriales de España", "conocer las instituciones de cada nivel", "localizar las comunidades autónomas", "entender qué es la Constitución"],
+      "titulo": "¿Dónde hacen más daño los incendios?",
+      "resumen": "Estudiamos los ecosistemas españoles, con especial atención a los bosques andaluces, el impacto de los incendios forestales, las causas del deterioro del medioambiente y las medidas de protección.",
+      "resumen_simple": "Los ecosistemas son los espacios donde viven los seres vivos junto con su entorno. Los incendios forestales son uno de los mayores peligros para los bosques de Andalucía. Aprendemos a proteger la naturaleza.",
+      "conceptos_clave": ["ecosistema", "bosque mediterráneo", "matorral", "incendio forestal", "deforestación", "contaminación", "medidas de protección", "espacios naturales protegidos", "parque nacional"],
+      "habilidades": ["identificar ecosistemas españoles", "explicar las causas de los incendios", "describir los efectos de los incendios en el ecosistema", "proponer medidas de protección"],
       "repaso_clave": [
-        "España tiene 17 comunidades autónomas y 2 ciudades autónomas",
-        "Andalucía tiene 8 provincias",
-        "El Ayuntamiento gobierna el municipio",
-        "La Junta de Andalucía gobierna nuestra comunidad",
-        "La Constitución de 1978 es la ley más importante de España"
+        "Los bosques mediterráneos son los más típicos de Andalucía",
+        "Las principales causas de incendios son humanas (descuidos, quemas)",
+        "Los incendios destruyen flora, fauna, suelo y aumentan la erosión",
+        "Medidas: prevención, cortafuegos, reforestación, educación ambiental",
+        "Doñana y Sierra Nevada son parques nacionales de Andalucía"
       ],
       "ejercicios_templates": [
         {
-          "tipo": "nivel_organizacion",
-          "enunciado": "¿A qué nivel de organización pertenece '{entidad}'? (municipio, provincia, comunidad autónoma o Estado)",
+          "tipo": "causa_consecuencia_incendio",
+          "enunciado": "¿Es '{afirmacion}' una consecuencia de los incendios forestales? Escribe Sí o No.",
           "variables": {
-            "entidad": { "tipo": "lista", "opciones": ["Sevilla (ciudad)", "Málaga (provincia)", "Andalucía", "España", "Jerez de la Frontera", "Cádiz (provincia)", "Cataluña", "Madrid (ciudad)"] }
+            "afirmacion": { "tipo": "lista", "opciones": [
+              "destrucción de la vegetación",
+              "aumento de la biodiversidad",
+              "muerte de animales",
+              "erosión del suelo",
+              "mejora de la calidad del agua",
+              "emisión de CO2 a la atmósfera"
+            ]}
           },
-          "respuesta": "nivel_de(entidad)",
+          "respuesta_esperada": ["Sí", "No", "Sí", "Sí", "No", "Sí"],
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "ecosistema_andalucia",
+          "enunciado": "¿Cómo se llama el tipo de bosque más característico de Andalucía?",
+          "variables": {},
+          "respuesta": "bosque mediterráneo",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "parque_natural",
+          "enunciado": "¿Cuál de estos es un Parque Nacional de Andalucía: Doñana, Picos de Europa o Ordesa?",
+          "variables": {},
+          "respuesta": "Doñana",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "medida_proteccion",
+          "enunciado": "¿Es '{medida}' una medida para prevenir incendios? Escribe Sí o No.",
+          "variables": {
+            "medida": { "tipo": "lista", "opciones": [
+              "hacer hogueras en el monte en verano",
+              "limpiar la maleza seca cerca de los bosques",
+              "tirar basura en el campo",
+              "crear cortafuegos",
+              "reforestar con especies autóctonas"
+            ]}
+          },
+          "respuesta_esperada": ["No", "Sí", "No", "Sí", "Sí"],
+          "dificultad": "facil"
+        }
+      ],
+      "test_templates": [
+        {
+          "tipo": "test_parque_nacional",
+          "enunciado": "¿Cuál es el parque nacional más conocido de Andalucía?",
+          "opciones": ["Ordesa", "Teide", "Doñana", "Picos de Europa"],
+          "respuesta": "Doñana",
+          "dificultad": "facil"
+        }
+      ],
+      "actividades_templates": [
+        {
+          "tipo": "carta_medioambiente",
+          "enunciado": "Escribe una carta a un ayuntamiento proponiendo {n} medidas concretas para proteger los bosques de tu zona de los incendios.",
+          "variables": {
+            "n": { "tipo": "numero", "min": 3, "max": 5 }
+          },
+          "respuesta": "Ver corrección manual",
+          "dificultad": "dificil"
+        }
+      ],
+      "fichas_templates": []
+    },
+    {
+      "id_unidad": "cono_06",
+      "numero": 6,
+      "titulo": "¿Qué nos da la naturaleza?",
+      "resumen": "Estudiamos los recursos naturales: renovables y no renovables, las materias primas y los productos elaborados, la energía y sus fuentes, y la importancia del consumo responsable.",
+      "resumen_simple": "La naturaleza nos da recursos que usamos para vivir: agua, minerales, madera, petróleo... Algunos se agotan (no renovables) y otros se renuevan solos (renovables). ¡Tenemos que usarlos con cuidado!",
+      "conceptos_clave": ["recurso natural", "recurso renovable", "recurso no renovable", "materia prima", "producto elaborado", "energía renovable", "energía no renovable", "consumo responsable", "las 3R"],
+      "habilidades": ["clasificar recursos naturales", "distinguir renovable de no renovable", "identificar materias primas y productos elaborados", "proponer medidas de consumo responsable"],
+      "repaso_clave": [
+        "Recursos renovables: sol, viento, agua, madera (si se replanta)",
+        "Recursos no renovables: petróleo, carbón, gas natural, minerales",
+        "Materia prima: recurso natural sin transformar (madera, algodón)",
+        "Producto elaborado: fabricado a partir de materias primas (papel, tela)",
+        "Las 3R: Reducir, Reutilizar, Reciclar",
+        "Andalucía tiene gran potencial de energía solar y eólica"
+      ],
+      "ejercicios_templates": [
+        {
+          "tipo": "renovable_no_renovable",
+          "enunciado": "¿Es '{recurso}' un recurso renovable o no renovable?",
+          "variables": {
+            "recurso": { "tipo": "lista", "opciones": ["energía solar", "carbón", "energía eólica", "petróleo", "agua", "gas natural", "madera", "minerales metálicos"] }
+          },
+          "respuesta_esperada": ["renovable", "no renovable", "renovable", "no renovable", "renovable", "no renovable", "renovable", "no renovable"],
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "materia_prima_producto",
+          "enunciado": "¿Es '{elemento}' una materia prima o un producto elaborado?",
+          "variables": {
+            "elemento": { "tipo": "lista", "opciones": ["madera", "papel", "algodón", "tela vaquera", "mineral de hierro", "cuchillo metálico", "trigo", "pan"] }
+          },
+          "respuesta_esperada": ["materia prima", "producto elaborado", "materia prima", "producto elaborado", "materia prima", "producto elaborado", "materia prima", "producto elaborado"],
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "3R",
+          "enunciado": "¿Qué R de las 3R aplicamos cuando '{accion}'?",
+          "variables": {
+            "accion": { "tipo": "lista", "opciones": [
+              "llevamos bolsas reutilizables al supermercado",
+              "echamos el papel usado en el contenedor azul",
+              "compramos solo lo que necesitamos",
+              "usamos una botella de agua rellenable",
+              "separamos el vidrio para reciclarlo"
+            ]}
+          },
+          "respuesta_esperada": ["Reutilizar", "Reciclar", "Reducir", "Reutilizar", "Reciclar"],
+          "dificultad": "medio"
+        }
+      ],
+      "test_templates": [
+        {
+          "tipo": "test_recurso_renovable",
+          "enunciado": "¿Cuál de estos es un recurso NO renovable?",
+          "opciones": ["energía solar", "viento", "petróleo", "agua"],
+          "respuesta": "petróleo",
+          "dificultad": "facil"
+        }
+      ],
+      "actividades_templates": [
+        {
+          "tipo": "consumo_responsable",
+          "enunciado": "Escribe {n} acciones que puedes hacer en casa o en el cole para ahorrar recursos naturales y cuidar el medioambiente.",
+          "variables": {
+            "n": { "tipo": "numero", "min": 4, "max": 6 }
+          },
+          "respuesta": "Ver corrección manual",
+          "dificultad": "medio"
+        }
+      ],
+      "fichas_templates": []
+    },
+    {
+      "id_unidad": "cono_07",
+      "numero": 7,
+      "titulo": "La industria 4.0",
+      "resumen": "Estudiamos la organización política y territorial de España: municipio, provincia, comunidad autónoma y Estado. Conocemos las instituciones de gobierno, la Constitución y los derechos y deberes de los ciudadanos.",
+      "resumen_simple": "España está organizada en municipios, provincias y comunidades autónomas. Cada nivel tiene su propio gobierno. La Constitución es la ley más importante y todos tenemos derechos y deberes.",
+      "conceptos_clave": ["municipio", "ayuntamiento", "alcalde", "provincia", "diputación", "comunidad autónoma", "Junta de Andalucía", "Estado", "Cortes Generales", "Constitución", "monarquía parlamentaria", "derechos y deberes"],
+      "habilidades": ["identificar las divisiones territoriales", "nombrar las instituciones de cada nivel", "localizar las comunidades autónomas", "explicar qué es la Constitución"],
+      "repaso_clave": [
+        "España tiene 17 comunidades autónomas y 2 ciudades autónomas",
+        "Andalucía tiene 8 provincias: Almería, Cádiz, Córdoba, Granada, Huelva, Jaén, Málaga y Sevilla",
+        "El Ayuntamiento gobierna el municipio",
+        "La Junta de Andalucía gobierna nuestra comunidad",
+        "La Constitución de 1978 es la ley fundamental de España",
+        "El Rey es el Jefe del Estado en una monarquía parlamentaria"
+      ],
+      "ejercicios_templates": [
+        {
+          "tipo": "nivel_territorial",
+          "enunciado": "¿A qué nivel de organización territorial pertenece '{entidad}'?",
+          "variables": {
+            "entidad": { "tipo": "lista", "opciones": ["Jerez de la Frontera", "provincia de Cádiz", "Andalucía", "España", "Sevilla (ciudad)", "provincia de Málaga", "Cataluña", "Madrid (ciudad)"] }
+          },
+          "respuesta_esperada": ["municipio", "provincia", "comunidad autónoma", "Estado", "municipio", "provincia", "comunidad autónoma", "municipio"],
           "dificultad": "medio"
         },
         {
           "tipo": "institucion_nivel",
-          "enunciado": "¿Qué institución gobierna {nivel}?",
+          "enunciado": "¿Qué institución gobierna '{nivel}'?",
           "variables": {
-            "nivel": { "tipo": "lista", "opciones": ["un municipio", "una provincia", "una comunidad autónoma", "el Estado español"] }
+            "nivel": { "tipo": "lista", "opciones": ["un municipio", "una provincia", "la comunidad autónoma de Andalucía", "el Estado español"] }
           },
-          "respuesta_esperada": ["Ayuntamiento", "Diputación", "Gobierno autonómico/Junta", "Gobierno de España/Cortes"],
-          "respuesta": "institucion_de(nivel)",
+          "respuesta_esperada": ["El Ayuntamiento", "La Diputación", "La Junta de Andalucía", "El Gobierno de España y las Cortes Generales"],
           "dificultad": "medio"
         },
         {
           "tipo": "provincias_andalucia",
-          "enunciado": "Nombra las 8 provincias de Andalucía.",
+          "enunciado": "Escribe las 8 provincias de Andalucía.",
           "variables": {},
-          "respuesta": "Almería, Cádiz, Córdoba, Granada, Huelva, Jaén, Málaga, Sevilla",
+          "respuesta": "Almería, Cádiz, Córdoba, Granada, Huelva, Jaén, Málaga y Sevilla",
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "derecho_deber",
+          "enunciado": "¿Es '{ejemplo}' un derecho o un deber de los ciudadanos?",
+          "variables": {
+            "ejemplo": { "tipo": "lista", "opciones": [
+              "recibir educación gratuita",
+              "pagar los impuestos",
+              "votar en las elecciones",
+              "respetar las leyes",
+              "recibir asistencia sanitaria"
+            ]}
+          },
+          "respuesta_esperada": ["derecho", "deber", "derecho y deber", "deber", "derecho"],
           "dificultad": "medio"
         }
       ],
@@ -331,78 +581,188 @@
           "opciones": ["15", "17", "19", "50"],
           "respuesta": "17",
           "dificultad": "facil"
+        },
+        {
+          "tipo": "test_provincias",
+          "enunciado": "¿Cuántas provincias tiene Andalucía?",
+          "opciones": ["6", "7", "8", "9"],
+          "respuesta": "8",
+          "dificultad": "facil"
         }
       ],
       "actividades_templates": [
         {
           "tipo": "mi_municipio",
-          "enunciado": "Escribe el nombre de tu municipio, provincia y comunidad autónoma. ¿Quién os gobierna en cada nivel?",
+          "enunciado": "Escribe el nombre de tu municipio, provincia y comunidad autónoma. ¿Quién os gobierna en cada nivel? ¿Cuál es el nombre de tu alcalde o alcaldesa?",
           "variables": {},
-          "respuesta": "texto_libre_municipio_propio",
+          "respuesta": "Ver corrección manual",
           "dificultad": "facil"
         }
       ],
       "fichas_templates": []
     },
     {
-      "id_unidad": "cono_06",
-      "numero": 6,
-      "titulo": "La energía y sus fuentes",
-      "resumen": "Aprendemos qué es la energía, las fuentes de energía renovables y no renovables, y la importancia del ahorro energético para el medioambiente.",
-      "resumen_simple": "La energía nos permite mover cosas, dar calor y producir luz. Algunas energías como el petróleo se agotan (no renovables). Otras como el sol o el viento son inagotables (renovables).",
-      "conceptos_clave": ["energía", "fuente de energía", "energía renovable", "energía no renovable", "energía solar", "energía eólica", "energía hidráulica", "carbón", "petróleo", "ahorro energético"],
-      "habilidades": ["clasificar fuentes de energía", "distinguir renovable de no renovable", "proponer medidas de ahorro", "relacionar energía con medioambiente"],
+      "id_unidad": "cono_08",
+      "numero": 8,
+      "titulo": "¿Cómo han cambiado nuestros hábitos?",
+      "resumen": "Estudiamos la historia: la Prehistoria (Paleolítico, Neolítico, Edad de los Metales), la Historia Antigua, Media, Moderna y Contemporánea. Aprendemos a situar hechos en líneas del tiempo.",
+      "resumen_simple": "La historia de la humanidad se divide en grandes etapas. Empezó con la Prehistoria, cuando los humanos vivían en cuevas y pintaban en ellas. Poco a poco nuestros hábitos fueron cambiando hasta hoy.",
+      "conceptos_clave": ["Prehistoria", "Paleolítico", "Neolítico", "Edad de los Metales", "Historia Antigua", "Historia Medieval", "Historia Moderna", "Historia Contemporánea", "línea del tiempo", "fuente histórica"],
+      "habilidades": ["ordenar las etapas de la historia", "situar hechos en una línea del tiempo", "distinguir fuentes históricas", "comparar el modo de vida en distintas épocas"],
       "repaso_clave": [
-        "Renovables: solar, eólica, hidráulica, mareomotriz, geotérmica",
-        "No renovables: carbón, petróleo, gas natural, nuclear",
-        "Las renovables no contaminan y no se agotan",
-        "El ahorro energético protege el medioambiente",
-        "Andalucía tiene gran potencial solar y eólico"
+        "Prehistoria: antes de la escritura (hace más de 5000 años)",
+        "Paleolítico: cazadores-recolectores, pinturas rupestres",
+        "Neolítico: agricultura, ganadería, primeros poblados",
+        "Historia Antigua: escritura, civilizaciones (Egipto, Grecia, Roma)",
+        "Historia Medieval: desde caída Roma (476) hasta Colón (1492)",
+        "Historia Moderna: 1492-1789 (Revolución Francesa)",
+        "Historia Contemporánea: desde 1789 hasta hoy"
       ],
       "ejercicios_templates": [
         {
-          "tipo": "renovable_o_no",
-          "enunciado": "¿Es '{energia}' una energía renovable o no renovable?",
+          "tipo": "etapa_historica",
+          "enunciado": "¿En qué etapa de la historia ocurrió '{evento}'?",
           "variables": {
-            "energia": { "tipo": "lista", "opciones": ["solar", "carbón", "eólica", "petróleo", "hidráulica", "gas natural", "geotérmica", "nuclear"] }
+            "evento": { "tipo": "lista", "opciones": [
+              "los primeros humanos pintaban en cuevas",
+              "los romanos conquistaron la Península Ibérica",
+              "Cristóbal Colón llegó a América",
+              "los seres humanos empezaron a cultivar la tierra",
+              "la Revolución Industrial transformó la sociedad"
+            ]}
           },
-          "respuesta_esperada": ["renovable", "no renovable", "renovable", "no renovable", "renovable", "no renovable", "renovable", "no renovable"],
-          "respuesta": "tipo_energia(energia)",
+          "respuesta_esperada": ["Prehistoria (Paleolítico)", "Historia Antigua", "Historia Moderna", "Prehistoria (Neolítico)", "Historia Contemporánea"],
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "antes_despues",
+          "enunciado": "¿Qué etapa histórica va ANTES de '{etapa}'?",
+          "variables": {
+            "etapa": { "tipo": "lista", "opciones": ["Historia Antigua", "Historia Medieval", "Historia Moderna", "Historia Contemporánea"] }
+          },
+          "respuesta_esperada": ["Prehistoria", "Historia Antigua", "Historia Medieval", "Historia Moderna"],
           "dificultad": "facil"
         },
         {
-          "tipo": "ahorro_energetico",
-          "enunciado": "¿Es '{accion}' una medida de ahorro energético? (Sí/No)",
-          "variables": {
-            "accion": { "tipo": "lista", "opciones": [
-              "apagar las luces al salir de una habitación",
-              "dejar el grifo abierto mientras te cepillas",
-              "usar bombillas LED",
-              "poner la calefacción muy alta en invierno",
-              "usar el transporte público"
-            ]}
-          },
-          "respuesta_esperada": [true, false, true, false, true],
-          "respuesta": "es_ahorro(accion)",
+          "tipo": "pintura_rupestre",
+          "enunciado": "Las pinturas de las cuevas prehistóricas se llaman pinturas... ¿qué?",
+          "variables": {},
+          "respuesta": "rupestres",
           "dificultad": "facil"
         }
       ],
       "test_templates": [
         {
-          "tipo": "test_energia_renovable",
-          "enunciado": "¿Cuál de estas es una energía renovable?",
-          "opciones": ["carbón", "petróleo", "solar", "gas natural"],
-          "respuesta": "solar",
+          "tipo": "test_prehistoria",
+          "enunciado": "¿En qué periodo de la Prehistoria empezaron los humanos a cultivar la tierra?",
+          "opciones": ["Paleolítico", "Neolítico", "Edad del Bronce", "Edad del Hierro"],
+          "respuesta": "Neolítico",
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "test_anno_colon",
+          "enunciado": "¿En qué año llegó Cristóbal Colón a América?",
+          "opciones": ["1289", "1392", "1492", "1592"],
+          "respuesta": "1492",
           "dificultad": "facil"
         }
       ],
       "actividades_templates": [
         {
-          "tipo": "medidas_ahorro_casa",
-          "enunciado": "Escribe 5 medidas de ahorro energético que puedas hacer en tu casa.",
+          "tipo": "linea_del_tiempo",
+          "enunciado": "Dibuja en tu cuaderno una línea del tiempo con las 5 grandes etapas de la historia e indica la fecha de inicio de cada una.",
           "variables": {},
-          "respuesta": "texto_libre_5_medidas",
+          "respuesta": "Ver corrección manual",
           "dificultad": "medio"
+        }
+      ],
+      "fichas_templates": []
+    },
+    {
+      "id_unidad": "cono_09",
+      "numero": 9,
+      "titulo": "Conocer la historia, un camino hacia la paz",
+      "resumen": "Estudiamos la historia de Andalucía: pueblos prerromanos, romanización, Al-Ándalus, la Reconquista y la época moderna. Reflexionamos sobre la convivencia, la paz y los derechos humanos.",
+      "resumen_simple": "Andalucía tiene una historia muy rica: iberios, romanos, árabes, reinos cristianos... Todas estas culturas dejaron su huella. Conocer la historia nos ayuda a convivir mejor y a construir la paz.",
+      "conceptos_clave": ["pueblos prerromanos", "romanización", "Al-Ándalus", "Reconquista", "patrimonio histórico", "convivencia", "paz", "derechos humanos", "Declaración Universal de los Derechos Humanos"],
+      "habilidades": ["describir las principales etapas de la historia de Andalucía", "identificar restos históricos en Andalucía", "reflexionar sobre convivencia y paz", "relacionar historia con valores"],
+      "repaso_clave": [
+        "Andalucía fue habitada por tartesios e iberos antes de los romanos",
+        "Los romanos dejaron ciudades como Itálica (Sevilla) y Baelo Claudia (Cádiz)",
+        "Al-Ándalus: periodo árabe, dejó la Alhambra y la Mezquita de Córdoba",
+        "La Reconquista terminó en 1492 con la toma de Granada",
+        "La Declaración Universal de los DDHH se aprobó en 1948",
+        "Los derechos humanos son universales, inalienables e indivisibles"
+      ],
+      "ejercicios_templates": [
+        {
+          "tipo": "pueblo_andalucia",
+          "enunciado": "¿Qué pueblo o civilización construyó '{monumento}' en Andalucía?",
+          "variables": {
+            "monumento": { "tipo": "lista", "opciones": [
+              "la Alhambra de Granada",
+              "la Mezquita de Córdoba",
+              "las ruinas de Itálica",
+              "el acueducto romano de Sevilla",
+              "el teatro romano de Málaga"
+            ]}
+          },
+          "respuesta_esperada": ["musulmanes (Al-Ándalus)", "musulmanes (Al-Ándalus)", "romanos", "romanos", "romanos"],
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "derecho_humano",
+          "enunciado": "¿Es '{derecho}' un derecho humano fundamental? Escribe Sí o No.",
+          "variables": {
+            "derecho": { "tipo": "lista", "opciones": [
+              "derecho a la vida",
+              "derecho a la educación",
+              "derecho a discriminar a otros",
+              "derecho a la libertad",
+              "derecho a la salud"
+            ]}
+          },
+          "respuesta_esperada": ["Sí", "Sí", "No", "Sí", "Sí"],
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "anno_declaracion",
+          "enunciado": "¿En qué año se aprobó la Declaración Universal de los Derechos Humanos?",
+          "variables": {},
+          "respuesta": "1948",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "etapa_andalucia",
+          "enunciado": "¿Cómo se llamaba el periodo en que los musulmanes gobernaron la Península Ibérica?",
+          "variables": {},
+          "respuesta": "Al-Ándalus",
+          "dificultad": "facil"
+        }
+      ],
+      "test_templates": [
+        {
+          "tipo": "test_alhambra",
+          "enunciado": "¿Quién construyó la Alhambra de Granada?",
+          "opciones": ["los romanos", "los visigodos", "los musulmanes", "los fenicios"],
+          "respuesta": "los musulmanes",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "test_reconquista",
+          "enunciado": "¿En qué año terminó la Reconquista con la toma de Granada?",
+          "opciones": ["1392", "1492", "1592", "1292"],
+          "respuesta": "1492",
+          "dificultad": "facil"
+        }
+      ],
+      "actividades_templates": [
+        {
+          "tipo": "patrimonio_andaluz",
+          "enunciado": "Elige un monumento histórico de Andalucía que conozcas. Escribe quién lo construyó, en qué época y por qué crees que es importante conservarlo.",
+          "variables": {},
+          "respuesta": "Ver corrección manual",
+          "dificultad": "dificil"
         }
       ],
       "fichas_templates": []
