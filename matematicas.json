@@ -1,0 +1,649 @@
+{
+  "asignatura": "Matemáticas",
+  "curso": "4º Primaria",
+  "editorial": "Anaya - Edudynamic",
+  "comunidad": "Andalucía",
+  "version": "1.0",
+  "unidades": [
+    {
+      "id_unidad": "mat_01",
+      "numero": 1,
+      "titulo": "Números hasta el millón",
+      "resumen": "En esta unidad aprendemos a leer, escribir y comparar números grandes hasta el millón. Trabajamos con el valor posicional de cada cifra y representamos cantidades en distintos formatos.",
+      "resumen_simple": "Vamos a aprender a contar números muy grandes, ¡hasta un millón! Aprenderás a leer y escribir esos números y a saber cuánto vale cada cifra.",
+      "conceptos_clave": ["valor posicional", "centenas de millar", "decenas de millar", "unidades de millar", "centenas", "decenas", "unidades", "descomposición numérica"],
+      "habilidades": ["leer y escribir números hasta el millón", "ordenar y comparar números", "descomponer números", "identificar el valor posicional"],
+      "repaso_clave": [
+        "Un millón = 1.000.000",
+        "Orden de posiciones: U, D, C, Um, Dm, Cm",
+        "Para comparar: empieza por la cifra de mayor valor",
+        "La descomposición separa cada cifra por su valor"
+      ],
+      "ejercicios_templates": [
+        {
+          "tipo": "valor_posicional",
+          "enunciado": "¿Cuánto vale el {digito} en el número {numero}?",
+          "variables": {
+            "numero": { "tipo": "numero", "min": 10000, "max": 999999 },
+            "digito": { "tipo": "lista", "opciones": ["primer dígito", "segundo dígito", "tercer dígito"] }
+          },
+          "respuesta": "calcular_valor_posicional(numero, digito)",
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "escritura_numero",
+          "enunciado": "Escribe con cifras: {numero_texto}",
+          "variables": {
+            "numero_texto": { "tipo": "numero_en_texto", "min": 1000, "max": 99999 }
+          },
+          "respuesta": "texto_a_numero(numero_texto)",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "comparacion",
+          "enunciado": "¿Es {a} mayor, menor o igual que {b}? Escribe >, < o =",
+          "variables": {
+            "a": { "tipo": "numero", "min": 1000, "max": 99999 },
+            "b": { "tipo": "numero", "min": 1000, "max": 99999 }
+          },
+          "respuesta": "comparar(a, b)",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "descomposicion",
+          "enunciado": "Descompón el número {n}: ___ + ___ + ___ + ___ = {n}",
+          "variables": {
+            "n": { "tipo": "numero", "min": 10000, "max": 99999 }
+          },
+          "respuesta": "descomponer(n)",
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "ordenar_numeros",
+          "enunciado": "Ordena de menor a mayor: {a}, {b}, {c}, {d}",
+          "variables": {
+            "a": { "tipo": "numero", "min": 10000, "max": 999999 },
+            "b": { "tipo": "numero", "min": 10000, "max": 999999 },
+            "c": { "tipo": "numero", "min": 10000, "max": 999999 },
+            "d": { "tipo": "numero", "min": 10000, "max": 999999 }
+          },
+          "respuesta": "ordenar([a,b,c,d])",
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "antecesor_sucesor",
+          "enunciado": "Escribe el antecesor y el sucesor de {n}",
+          "variables": {
+            "n": { "tipo": "numero", "min": 10001, "max": 999998 }
+          },
+          "respuesta": "antecesor=n-1, sucesor=n+1",
+          "dificultad": "facil"
+        }
+      ],
+      "test_templates": [
+        {
+          "tipo": "test_opcion_multiple",
+          "enunciado": "¿Cuántas centenas hay en el número {n}?",
+          "variables": {
+            "n": { "tipo": "numero", "min": 100, "max": 9999 }
+          },
+          "opciones_generacion": "calcular_centenas(n) y 3 distractores cercanos",
+          "respuesta": "floor(n/100)",
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "test_verdadero_falso",
+          "enunciado": "{a} es mayor que {b}. ¿Verdadero o falso?",
+          "variables": {
+            "a": { "tipo": "numero", "min": 1000, "max": 99999 },
+            "b": { "tipo": "numero", "min": 1000, "max": 99999 }
+          },
+          "respuesta": "a > b",
+          "dificultad": "facil"
+        }
+      ],
+      "actividades_templates": [
+        {
+          "tipo": "problema_contexto",
+          "enunciado": "En una ciudad viven {a} personas. En otra ciudad viven {b} personas. ¿Cuántas personas viven en total en las dos ciudades?",
+          "variables": {
+            "a": { "tipo": "numero", "min": 10000, "max": 99999 },
+            "b": { "tipo": "numero", "min": 10000, "max": 99999 }
+          },
+          "respuesta": "a + b",
+          "dificultad": "facil"
+        }
+      ],
+      "fichas_templates": [
+        {
+          "tipo": "ficha_tabla_valor_posicional",
+          "descripcion": "Tabla para rellenar con el valor posicional de un número dado",
+          "variables": { "n": { "tipo": "numero", "min": 10000, "max": 999999 } }
+        }
+      ]
+    },
+    {
+      "id_unidad": "mat_02",
+      "numero": 2,
+      "titulo": "Suma y resta de números grandes",
+      "resumen": "Practicamos la suma y la resta con números de hasta 6 cifras, incluyendo llevadas y préstamos. Resolvemos problemas de la vida cotidiana usando estas operaciones.",
+      "resumen_simple": "Aprenderemos a sumar y restar números grandes, como los que usamos cuando contamos el dinero o las distancias. ¡Con práctica se vuelve muy fácil!",
+      "conceptos_clave": ["suma con llevadas", "resta con préstamo", "comprobación de resultados", "problemas de suma y resta"],
+      "habilidades": ["sumar números de hasta 6 cifras", "restar con préstamo", "comprobar operaciones", "resolver problemas"],
+      "repaso_clave": [
+        "En la suma, sumamos de derecha a izquierda",
+        "Si la suma supera 9, llevamos una a la siguiente columna",
+        "La resta se comprueba sumando el resultado + el sustraendo",
+        "En la resta con préstamo, tomamos una decena prestada"
+      ],
+      "ejercicios_templates": [
+        {
+          "tipo": "suma",
+          "enunciado": "Calcula: {a} + {b}",
+          "variables": {
+            "a": { "tipo": "numero", "min": 1000, "max": 99999 },
+            "b": { "tipo": "numero", "min": 1000, "max": 99999 }
+          },
+          "respuesta": "a + b",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "suma_tres_sumandos",
+          "enunciado": "Calcula: {a} + {b} + {c}",
+          "variables": {
+            "a": { "tipo": "numero", "min": 1000, "max": 49999 },
+            "b": { "tipo": "numero", "min": 1000, "max": 49999 },
+            "c": { "tipo": "numero", "min": 1000, "max": 49999 }
+          },
+          "respuesta": "a + b + c",
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "resta",
+          "enunciado": "Calcula: {a} - {b}",
+          "variables": {
+            "a": { "tipo": "numero", "min": 10000, "max": 99999 },
+            "b": { "tipo": "numero", "min": 1000, "max": "a" }
+          },
+          "respuesta": "a - b",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "suma_con_huecos",
+          "enunciado": "{a} + ___ = {resultado}",
+          "variables": {
+            "a": { "tipo": "numero", "min": 1000, "max": 49999 },
+            "b": { "tipo": "numero", "min": 1000, "max": 49999 }
+          },
+          "resultado_calculo": "a + b",
+          "respuesta": "b",
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "problema_suma_resta",
+          "enunciado": "En una librería había {a} libros. Vendieron {b} y llegaron {c} nuevos. ¿Cuántos libros hay ahora?",
+          "variables": {
+            "a": { "tipo": "numero", "min": 5000, "max": 20000 },
+            "b": { "tipo": "numero", "min": 500, "max": 3000 },
+            "c": { "tipo": "numero", "min": 200, "max": 2000 }
+          },
+          "respuesta": "a - b + c",
+          "dificultad": "dificil"
+        },
+        {
+          "tipo": "comprobacion_resta",
+          "enunciado": "Comprueba si esta resta es correcta: {a} - {b} = {resultado_propuesto}",
+          "variables": {
+            "a": { "tipo": "numero", "min": 10000, "max": 99999 },
+            "b": { "tipo": "numero", "min": 1000, "max": 9999 },
+            "error": { "tipo": "booleano" }
+          },
+          "respuesta": "verificar_resta(a, b, resultado_propuesto)",
+          "dificultad": "dificil"
+        }
+      ],
+      "test_templates": [
+        {
+          "tipo": "test_resultado_correcto",
+          "enunciado": "¿Cuánto es {a} + {b}?",
+          "variables": {
+            "a": { "tipo": "numero", "min": 1000, "max": 9999 },
+            "b": { "tipo": "numero", "min": 1000, "max": 9999 }
+          },
+          "respuesta": "a + b",
+          "dificultad": "facil"
+        }
+      ],
+      "actividades_templates": [
+        {
+          "tipo": "problema_dinero",
+          "enunciado": "Papá tiene {a} euros. Gasta {b} euros en la compra y {c} euros en gasolina. ¿Cuánto dinero le queda?",
+          "variables": {
+            "a": { "tipo": "numero", "min": 500, "max": 2000 },
+            "b": { "tipo": "numero", "min": 50, "max": 300 },
+            "c": { "tipo": "numero", "min": 20, "max": 100 }
+          },
+          "respuesta": "a - b - c",
+          "dificultad": "medio"
+        }
+      ],
+      "fichas_templates": [
+        {
+          "tipo": "ficha_operaciones_verticales",
+          "descripcion": "Cuadrícula con 8 operaciones de suma y resta para resolver verticalmente",
+          "variables": {}
+        }
+      ]
+    },
+    {
+      "id_unidad": "mat_03",
+      "numero": 3,
+      "titulo": "Multiplicación",
+      "resumen": "Aprendemos las tablas de multiplicar del 1 al 9, la multiplicación por decenas y centenas, y la multiplicación de números de varias cifras por un número de una cifra.",
+      "resumen_simple": "Las multiplicaciones son sumas muy rápidas. Si sabes que 3 × 4 = 12, es como decir 4+4+4. ¡Vamos a practicar las tablas y a multiplicar números grandes!",
+      "conceptos_clave": ["tablas de multiplicar", "propiedad conmutativa", "multiplicación por 10, 100 y 1000", "multiplicación por una cifra", "doble y triple"],
+      "habilidades": ["dominar las tablas", "multiplicar por decenas", "multiplicar números grandes por una cifra", "resolver problemas de multiplicación"],
+      "repaso_clave": [
+        "La multiplicación es una suma repetida",
+        "Cualquier número × 0 = 0",
+        "Cualquier número × 1 = ese mismo número",
+        "Para multiplicar por 10 añadimos un cero",
+        "La propiedad conmutativa: 3×5 = 5×3"
+      ],
+      "ejercicios_templates": [
+        {
+          "tipo": "tabla_multiplicar",
+          "enunciado": "{a} × {b} = ___",
+          "variables": {
+            "a": { "tipo": "numero", "min": 2, "max": 9 },
+            "b": { "tipo": "numero", "min": 1, "max": 10 }
+          },
+          "respuesta": "a * b",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "multiplicacion_una_cifra",
+          "enunciado": "Calcula: {a} × {b}",
+          "variables": {
+            "a": { "tipo": "numero", "min": 100, "max": 9999 },
+            "b": { "tipo": "numero", "min": 2, "max": 9 }
+          },
+          "respuesta": "a * b",
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "multiplicacion_por_decenas",
+          "enunciado": "Calcula: {a} × {b}",
+          "variables": {
+            "a": { "tipo": "numero", "min": 10, "max": 900, "multiplo": 10 },
+            "b": { "tipo": "numero", "min": 2, "max": 9 }
+          },
+          "respuesta": "a * b",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "hueco_multiplicacion",
+          "enunciado": "___ × {b} = {resultado}",
+          "variables": {
+            "a": { "tipo": "numero", "min": 2, "max": 9 },
+            "b": { "tipo": "numero", "min": 2, "max": 9 }
+          },
+          "resultado_calculo": "a * b",
+          "respuesta": "a",
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "problema_multiplicacion",
+          "enunciado": "Una caja tiene {a} naranjas. Si hay {b} cajas iguales, ¿cuántas naranjas hay en total?",
+          "variables": {
+            "a": { "tipo": "numero", "min": 10, "max": 99 },
+            "b": { "tipo": "numero", "min": 2, "max": 9 }
+          },
+          "respuesta": "a * b",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "doble_triple",
+          "enunciado": "¿Cuánto es el {operacion} de {n}?",
+          "variables": {
+            "n": { "tipo": "numero", "min": 10, "max": 999 },
+            "operacion": { "tipo": "lista", "opciones": ["doble", "triple"] }
+          },
+          "respuesta": "operacion == doble ? n*2 : n*3",
+          "dificultad": "facil"
+        }
+      ],
+      "test_templates": [
+        {
+          "tipo": "test_tabla",
+          "enunciado": "¿Cuánto es {a} × {b}?",
+          "variables": {
+            "a": { "tipo": "numero", "min": 2, "max": 9 },
+            "b": { "tipo": "numero", "min": 1, "max": 10 }
+          },
+          "respuesta": "a * b",
+          "dificultad": "facil"
+        }
+      ],
+      "actividades_templates": [
+        {
+          "tipo": "problema_precios",
+          "enunciado": "En el mercado, cada kilo de fresas cuesta {a} euros. Si compramos {b} kilos, ¿cuánto pagamos?",
+          "variables": {
+            "a": { "tipo": "numero", "min": 2, "max": 8 },
+            "b": { "tipo": "numero", "min": 2, "max": 9 }
+          },
+          "respuesta": "a * b",
+          "dificultad": "facil"
+        }
+      ],
+      "fichas_templates": [
+        {
+          "tipo": "ficha_tablas",
+          "descripcion": "Tabla de multiplicar completa para repasar con huecos a rellenar",
+          "variables": { "tabla": { "tipo": "numero", "min": 2, "max": 9 } }
+        }
+      ]
+    },
+    {
+      "id_unidad": "mat_04",
+      "numero": 4,
+      "titulo": "División",
+      "resumen": "Estudiamos la división exacta e inexacta, los términos de la división (dividendo, divisor, cociente y resto) y resolvemos problemas con divisiones.",
+      "resumen_simple": "Dividir es repartir en partes iguales. Si tienes 20 caramelos y los quieres repartir entre 4 amigos, ¡con la división sabrás cuántos le tocan a cada uno!",
+      "conceptos_clave": ["dividendo", "divisor", "cociente", "resto", "división exacta", "división inexacta", "prueba de la división"],
+      "habilidades": ["dividir por una cifra", "calcular el resto", "comprobar divisiones", "resolver problemas de reparto"],
+      "repaso_clave": [
+        "División exacta: el resto es 0",
+        "División inexacta: el resto es distinto de 0",
+        "El resto siempre es menor que el divisor",
+        "Prueba: cociente × divisor + resto = dividendo"
+      ],
+      "ejercicios_templates": [
+        {
+          "tipo": "division_exacta",
+          "enunciado": "{a} ÷ {b} = ___",
+          "variables": {
+            "b": { "tipo": "numero", "min": 2, "max": 9 },
+            "cociente": { "tipo": "numero", "min": 2, "max": 99 }
+          },
+          "a_calculo": "b * cociente",
+          "respuesta": "a / b",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "division_con_resto",
+          "enunciado": "{a} ÷ {b} = ___ (resto ___)",
+          "variables": {
+            "a": { "tipo": "numero", "min": 20, "max": 999 },
+            "b": { "tipo": "numero", "min": 2, "max": 9 }
+          },
+          "respuesta": "cociente=floor(a/b), resto=a%b",
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "prueba_division",
+          "enunciado": "Comprueba la división: {dividendo} ÷ {divisor} = {cociente} (resto {resto}). ¿Es correcta?",
+          "variables": {
+            "divisor": { "tipo": "numero", "min": 2, "max": 9 },
+            "cociente": { "tipo": "numero", "min": 10, "max": 99 },
+            "resto": { "tipo": "numero", "min": 0, "max": 8 }
+          },
+          "dividendo_calculo": "divisor * cociente + resto",
+          "respuesta": "divisor * cociente + resto == dividendo",
+          "dificultad": "dificil"
+        },
+        {
+          "tipo": "problema_reparto",
+          "enunciado": "Hay {total} manzanas para repartir entre {personas} personas. ¿Cuántas le tocan a cada una? ¿Sobra alguna?",
+          "variables": {
+            "total": { "tipo": "numero", "min": 20, "max": 200 },
+            "personas": { "tipo": "numero", "min": 2, "max": 9 }
+          },
+          "respuesta": "cociente=floor(total/personas), resto=total%personas",
+          "dificultad": "medio"
+        }
+      ],
+      "test_templates": [
+        {
+          "tipo": "test_division",
+          "enunciado": "¿Cuánto es {a} ÷ {b}?",
+          "variables": {
+            "b": { "tipo": "numero", "min": 2, "max": 9 },
+            "cociente": { "tipo": "numero", "min": 2, "max": 10 }
+          },
+          "a_calculo": "b * cociente",
+          "respuesta": "cociente",
+          "dificultad": "facil"
+        }
+      ],
+      "actividades_templates": [
+        {
+          "tipo": "problema_grupos",
+          "enunciado": "En el cole hay {alumnos} alumnos. Si se forman grupos de {grupo_size}, ¿cuántos grupos completos hay? ¿Cuántos alumnos sobran?",
+          "variables": {
+            "alumnos": { "tipo": "numero", "min": 50, "max": 200 },
+            "grupo_size": { "tipo": "numero", "min": 4, "max": 8 }
+          },
+          "respuesta": "grupos=floor(alumnos/grupo_size), sobran=alumnos%grupo_size",
+          "dificultad": "medio"
+        }
+      ],
+      "fichas_templates": []
+    },
+    {
+      "id_unidad": "mat_05",
+      "numero": 5,
+      "titulo": "Fracciones",
+      "resumen": "Aprendemos qué es una fracción, sus términos (numerador y denominador), las fracciones equivalentes, y a comparar fracciones con el mismo denominador.",
+      "resumen_simple": "Las fracciones nos ayudan a representar partes de un todo. Si partes una pizza en 8 trozos y te comes 3, has comido 3/8 de la pizza.",
+      "conceptos_clave": ["fracción", "numerador", "denominador", "fracciones equivalentes", "fracción propia", "fracción impropia"],
+      "habilidades": ["identificar fracciones", "representar fracciones gráficamente", "comparar fracciones", "encontrar equivalentes"],
+      "repaso_clave": [
+        "El denominador dice en cuántas partes está dividido el todo",
+        "El numerador dice cuántas partes tomamos",
+        "Fracción propia: numerador < denominador",
+        "Fracciones equivalentes representan la misma cantidad"
+      ],
+      "ejercicios_templates": [
+        {
+          "tipo": "identificar_fraccion",
+          "enunciado": "Si un pastel se divide en {den} trozos iguales y nos comemos {num}, ¿qué fracción representa lo que comemos?",
+          "variables": {
+            "den": { "tipo": "numero", "min": 2, "max": 12 },
+            "num": { "tipo": "numero", "min": 1, "max": "den-1" }
+          },
+          "respuesta": "num/den",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "comparar_fracciones",
+          "enunciado": "¿Cuál es mayor: {num1}/{den} o {num2}/{den}? Escribe > o <",
+          "variables": {
+            "den": { "tipo": "numero", "min": 4, "max": 10 },
+            "num1": { "tipo": "numero", "min": 1, "max": "den-1" },
+            "num2": { "tipo": "numero", "min": 1, "max": "den-1" }
+          },
+          "respuesta": "num1 > num2 ? > : <",
+          "dificultad": "medio"
+        }
+      ],
+      "test_templates": [
+        {
+          "tipo": "test_fraccion",
+          "enunciado": "En la fracción 3/5, ¿cuál es el numerador?",
+          "variables": {
+            "num": { "tipo": "numero", "min": 1, "max": 9 },
+            "den": { "tipo": "numero", "min": 2, "max": 10 }
+          },
+          "respuesta": "num",
+          "dificultad": "facil"
+        }
+      ],
+      "actividades_templates": [
+        {
+          "tipo": "fraccion_en_contexto",
+          "enunciado": "En una clase hay {total} alumnos. {presentes} están presentes. ¿Qué fracción del total está presente?",
+          "variables": {
+            "total": { "tipo": "numero", "min": 10, "max": 30 },
+            "presentes": { "tipo": "numero", "min": 5, "max": "total" }
+          },
+          "respuesta": "presentes/total",
+          "dificultad": "medio"
+        }
+      ],
+      "fichas_templates": []
+    },
+    {
+      "id_unidad": "mat_06",
+      "numero": 6,
+      "titulo": "Medida: longitud, masa y capacidad",
+      "resumen": "Aprendemos las unidades del Sistema Métrico Decimal para medir longitudes (km, m, cm, mm), masas (kg, g) y capacidades (l, ml). Realizamos conversiones entre unidades.",
+      "resumen_simple": "Para medir cosas usamos unidades. Para medir longitudes usamos metros y centímetros, para pesar usamos kilos y gramos, y para líquidos usamos litros.",
+      "conceptos_clave": ["kilómetro", "metro", "centímetro", "milímetro", "kilogramo", "gramo", "litro", "mililitro", "conversión de unidades"],
+      "habilidades": ["usar el metro y sus divisiones", "usar el kilogramo y sus divisiones", "usar el litro y sus divisiones", "convertir unidades", "resolver problemas de medida"],
+      "repaso_clave": [
+        "1 km = 1000 m",
+        "1 m = 100 cm",
+        "1 cm = 10 mm",
+        "1 kg = 1000 g",
+        "1 l = 1000 ml"
+      ],
+      "ejercicios_templates": [
+        {
+          "tipo": "conversion_longitud",
+          "enunciado": "Convierte: {valor} {unidad_origen} = ___ {unidad_destino}",
+          "variables": {
+            "valor": { "tipo": "numero", "min": 1, "max": 100 },
+            "par_conversion": { "tipo": "lista", "opciones": ["m_a_cm", "cm_a_mm", "km_a_m"] }
+          },
+          "respuesta": "convertir(valor, par_conversion)",
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "comparar_medidas",
+          "enunciado": "¿Cuál es mayor: {a} metros o {b} centímetros?",
+          "variables": {
+            "a": { "tipo": "numero", "min": 1, "max": 10 },
+            "b": { "tipo": "numero", "min": 50, "max": 999 }
+          },
+          "respuesta": "a*100 > b ? a metros : b cm",
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "problema_masa",
+          "enunciado": "Una bolsa de patatas pesa {a} kg y {b} g. ¿Cuántos gramos pesa en total?",
+          "variables": {
+            "a": { "tipo": "numero", "min": 1, "max": 5 },
+            "b": { "tipo": "numero", "min": 100, "max": 900, "multiplo": 100 }
+          },
+          "respuesta": "a * 1000 + b",
+          "dificultad": "medio"
+        }
+      ],
+      "test_templates": [
+        {
+          "tipo": "test_equivalencia",
+          "enunciado": "¿Cuántos centímetros hay en {n} metros?",
+          "variables": { "n": { "tipo": "numero", "min": 1, "max": 10 } },
+          "respuesta": "n * 100",
+          "dificultad": "facil"
+        }
+      ],
+      "actividades_templates": [
+        {
+          "tipo": "problema_receta",
+          "enunciado": "Para hacer un bizcocho necesitamos {a} litros de leche. Si tenemos {b} mililitros, ¿tenemos suficiente?",
+          "variables": {
+            "a": { "tipo": "numero", "min": 1, "max": 3 },
+            "b": { "tipo": "numero", "min": 500, "max": 3500, "multiplo": 100 }
+          },
+          "respuesta": "b >= a*1000",
+          "dificultad": "medio"
+        }
+      ],
+      "fichas_templates": []
+    },
+    {
+      "id_unidad": "mat_07",
+      "numero": 7,
+      "titulo": "Geometría: figuras planas",
+      "resumen": "Identificamos y clasificamos los polígonos según el número de lados, estudiamos los triángulos y cuadriláteros, y calculamos perímetros de figuras.",
+      "resumen_simple": "Las figuras planas son formas como cuadrados, triángulos y rectángulos. Las encontramos por todas partes. Aprenderemos sus nombres y cómo calcular su contorno.",
+      "conceptos_clave": ["polígono", "triángulo", "cuadrilátero", "pentágono", "hexágono", "perímetro", "lado", "vértice", "ángulo"],
+      "habilidades": ["identificar polígonos", "clasificar triángulos y cuadriláteros", "calcular el perímetro", "distinguir figuras regulares e irregulares"],
+      "repaso_clave": [
+        "Perímetro = suma de todos los lados",
+        "Triángulo equilátero: los tres lados iguales",
+        "Triángulo isósceles: dos lados iguales",
+        "Triángulo escaleno: todos los lados distintos",
+        "Rectángulo: P = 2 × (largo + ancho)"
+      ],
+      "ejercicios_templates": [
+        {
+          "tipo": "perimetro_rectangulo",
+          "enunciado": "Calcula el perímetro de un rectángulo de {largo} cm de largo y {ancho} cm de ancho.",
+          "variables": {
+            "largo": { "tipo": "numero", "min": 5, "max": 30 },
+            "ancho": { "tipo": "numero", "min": 2, "max": "largo" }
+          },
+          "respuesta": "2 * (largo + ancho)",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "perimetro_cuadrado",
+          "enunciado": "Calcula el perímetro de un cuadrado de {lado} cm de lado.",
+          "variables": {
+            "lado": { "tipo": "numero", "min": 3, "max": 20 }
+          },
+          "respuesta": "lado * 4",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "perimetro_triangulo",
+          "enunciado": "Un triángulo tiene lados de {a} cm, {b} cm y {c} cm. ¿Cuánto mide su perímetro?",
+          "variables": {
+            "a": { "tipo": "numero", "min": 3, "max": 15 },
+            "b": { "tipo": "numero", "min": 3, "max": 15 },
+            "c": { "tipo": "numero", "min": 3, "max": 15 }
+          },
+          "respuesta": "a + b + c",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "clasificar_triangulo",
+          "enunciado": "Un triángulo tiene lados de {a} cm, {b} cm y {c} cm. ¿Cómo se clasifica?",
+          "variables": {
+            "tipo_triangulo": { "tipo": "lista", "opciones": ["equilátero", "isósceles", "escaleno"] }
+          },
+          "respuesta": "tipo_triangulo",
+          "dificultad": "medio"
+        }
+      ],
+      "test_templates": [
+        {
+          "tipo": "test_lados_poligono",
+          "enunciado": "¿Cuántos lados tiene un {poligono}?",
+          "variables": {
+            "poligono": { "tipo": "lista", "opciones": ["triángulo", "cuadrilátero", "pentágono", "hexágono"] }
+          },
+          "respuesta": "triangulo=3, cuadrilátero=4, pentágono=5, hexágono=6",
+          "dificultad": "facil"
+        }
+      ],
+      "actividades_templates": [
+        {
+          "tipo": "problema_valla",
+          "enunciado": "Quiero poner una valla alrededor de un jardín rectangular de {largo} m de largo y {ancho} m de ancho. ¿Cuántos metros de valla necesito?",
+          "variables": {
+            "largo": { "tipo": "numero", "min": 10, "max": 50 },
+            "ancho": { "tipo": "numero", "min": 5, "max": 30 }
+          },
+          "respuesta": "2 * (largo + ancho)",
+          "dificultad": "medio"
+        }
+      ],
+      "fichas_templates": []
+    }
+  ]
+}

@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestor Educativo 4º Primaria</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ── RESET & BASE ────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --col-mat: #FF6B35;
+      --col-len: #4ECDC4;
+      --col-cono: #45B7D1;
+      --col-ing: #96CEB4;
+      --bg: #F7F3EE;
+      --surface: #FFFFFF;
+      --text: #2D2D2D;
+      --text-muted: #7A7A8C;
+      --radius: 16px;
+      --shadow: 0 4px 20px rgba(0,0,0,0.08);
+      --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+      --accent: #FFD166;
+      --correct: #06D6A0;
+      --wrong: #EF476F;
+      --libre: #A78BFA;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ──────────────────────────────────────────────── */
+    .header {
+      background: linear-gradient(135deg, #2D2D2D 0%, #1a1a2e 100%);
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+    }
+    .header-logo {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+    .header-logo span { color: var(--accent); }
+    .header-sub {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      margin-left: auto;
+    }
+    .breadcrumb {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+    }
+    .breadcrumb span { color: var(--accent); font-weight: 700; }
+
+    /* ── LAYOUT ──────────────────────────────────────────────── */
+    .main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 32px 20px;
+    }
+
+    /* ── SECCIONES / PASOS ───────────────────────────────────── */
+    .step { display: none; }
+    .step.active { display: block; }
+
+    .section-title {
+      font-family: 'Baloo 2', cursive;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .section-subtitle {
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+
+    /* ── TARJETAS ASIGNATURA ─────────────────────────────────── */
+    .asig-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .asig-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 28px 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: var(--shadow);
+      border: 3px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+    .asig-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--card-color);
+    }
+    .asig-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .asig-card .icon { font-size: 2.8rem; margin-bottom: 10px; }
+    .asig-card .name {
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--text);
+    }
+    .asig-card .desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .asig-card[data-key="matematicas"] { --card-color: var(--col-mat); }
+    .asig-card[data-key="lengua"] { --card-color: var(--col-len); }
+    .asig-card[data-key="conocimiento_medio"] { --card-color: var(--col-cono); }
+    .asig-card[data-key="ingles"] { --card-color: var(--col-ing); }
+
+    /* ── SELECTOR UNIDAD ─────────────────────────────────────── */
+    .unidad-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .unidad-item {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 16px 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: var(--shadow);
+      transition: transform 0.15s, box-shadow 0.15s;
+      border: 2px solid transparent;
+    }
+    .unidad-item:hover {
+      transform: translateX(4px);
+      border-color: var(--current-accent, var(--col-mat));
+      box-shadow: var(--shadow-lg);
+    }
+    .unidad-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 0.85rem;
+      background: var(--current-accent, var(--col-mat));
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .unidad-info .titulo { font-weight: 700; font-size: 0.95rem; }
+    .unidad-info .resumen-corto {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* ── SELECTOR ACTIVIDAD ──────────────────────────────────── */
+    .actividad-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+    }
+    .actividad-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 22px 16px;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: transform 0.15s, box-shadow 0.15s;
+      border: 2px solid transparent;
+    }
+    .actividad-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--current-accent, var(--col-mat));
+    }
+    .actividad-card .act-icon { font-size: 2rem; margin-bottom: 8px; }
+    .actividad-card .act-name { font-weight: 700; font-size: 0.9rem; }
+
+    /* ── SELECTOR DIFICULTAD ─────────────────────────────────── */
+    .dificultad-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .dif-btn {
+      padding: 10px 24px;
+      border-radius: 30px;
+      border: 2px solid #ddd;
+      background: var(--surface);
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .dif-btn.active, .dif-btn:hover {
+      background: var(--current-accent, var(--col-mat));
+      border-color: var(--current-accent, var(--col-mat));
+      color: #fff;
+      transform: scale(1.05);
+    }
+    .dif-btn.facil.active { background: #06D6A0; border-color: #06D6A0; }
+    .dif-btn.medio.active { background: #FFD166; border-color: #FFD166; color: #333; }
+    .dif-btn.dificil.active { background: #EF476F; border-color: #EF476F; }
+
+    /* ── ÁREA DE EJERCICIOS ──────────────────────────────────── */
+    .ejercicio-header {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .ej-header-info .ej-asig {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .ej-header-info .ej-titulo {
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+    .badge {
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: var(--current-accent, #eee);
+      color: #fff;
+    }
+
+    .ejercicio-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .ejercicio-item {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      box-shadow: var(--shadow);
+      border-left: 4px solid var(--current-accent, #ccc);
+      transition: all 0.3s;
+    }
+    .ejercicio-item.correcto { border-left-color: var(--correct); background: #F0FDF9; }
+    .ejercicio-item.incorrecto { border-left-color: var(--wrong); background: #FFF5F7; }
+    .ejercicio-item.libre { border-left-color: var(--libre); background: #FAF5FF; }
+
+    .ej-num {
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .ej-enunciado {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+    .ej-input-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .ej-input {
+      flex: 1;
+      min-width: 180px;
+      padding: 10px 14px;
+      border: 2px solid #E5E5E5;
+      border-radius: 10px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: border-color 0.2s;
+    }
+    .ej-input:focus {
+      outline: none;
+      border-color: var(--current-accent, var(--col-mat));
+    }
+    .ej-input:disabled {
+      background: #f5f5f5;
+      cursor: not-allowed;
+    }
+
+    .ej-feedback {
+      display: none;
+      margin-top: 12px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+    .ej-feedback.show { display: flex; align-items: center; gap: 8px; }
+    .ej-feedback.correcto { background: #D1FAE5; color: #065F46; }
+    .ej-feedback.incorrecto { background: #FFE4E6; color: #9F1239; }
+    .ej-feedback.libre { background: #EDE9FE; color: #5B21B6; }
+
+    /* ── PANEL RESUMEN ───────────────────────────────────────── */
+    .resumen-info-box {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+    .resumen-info-box h3 { font-family: 'Baloo 2', cursive; font-size: 1.3rem; margin-bottom: 8px; }
+    .resumen-info-box p { color: var(--text-muted); line-height: 1.7; }
+    .conceptos-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .concepto-tag {
+      padding: 5px 14px;
+      background: var(--bg);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1.5px solid #E5E5E5;
+    }
+    .repaso-list {
+      margin-top: 16px;
+      list-style: none;
+    }
+    .repaso-list li {
+      padding: 8px 0 8px 28px;
+      position: relative;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #F0F0F0;
+    }
+    .repaso-list li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--current-accent, var(--col-mat));
+      font-size: 0.7rem;
+      top: 10px;
+    }
+
+    /* ── RESULTADO FINAL ─────────────────────────────────────── */
+    .resultado-panel {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 32px;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+      margin-top: 20px;
+    }
+    .nota-grande {
+      font-family: 'Baloo 2', cursive;
+      font-size: 5rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .nota-label { color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem; }
+    .stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+    .stat-item { text-align: center; }
+    .stat-num { font-size: 2rem; font-weight: 900; }
+    .stat-lbl { font-size: 0.78rem; color: var(--text-muted); }
+    .stat-item.aciertos .stat-num { color: var(--correct); }
+    .stat-item.fallos .stat-num { color: var(--wrong); }
+    .stat-item.libres .stat-num { color: var(--libre); }
+
+    /* ── BOTONES ─────────────────────────────────────────────── */
+    .btn {
+      padding: 12px 28px;
+      border-radius: 12px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+    .btn-primary {
+      background: var(--current-accent, var(--col-mat));
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    }
+    .btn-primary:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 2px solid #E5E5E5;
+    }
+    .btn-secondary:hover:not(:disabled) {
+      border-color: var(--current-accent, var(--col-mat));
+      color: var(--current-accent, var(--col-mat));
+    }
+    .btn-danger {
+      background: var(--wrong);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(239,71,111,0.3);
+    }
+    .btn-danger:hover:not(:disabled) {
+      transform: translateY(-2px);
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    /* ── VOCABULARIO (INGLÉS) ────────────────────────────────── */
+    .vocab-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .vocab-card {
+      background: var(--bg);
+      border-radius: 10px;
+      padding: 12px;
+      text-align: center;
+      border: 2px solid #E5E5E5;
+      cursor: pointer;
+      transition: all 0.2s;
+      user-select: none;
+    }
+    .vocab-card .v-en { font-weight: 700; font-size: 0.95rem; }
+    .vocab-card .v-es { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; display: none; }
+    .vocab-card.flipped .v-es { display: block; }
+    .vocab-card.flipped .v-en { color: var(--current-accent, var(--col-ing)); }
+    .vocab-card:hover {
+      border-color: var(--current-accent, var(--col-ing));
+      transform: scale(1.02);
+    }
+
+    /* ── SPINNER / LOADING ───────────────────────────────────── */
+    .loading {
+      text-align: center;
+      padding: 60px;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+    .spinner {
+      width: 40px; height: 40px;
+      border: 4px solid #E5E5E5;
+      border-top-color: var(--col-mat);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 16px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── ALERT ───────────────────────────────────────────────── */
+    .alert {
+      padding: 14px 18px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .alert-warning { background: #FFF3CD; color: #856404; border: 1px solid #FFD166; }
+    .alert-info { background: #D1F2EB; color: #0B5345; border: 1px solid #48C9B0; }
+
+    /* ── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .header { padding: 14px 16px; }
+      .main { padding: 20px 12px; }
+      .asig-grid { grid-template-columns: 1fr 1fr; }
+      .actividad-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-logo">Gestor <span>Edu</span></div>
+  <div class="breadcrumb" id="breadcrumb"></div>
+  <div class="header-sub">4º Primaria · Andalucía</div>
+</header>
+
+<main class="main">
+
+  <!-- PASO 0: CARGANDO -->
+  <div class="step active" id="step-loading">
+    <div class="loading">
+      <div class="spinner"></div>
+      Cargando contenidos educativos...
+    </div>
+  </div>
+
+  <!-- PASO 1: SELECCIONAR ASIGNATURA -->
+  <div class="step" id="step-asignatura">
+    <div class="section-title">📚 ¿Qué asignatura practicamos hoy?</div>
+    <div class="section-subtitle">Selecciona una asignatura para empezar</div>
+    <div class="asig-grid">
+      <div class="asig-card" data-key="matematicas" onclick="seleccionarAsignatura('matematicas')">
+        <div class="icon">🔢</div>
+        <div class="name">Matemáticas</div>
+        <div class="desc">Números, operaciones y geometría</div>
+      </div>
+      <div class="asig-card" data-key="lengua" onclick="seleccionarAsignatura('lengua')">
+        <div class="icon">📖</div>
+        <div class="name">Lengua</div>
+        <div class="desc">Gramática, ortografía y comprensión</div>
+      </div>
+      <div class="asig-card" data-key="conocimiento_medio" onclick="seleccionarAsignatura('conocimiento_medio')">
+        <div class="icon">🌍</div>
+        <div class="name">Conocimiento del Medio</div>
+        <div class="desc">Ciencias sociales y naturales</div>
+      </div>
+      <div class="asig-card" data-key="ingles" onclick="seleccionarAsignatura('ingles')">
+        <div class="icon">🇬🇧</div>
+        <div class="name">Inglés</div>
+        <div class="desc">Rise & Shine · Vocabulario y gramática</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PASO 2: SELECCIONAR UNIDAD -->
+  <div class="step" id="step-unidad">
+    <div class="section-title" id="unidad-asig-title">Selecciona la unidad</div>
+    <div class="section-subtitle">Elige la unidad que quieres practicar</div>
+    <div class="unidad-list" id="unidad-list"></div>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="irA('step-asignatura')">← Cambiar asignatura</button>
+    </div>
+  </div>
+
+  <!-- PASO 3: TIPO DE ACTIVIDAD -->
+  <div class="step" id="step-tipo">
+    <div class="section-title">¿Qué tipo de actividad?</div>
+    <div class="section-subtitle">Elige qué quieres practicar en esta sesión</div>
+    <div class="actividad-grid" id="actividad-grid">
+      <div class="actividad-card" onclick="seleccionarTipo('resumen')">
+        <div class="act-icon">📋</div>
+        <div class="act-name">Resumen</div>
+      </div>
+      <div class="actividad-card" onclick="seleccionarTipo('repaso')">
+        <div class="act-icon">🔑</div>
+        <div class="act-name">Repaso clave</div>
+      </div>
+      <div class="actividad-card" onclick="seleccionarTipo('ejercicios')">
+        <div class="act-icon">✏️</div>
+        <div class="act-name">Ejercicios</div>
+      </div>
+      <div class="actividad-card" onclick="seleccionarTipo('test')">
+        <div class="act-icon">✅</div>
+        <div class="act-name">Test</div>
+      </div>
+      <div class="actividad-card" onclick="seleccionarTipo('actividades')">
+        <div class="act-icon">🧩</div>
+        <div class="act-name">Actividades</div>
+      </div>
+      <div class="actividad-card" id="vocab-btn" onclick="seleccionarTipo('vocabulario')" style="display:none">
+        <div class="act-icon">🃏</div>
+        <div class="act-name">Vocabulario</div>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="irA('step-unidad')">← Cambiar unidad</button>
+    </div>
+  </div>
+
+  <!-- PASO 4: DIFICULTAD + GENERAR -->
+  <div class="step" id="step-dificultad">
+    <div class="section-title">Nivel de dificultad</div>
+    <div class="section-subtitle">Elige el nivel y genera los ejercicios</div>
+
+    <div class="dificultad-row">
+      <button class="btn dif-btn facil active" onclick="setDificultad('facil')">🟢 Fácil</button>
+      <button class="btn dif-btn medio" onclick="setDificultad('medio')">🟡 Medio</button>
+      <button class="btn dif-btn dificil" onclick="setDificultad('dificil')">🔴 Difícil</button>
+    </div>
+
+    <div style="margin-top:20px;display:flex;align-items:center;gap:12px;">
+      <label style="font-weight:700;font-size:0.9rem;">Número de ejercicios:</label>
+      <select id="num-ejercicios" style="padding:8px 14px;border-radius:10px;border:2px solid #E5E5E5;font-family:'Nunito',sans-serif;font-weight:700;">
+        <option value="5">5</option>
+        <option value="8">8</option>
+        <option value="10" selected>10</option>
+        <option value="15">15</option>
+      </select>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="generarYMostrar()">🚀 Generar ejercicios</button>
+      <button class="btn btn-secondary" onclick="irA('step-tipo')">← Cambiar tipo</button>
+    </div>
+  </div>
+
+  <!-- PASO 5: EJERCICIOS + CORRECCIÓN -->
+  <div class="step" id="step-ejercicios">
+    <div class="ejercicio-header">
+      <div class="ej-header-info">
+        <div class="ej-asig" id="ej-asig-label"></div>
+        <div class="ej-titulo" id="ej-unidad-titulo"></div>
+      </div>
+      <div>
+        <span class="badge" id="ej-tipo-badge"></span>
+      </div>
+    </div>
+
+    <div class="alert alert-info">
+      📝 <strong>Para el alumno:</strong> Resuelve los ejercicios en tu cuaderno e introduce solo la respuesta final en cada campo.
+    </div>
+
+    <div class="ejercicio-list" id="ejercicio-list"></div>
+
+    <!-- Panel corrección -->
+    <div id="resultado-panel" style="display:none">
+      <div class="resultado-panel">
+        <div class="nota-grande" id="nota-grande">—</div>
+        <div class="nota-label">Nota sobre 10</div>
+        <div class="stats-row">
+          <div class="stat-item aciertos">
+            <div class="stat-num" id="stat-aciertos">0</div>
+            <div class="stat-lbl">✅ Correctos</div>
+          </div>
+          <div class="stat-item fallos">
+            <div class="stat-num" id="stat-fallos">0</div>
+            <div class="stat-lbl">❌ Incorrectos</div>
+          </div>
+          <div class="stat-item libres">
+            <div class="stat-num" id="stat-libres">0</div>
+            <div class="stat-lbl">📝 Corrección manual</div>
+          </div>
+        </div>
+        <div id="feedback-msg" style="margin-top:12px;font-size:1rem;font-weight:700;"></div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-danger" id="btn-corregir" onclick="corregir()">🔍 Corregir</button>
+      <button class="btn btn-secondary" id="btn-regenerar" onclick="generarYMostrar()">🔄 Nuevos ejercicios</button>
+      <button class="btn btn-secondary" onclick="irA('step-tipo')">← Cambiar actividad</button>
+      <button class="btn btn-secondary" onclick="irA('step-asignatura')">🏠 Inicio</button>
+    </div>
+  </div>
+
+  <!-- PASO 5b: RESUMEN / REPASO -->
+  <div class="step" id="step-resumen">
+    <div class="resumen-info-box">
+      <div style="font-size:0.78rem;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);margin-bottom:4px;" id="res-asig-label"></div>
+      <h3 id="res-titulo"></h3>
+      <p id="res-resumen"></p>
+
+      <div style="margin-top:20px;">
+        <div style="font-weight:800;margin-bottom:8px;">💡 Conceptos clave</div>
+        <div class="conceptos-list" id="res-conceptos"></div>
+      </div>
+
+      <div style="margin-top:20px;" id="res-repaso-section">
+        <div style="font-weight:800;margin-bottom:8px;">🔑 Repaso clave</div>
+        <ul class="repaso-list" id="res-repaso"></ul>
+      </div>
+
+      <div style="margin-top:20px;" id="res-habilidades-section">
+        <div style="font-weight:800;margin-bottom:8px;">🎯 Habilidades</div>
+        <ul class="repaso-list" id="res-habilidades"></ul>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="irA('step-tipo')">✏️ Practicar esta unidad</button>
+      <button class="btn btn-secondary" onclick="irA('step-unidad')">← Elegir otra unidad</button>
+    </div>
+  </div>
+
+  <!-- PASO 5c: VOCABULARIO (INGLÉS) -->
+  <div class="step" id="step-vocabulario">
+    <div class="alert alert-info">
+      🃏 <strong>Tarjetas de vocabulario:</strong> Pulsa cada tarjeta para ver la traducción.
+    </div>
+    <div class="vocab-grid" id="vocab-grid"></div>
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="irA('step-tipo')">← Volver</button>
+      <button class="btn btn-secondary" onclick="irA('step-asignatura')">🏠 Inicio</button>
+    </div>
+  </div>
+
+</main>
+
+<script src="js/engine.js"></script>
+<script>
+// ─── ESTADO UI ─────────────────────────────────────────────────────────────
+const COLORES = {
+  matematicas: '#FF6B35',
+  lengua: '#4ECDC4',
+  conocimiento_medio: '#45B7D1',
+  ingles: '#96CEB4'
+};
+
+let currentColor = '#FF6B35';
+let appReady = false;
+
+// ─── INICIALIZACIÓN ────────────────────────────────────────────────────────
+window.addEventListener('DOMContentLoaded', async () => {
+  await AppEngine.cargarDatos();
+  appReady = true;
+  irA('step-asignatura');
+  actualizarBreadcrumb();
+});
+
+// ─── NAVEGACIÓN ────────────────────────────────────────────────────────────
+function irA(stepId) {
+  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+  document.getElementById(stepId).classList.add('active');
+}
+
+function actualizarBreadcrumb() {
+  const S = AppEngine.AppState;
+  const bc = document.getElementById('breadcrumb');
+  const parts = [];
+  if (S.asignaturaActual) parts.push(`<span>${S.datosAsignaturas[S.asignaturaActual]?.asignatura || S.asignaturaActual}</span>`);
+  if (S.unidadActual) parts.push(`<span>U${S.unidadActual.numero}</span>`);
+  bc.innerHTML = parts.map((p, i) => i > 0 ? `<span style="opacity:0.4">›</span>${p}` : p).join('');
+}
+
+function setAccentColor(color) {
+  currentColor = color;
+  document.documentElement.style.setProperty('--current-accent', color);
+}
+
+// ─── PASO 1: ASIGNATURA ────────────────────────────────────────────────────
+function seleccionarAsignatura(key) {
+  AppEngine.AppState.asignaturaActual = key;
+  AppEngine.AppState.unidadActual = null;
+  setAccentColor(COLORES[key] || '#FF6B35');
+  actualizarBreadcrumb();
+
+  const datos = AppEngine.AppState.datosAsignaturas[key];
+  if (!datos) return alert('No se pudieron cargar los datos de la asignatura.');
+
+  // Actualizar título
+  document.getElementById('unidad-asig-title').textContent = `📚 ${datos.asignatura}`;
+
+  // Renderizar lista unidades
+  const list = document.getElementById('unidad-list');
+  list.innerHTML = datos.unidades.map(u => `
+    <div class="unidad-item" onclick="seleccionarUnidad('${u.id_unidad}')">
+      <div class="unidad-num" style="background:${currentColor}">${u.numero}</div>
+      <div class="unidad-info">
+        <div class="titulo">${u.titulo}</div>
+        <div class="resumen-corto">${u.conceptos_clave?.slice(0,3).join(' · ') || ''}</div>
+      </div>
+    </div>
+  `).join('');
+
+  irA('step-unidad');
+}
+
+// ─── PASO 2: UNIDAD ────────────────────────────────────────────────────────
+function seleccionarUnidad(idUnidad) {
+  const datos = AppEngine.AppState.datosAsignaturas[AppEngine.AppState.asignaturaActual];
+  const unidad = datos.unidades.find(u => u.id_unidad === idUnidad);
+  AppEngine.AppState.unidadActual = unidad;
+  actualizarBreadcrumb();
+
+  // Mostrar vocabulario solo en inglés
+  const vocabBtn = document.getElementById('vocab-btn');
+  vocabBtn.style.display = unidad.vocabulario ? 'block' : 'none';
+
+  irA('step-tipo');
+}
+
+// ─── PASO 3: TIPO ACTIVIDAD ────────────────────────────────────────────────
+function seleccionarTipo(tipo) {
+  AppEngine.AppState.tipoActividadActual = tipo;
+
+  if (tipo === 'resumen' || tipo === 'repaso') {
+    mostrarResumen(tipo);
+  } else if (tipo === 'vocabulario') {
+    mostrarVocabulario();
+  } else {
+    irA('step-dificultad');
+  }
+}
+
+// ─── RESUMEN ────────────────────────────────────────────────────────────────
+function mostrarResumen(modo) {
+  const S = AppEngine.AppState;
+  const datos = S.datosAsignaturas[S.asignaturaActual];
+  const u = S.unidadActual;
+
+  document.getElementById('res-asig-label').textContent = `${datos.asignatura} · Unidad ${u.numero}`;
+  document.getElementById('res-titulo').textContent = u.titulo;
+  document.getElementById('res-resumen').textContent = modo === 'resumen' ? u.resumen : u.resumen_simple;
+
+  // Conceptos
+  const conceptosEl = document.getElementById('res-conceptos');
+  conceptosEl.innerHTML = (u.conceptos_clave || []).map(c => `<span class="concepto-tag">${c}</span>`).join('');
+
+  // Repaso
+  const repasoEl = document.getElementById('res-repaso');
+  repasoEl.innerHTML = (u.repaso_clave || []).map(r => `<li>${r}</li>`).join('');
+
+  // Habilidades
+  const habEl = document.getElementById('res-habilidades');
+  habEl.innerHTML = (u.habilidades || []).map(h => `<li>${h}</li>`).join('');
+
+  irA('step-resumen');
+}
+
+// ─── VOCABULARIO ────────────────────────────────────────────────────────────
+function mostrarVocabulario() {
+  const u = AppEngine.AppState.unidadActual;
+  const grid = document.getElementById('vocab-grid');
+  grid.innerHTML = (u.vocabulario || []).map(v => `
+    <div class="vocab-card" onclick="this.classList.toggle('flipped')">
+      <div class="v-en">🇬🇧 ${v.ingles}</div>
+      <div class="v-es">🇪🇸 ${v.español}</div>
+    </div>
+  `).join('');
+  irA('step-vocabulario');
+}
+
+// ─── DIFICULTAD ─────────────────────────────────────────────────────────────
+function setDificultad(nivel) {
+  AppEngine.AppState.dificultadActual = nivel;
+  document.querySelectorAll('.dif-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.dif-btn.${nivel}`).classList.add('active');
+}
+
+// ─── GENERAR EJERCICIOS ─────────────────────────────────────────────────────
+function generarYMostrar() {
+  const S = AppEngine.AppState;
+  const cantidad = parseInt(document.getElementById('num-ejercicios').value);
+
+  const ejercicios = AppEngine.generarEjerciciosParaTipo(
+    S.unidadActual,
+    S.tipoActividadActual,
+    S.dificultadActual,
+    cantidad
+  );
+  S.ejerciciosGenerados = ejercicios;
+
+  if (ejercicios.length === 0) {
+    alert('No hay ejercicios disponibles para este tipo y dificultad. Prueba otra combinación.');
+    return;
+  }
+
+  // Header
+  const datos = S.datosAsignaturas[S.asignaturaActual];
+  document.getElementById('ej-asig-label').textContent = `${datos.asignatura} · Unidad ${S.unidadActual.numero}`;
+  document.getElementById('ej-unidad-titulo').textContent = S.unidadActual.titulo;
+  const tiposLabel = { ejercicios: '✏️ Ejercicios', test: '✅ Test', actividades: '🧩 Actividades' };
+  document.getElementById('ej-tipo-badge').textContent = tiposLabel[S.tipoActividadActual] || S.tipoActividadActual;
+  document.getElementById('ej-tipo-badge').style.background = currentColor;
+
+  // Renderizar
+  const list = document.getElementById('ejercicio-list');
+  list.innerHTML = ejercicios.map((ej, i) => `
+    <div class="ejercicio-item" id="ej-item-${ej.id}" data-id="${ej.id}">
+      <div class="ej-num">Ejercicio ${i + 1} · ${ej.dificultad || ''} ${ej.esLibre ? '· Corrección manual' : ''}</div>
+      <div class="ej-enunciado">${ej.enunciado}</div>
+      <div class="ej-input-row">
+        ${ej.esLibre
+          ? `<textarea class="ej-input" id="input-${ej.id}" rows="2" style="resize:vertical;min-width:280px;" placeholder="Escribe tu respuesta..."></textarea>`
+          : `<input type="text" class="ej-input" id="input-${ej.id}" placeholder="Tu respuesta..." autocomplete="off" spellcheck="false">`
+        }
+      </div>
+      <div class="ej-feedback" id="fb-${ej.id}"></div>
+    </div>
+  `).join('');
+
+  // Resetear resultado y botón corregir
+  document.getElementById('resultado-panel').style.display = 'none';
+  document.getElementById('btn-corregir').disabled = false;
+
+  // Listeners para capturar respuestas
+  ejercicios.forEach(ej => {
+    const input = document.getElementById(`input-${ej.id}`);
+    if (input) input.addEventListener('input', e => { ej.respuestaAlumno = e.target.value; });
+  });
+
+  irA('step-ejercicios');
+}
+
+// ─── CORRECCIÓN ─────────────────────────────────────────────────────────────
+function corregir() {
+  const S = AppEngine.AppState;
+  const ejs = S.ejerciciosGenerados;
+
+  // Capturar respuestas actuales
+  ejs.forEach(ej => {
+    const input = document.getElementById(`input-${ej.id}`);
+    if (input) ej.respuestaAlumno = input.value;
+  });
+
+  const { aciertos, fallos, libres, total, nota } = AppEngine.corregirEjercicios(ejs);
+
+  // Colorear cada ejercicio
+  ejs.forEach(ej => {
+    const item = document.getElementById(`ej-item-${ej.id}`);
+    const fb = document.getElementById(`fb-${ej.id}`);
+    const input = document.getElementById(`input-${ej.id}`);
+    if (!item) return;
+    item.classList.remove('correcto', 'incorrecto', 'libre');
+
+    if (input) input.disabled = true;
+
+    if (ej.esLibre) {
+      item.classList.add('libre');
+      fb.className = 'ej-feedback libre show';
+      fb.innerHTML = `📝 Revisión manual — Respuesta de referencia: <strong>${ej.respuestaCorrecta}</strong>`;
+    } else if (ej.esCorrecta) {
+      item.classList.add('correcto');
+      fb.className = 'ej-feedback correcto show';
+      fb.innerHTML = `✅ ¡Correcto! La respuesta es: <strong>${ej.respuestaCorrecta}</strong>`;
+    } else {
+      item.classList.add('incorrecto');
+      fb.className = 'ej-feedback incorrecto show';
+      fb.innerHTML = `❌ Incorrecto. La respuesta correcta es: <strong>${ej.respuestaCorrecta}</strong>`;
+    }
+  });
+
+  // Resultado global
+  document.getElementById('nota-grande').textContent = nota;
+  document.getElementById('stat-aciertos').textContent = aciertos;
+  document.getElementById('stat-fallos').textContent = fallos;
+  document.getElementById('stat-libres').textContent = libres;
+  document.getElementById('nota-grande').style.color =
+    nota >= 9 ? 'var(--correct)' : nota >= 6 ? 'var(--accent)' : 'var(--wrong)';
+
+  const mensajes = [
+    [9, '🌟 ¡Excelente trabajo! ¡Eres una campeona!'],
+    [7, '😊 ¡Muy bien! Sigue practicando y llegarás al 10.'],
+    [5, '💪 Bien, pero hay cosas que repasar. ¡Tú puedes!'],
+    [0, '📚 Necesitas repasar esta unidad. ¡No te rindas!']
+  ];
+  const msg = mensajes.find(([min]) => nota >= min);
+  document.getElementById('feedback-msg').textContent = msg ? msg[1] : '';
+
+  document.getElementById('resultado-panel').style.display = 'block';
+  document.getElementById('btn-corregir').disabled = true;
+  document.getElementById('resultado-panel').scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+</body>
+</html>

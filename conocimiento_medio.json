@@ -1,0 +1,411 @@
+{
+  "asignatura": "Ciencias Sociales y Naturales",
+  "curso": "4º Primaria",
+  "editorial": "Anaya - Edudynamic Dual Focus",
+  "comunidad": "Andalucía",
+  "version": "1.0",
+  "unidades": [
+    {
+      "id_unidad": "cono_01",
+      "numero": 1,
+      "titulo": "El cuerpo humano: aparatos y sistemas",
+      "resumen": "Estudiamos los principales aparatos y sistemas del cuerpo humano: locomotor, digestivo, respiratorio, circulatorio y excretor. Aprendemos su función y sus órganos más importantes.",
+      "resumen_simple": "Nuestro cuerpo está formado por muchas partes que trabajan juntas. Los huesos y músculos nos ayudan a movernos, el corazón bombea la sangre y los pulmones nos ayudan a respirar.",
+      "conceptos_clave": ["aparato locomotor", "aparato digestivo", "aparato respiratorio", "aparato circulatorio", "aparato excretor", "órgano", "sistema", "esqueleto", "músculo"],
+      "habilidades": ["identificar los aparatos del cuerpo", "nombrar órganos principales", "explicar la función de cada aparato", "relacionar hábitos saludables con el cuerpo"],
+      "repaso_clave": [
+        "Aparato locomotor: huesos + músculos → nos movemos",
+        "Aparato digestivo: boca → esófago → estómago → intestinos",
+        "Aparato respiratorio: nariz → tráquea → pulmones",
+        "Aparato circulatorio: corazón + vasos sanguíneos → transporta sangre",
+        "Aparato excretor: elimina residuos del cuerpo"
+      ],
+      "ejercicios_templates": [
+        {
+          "tipo": "funcion_aparato",
+          "enunciado": "¿Cuál es la función principal del aparato {aparato}?",
+          "variables": {
+            "aparato": { "tipo": "lista", "opciones": ["locomotor", "digestivo", "respiratorio", "circulatorio", "excretor"] }
+          },
+          "respuesta": "funcion_de(aparato)",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "identificar_organo",
+          "enunciado": "¿A qué aparato pertenece el órgano '{organo}'?",
+          "variables": {
+            "organo": { "tipo": "lista", "opciones": ["pulmón", "corazón", "estómago", "fémur", "riñón", "intestino delgado", "tráquea", "bíceps"] }
+          },
+          "respuesta_esperada": ["respiratorio", "circulatorio", "digestivo", "locomotor", "excretor", "digestivo", "respiratorio", "locomotor"],
+          "respuesta": "aparato_de(organo)",
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "orden_digestion",
+          "enunciado": "Ordena los pasos de la digestión: estómago, boca, intestino grueso, esófago, intestino delgado. Escribe el número del orden.",
+          "variables": {},
+          "respuesta": "1-boca, 2-esófago, 3-estómago, 4-intestino_delgado, 5-intestino_grueso",
+          "dificultad": "medio"
+        }
+      ],
+      "test_templates": [
+        {
+          "tipo": "test_aparato",
+          "enunciado": "¿Qué aparato se encarga de transportar la sangre por el cuerpo?",
+          "opciones": ["locomotor", "digestivo", "circulatorio", "respiratorio"],
+          "respuesta": "circulatorio",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "test_organo",
+          "enunciado": "¿Cuál es el órgano principal del aparato respiratorio?",
+          "opciones": ["corazón", "estómago", "pulmón", "riñón"],
+          "respuesta": "pulmón",
+          "dificultad": "facil"
+        }
+      ],
+      "actividades_templates": [
+        {
+          "tipo": "habitos_saludables",
+          "enunciado": "Escribe 3 hábitos saludables que cuiden el aparato {aparato}.",
+          "variables": {
+            "aparato": { "tipo": "lista", "opciones": ["respiratorio", "circulatorio", "locomotor", "digestivo"] }
+          },
+          "respuesta": "texto_libre_habitos",
+          "dificultad": "medio"
+        }
+      ],
+      "fichas_templates": [
+        {
+          "tipo": "ficha_silueta_cuerpo",
+          "descripcion": "Silueta del cuerpo humano para señalar y etiquetar los principales órganos",
+          "variables": {}
+        }
+      ]
+    },
+    {
+      "id_unidad": "cono_02",
+      "numero": 2,
+      "titulo": "Los seres vivos: clasificación",
+      "resumen": "Estudiamos la clasificación de los seres vivos en cinco reinos: animales, plantas, hongos, bacterias y protistas. Profundizamos en vertebrados e invertebrados, y en las plantas.",
+      "resumen_simple": "Todos los seres vivos están clasificados en grupos. Los animales se dividen en vertebrados (con columna vertebral) e invertebrados. Las plantas fabrican su propio alimento gracias al sol.",
+      "conceptos_clave": ["ser vivo", "reino animal", "reino vegetal", "vertebrado", "invertebrado", "mamífero", "ave", "reptil", "anfibio", "pez", "fotosíntesis"],
+      "habilidades": ["clasificar animales en vertebrados e invertebrados", "reconocer los grupos de vertebrados", "explicar la fotosíntesis", "distinguir plantas y hongos"],
+      "repaso_clave": [
+        "Vertebrados: mamíferos, aves, reptiles, anfibios, peces",
+        "Mamíferos: tienen pelo, dan leche a sus crías",
+        "Aves: tienen plumas y pico",
+        "Reptiles: tienen escamas, son de sangre fría",
+        "Fotosíntesis: las plantas usan agua, CO2 y luz solar para fabricar alimento"
+      ],
+      "ejercicios_templates": [
+        {
+          "tipo": "vertebrado_o_invertebrado",
+          "enunciado": "¿Es el '{animal}' un vertebrado o un invertebrado?",
+          "variables": {
+            "animal": { "tipo": "lista", "opciones": ["perro", "mariposa", "delfín", "pulpo", "serpiente", "hormiga", "águila", "medusa", "rana", "caracol"] }
+          },
+          "respuesta_esperada": ["vertebrado", "invertebrado", "vertebrado", "invertebrado", "vertebrado", "invertebrado", "vertebrado", "invertebrado", "vertebrado", "invertebrado"],
+          "respuesta": "clasificar_vertebrado(animal)",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "grupo_vertebrado",
+          "enunciado": "¿A qué grupo de vertebrados pertenece el '{animal}'?",
+          "variables": {
+            "animal": { "tipo": "lista", "opciones": ["ballena", "paloma", "cocodrilo", "rana", "salmón", "murciélago", "loro", "tortuga", "salamandra", "tiburón"] }
+          },
+          "respuesta_esperada": ["mamífero", "ave", "reptil", "anfibio", "pez", "mamífero", "ave", "reptil", "anfibio", "pez"],
+          "respuesta": "grupo_vertebrado(animal)",
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "fotosintesis_elementos",
+          "enunciado": "En la fotosíntesis, las plantas necesitan {elemento}. ¿Verdadero o falso?",
+          "variables": {
+            "elemento": { "tipo": "lista", "opciones": ["luz solar", "dióxido de carbono", "oxígeno", "agua", "calor del suelo"] }
+          },
+          "respuesta_esperada": [true, true, false, true, false],
+          "respuesta": "elemento_en_fotosintesis(elemento)",
+          "dificultad": "medio"
+        }
+      ],
+      "test_templates": [
+        {
+          "tipo": "test_mamifero",
+          "enunciado": "¿Cuál de estos animales es un mamífero?",
+          "opciones": ["paloma", "tortuga", "delfín", "rana"],
+          "respuesta": "delfín",
+          "dificultad": "facil"
+        }
+      ],
+      "actividades_templates": [
+        {
+          "tipo": "cadena_alimentaria",
+          "enunciado": "Ordena estos seres vivos para formar una cadena alimentaria: {ser_a}, {ser_b}, {ser_c}.",
+          "variables": {
+            "cadenas": { "tipo": "lista", "opciones": [
+              "hierba → conejo → zorro",
+              "algas → pez pequeño → delfín",
+              "trigo → ratón → halcón"
+            ]}
+          },
+          "respuesta": "cadena_correcta",
+          "dificultad": "medio"
+        }
+      ],
+      "fichas_templates": []
+    },
+    {
+      "id_unidad": "cono_03",
+      "numero": 3,
+      "titulo": "La materia y sus estados",
+      "resumen": "Estudiamos la materia, sus propiedades y sus tres estados: sólido, líquido y gaseoso. Aprendemos los cambios de estado: fusión, solidificación, evaporación y condensación.",
+      "resumen_simple": "La materia es todo lo que podemos tocar o pesar. Puede estar en estado sólido (como el hielo), líquido (como el agua) o gaseoso (como el vapor). Cuando la calentamos o enfriamos, puede cambiar de estado.",
+      "conceptos_clave": ["materia", "sólido", "líquido", "gas", "fusión", "solidificación", "evaporación", "condensación", "propiedades de la materia", "masa", "volumen"],
+      "habilidades": ["clasificar materiales por su estado", "describir cambios de estado", "identificar propiedades de la materia", "dar ejemplos de cada estado"],
+      "repaso_clave": [
+        "Sólido: forma y volumen propios (mesa, hielo, piedra)",
+        "Líquido: volumen propio, toma la forma del recipiente",
+        "Gas: sin forma ni volumen propio, llena el espacio",
+        "Fusión: sólido → líquido (el hielo se derrite)",
+        "Evaporación: líquido → gas (el agua se evapora)",
+        "Condensación: gas → líquido (el vapor forma gotas)"
+      ],
+      "ejercicios_templates": [
+        {
+          "tipo": "estado_materia",
+          "enunciado": "¿En qué estado de la materia está '{objeto}'? (sólido, líquido o gas)",
+          "variables": {
+            "objeto": { "tipo": "lista", "opciones": ["madera", "leche", "aire", "plastilina", "zumo", "vapor de agua", "piedra", "aceite", "oxígeno", "mantequilla derretida"] }
+          },
+          "respuesta_esperada": ["sólido", "líquido", "gas", "sólido", "líquido", "gas", "sólido", "líquido", "gas", "líquido"],
+          "respuesta": "estado_de(objeto)",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "cambio_estado",
+          "enunciado": "¿Qué cambio de estado ocurre cuando {descripcion_cambio}?",
+          "variables": {
+            "descripcion_cambio": { "tipo": "lista", "opciones": [
+              "el hielo se convierte en agua",
+              "el agua se convierte en vapor",
+              "el vapor se convierte en agua",
+              "el agua se convierte en hielo"
+            ]}
+          },
+          "respuesta_esperada": ["fusión", "evaporación", "condensación", "solidificación"],
+          "respuesta": "nombre_cambio(descripcion_cambio)",
+          "dificultad": "medio"
+        }
+      ],
+      "test_templates": [
+        {
+          "tipo": "test_estado",
+          "enunciado": "¿Qué estado tiene forma propia y volumen propio?",
+          "opciones": ["sólido", "líquido", "gas", "plasma"],
+          "respuesta": "sólido",
+          "dificultad": "facil"
+        }
+      ],
+      "actividades_templates": [
+        {
+          "tipo": "experimento_agua",
+          "enunciado": "Describe qué le pasa al agua cuando la metemos en el congelador durante varias horas. ¿Qué cambio de estado se produce?",
+          "variables": {},
+          "respuesta": "descripcion_solidificacion_agua",
+          "dificultad": "medio"
+        }
+      ],
+      "fichas_templates": []
+    },
+    {
+      "id_unidad": "cono_04",
+      "numero": 4,
+      "titulo": "El relieve de España y Andalucía",
+      "resumen": "Estudiamos las principales formas del relieve: montañas, mesetas, llanuras, valles y costas. Identificamos los sistemas montañosos y ríos más importantes de España y, en especial, de Andalucía.",
+      "resumen_simple": "El relieve es cómo es la superficie de la Tierra: hay montañas muy altas, llanuras planas, valles entre montañas y costas junto al mar. España tiene muchas formas diferentes de relieve.",
+      "conceptos_clave": ["relieve", "montaña", "sierra", "meseta", "llanura", "valle", "cabo", "golfo", "península", "sistema montañoso", "cordillera"],
+      "habilidades": ["identificar formas del relieve", "localizar montañas y ríos en el mapa", "describir el relieve de Andalucía", "distinguir relieve interior y costero"],
+      "repaso_clave": [
+        "Sistema Central: separa la meseta norte y sur",
+        "Sierra Nevada (Andalucía): el pico más alto de la Península (Mulhacén)",
+        "Ríos principales de Andalucía: Guadalquivir, Genil, Guadalhorce",
+        "Meseta Central: ocupa el centro de España",
+        "Cordillera Cantábrica: norte de España"
+      ],
+      "ejercicios_templates": [
+        {
+          "tipo": "definir_relieve",
+          "enunciado": "¿Qué es {forma_relieve}?",
+          "variables": {
+            "forma_relieve": { "tipo": "lista", "opciones": ["una montaña", "un valle", "una meseta", "una llanura", "un cabo", "un golfo"] }
+          },
+          "respuesta": "definicion_de(forma_relieve)",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "localizar_accidente",
+          "enunciado": "¿En qué comunidad autónoma está {accidente_geografico}?",
+          "variables": {
+            "accidente_geografico": { "tipo": "lista", "opciones": ["Sierra Nevada", "los Picos de Europa", "el río Guadalquivir", "la meseta central", "los Pirineos"] }
+          },
+          "respuesta": "comunidad_de(accidente_geografico)",
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "rio_andalucia",
+          "enunciado": "¿Cuál es el río más importante de Andalucía y en qué mar desemboca?",
+          "variables": {},
+          "respuesta": "Guadalquivir, Océano Atlántico",
+          "dificultad": "facil"
+        }
+      ],
+      "test_templates": [
+        {
+          "tipo": "test_pico_mas_alto",
+          "enunciado": "¿Cuál es el pico más alto de la Península Ibérica?",
+          "opciones": ["Teide", "Mulhacén", "Picos de Europa", "Montserrat"],
+          "respuesta": "Mulhacén",
+          "dificultad": "medio"
+        }
+      ],
+      "actividades_templates": [
+        {
+          "tipo": "describir_andalucia",
+          "enunciado": "Describe el relieve de Andalucía mencionando al menos: una sierra, un río y una llanura.",
+          "variables": {},
+          "respuesta": "texto_libre_relieve_andalucia",
+          "dificultad": "dificil"
+        }
+      ],
+      "fichas_templates": []
+    },
+    {
+      "id_unidad": "cono_05",
+      "numero": 5,
+      "titulo": "La organización política de España",
+      "resumen": "Estudiamos la organización territorial y política de España: municipio, provincia, comunidad autónoma y Estado. Conocemos las instituciones de gobierno y la Constitución Española.",
+      "resumen_simple": "España está organizada en municipios (pueblos y ciudades), provincias y comunidades autónomas. Tenemos un gobierno para toda España y gobiernos propios en cada comunidad, como la Junta de Andalucía.",
+      "conceptos_clave": ["municipio", "ayuntamiento", "provincia", "diputación", "comunidad autónoma", "parlamento autonómico", "Estado", "Cortes Generales", "Constitución", "monarquía parlamentaria"],
+      "habilidades": ["identificar las divisiones territoriales de España", "conocer las instituciones de cada nivel", "localizar las comunidades autónomas", "entender qué es la Constitución"],
+      "repaso_clave": [
+        "España tiene 17 comunidades autónomas y 2 ciudades autónomas",
+        "Andalucía tiene 8 provincias",
+        "El Ayuntamiento gobierna el municipio",
+        "La Junta de Andalucía gobierna nuestra comunidad",
+        "La Constitución de 1978 es la ley más importante de España"
+      ],
+      "ejercicios_templates": [
+        {
+          "tipo": "nivel_organizacion",
+          "enunciado": "¿A qué nivel de organización pertenece '{entidad}'? (municipio, provincia, comunidad autónoma o Estado)",
+          "variables": {
+            "entidad": { "tipo": "lista", "opciones": ["Sevilla (ciudad)", "Málaga (provincia)", "Andalucía", "España", "Jerez de la Frontera", "Cádiz (provincia)", "Cataluña", "Madrid (ciudad)"] }
+          },
+          "respuesta": "nivel_de(entidad)",
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "institucion_nivel",
+          "enunciado": "¿Qué institución gobierna {nivel}?",
+          "variables": {
+            "nivel": { "tipo": "lista", "opciones": ["un municipio", "una provincia", "una comunidad autónoma", "el Estado español"] }
+          },
+          "respuesta_esperada": ["Ayuntamiento", "Diputación", "Gobierno autonómico/Junta", "Gobierno de España/Cortes"],
+          "respuesta": "institucion_de(nivel)",
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "provincias_andalucia",
+          "enunciado": "Nombra las 8 provincias de Andalucía.",
+          "variables": {},
+          "respuesta": "Almería, Cádiz, Córdoba, Granada, Huelva, Jaén, Málaga, Sevilla",
+          "dificultad": "medio"
+        }
+      ],
+      "test_templates": [
+        {
+          "tipo": "test_comunidades",
+          "enunciado": "¿Cuántas comunidades autónomas tiene España?",
+          "opciones": ["15", "17", "19", "50"],
+          "respuesta": "17",
+          "dificultad": "facil"
+        }
+      ],
+      "actividades_templates": [
+        {
+          "tipo": "mi_municipio",
+          "enunciado": "Escribe el nombre de tu municipio, provincia y comunidad autónoma. ¿Quién os gobierna en cada nivel?",
+          "variables": {},
+          "respuesta": "texto_libre_municipio_propio",
+          "dificultad": "facil"
+        }
+      ],
+      "fichas_templates": []
+    },
+    {
+      "id_unidad": "cono_06",
+      "numero": 6,
+      "titulo": "La energía y sus fuentes",
+      "resumen": "Aprendemos qué es la energía, las fuentes de energía renovables y no renovables, y la importancia del ahorro energético para el medioambiente.",
+      "resumen_simple": "La energía nos permite mover cosas, dar calor y producir luz. Algunas energías como el petróleo se agotan (no renovables). Otras como el sol o el viento son inagotables (renovables).",
+      "conceptos_clave": ["energía", "fuente de energía", "energía renovable", "energía no renovable", "energía solar", "energía eólica", "energía hidráulica", "carbón", "petróleo", "ahorro energético"],
+      "habilidades": ["clasificar fuentes de energía", "distinguir renovable de no renovable", "proponer medidas de ahorro", "relacionar energía con medioambiente"],
+      "repaso_clave": [
+        "Renovables: solar, eólica, hidráulica, mareomotriz, geotérmica",
+        "No renovables: carbón, petróleo, gas natural, nuclear",
+        "Las renovables no contaminan y no se agotan",
+        "El ahorro energético protege el medioambiente",
+        "Andalucía tiene gran potencial solar y eólico"
+      ],
+      "ejercicios_templates": [
+        {
+          "tipo": "renovable_o_no",
+          "enunciado": "¿Es '{energia}' una energía renovable o no renovable?",
+          "variables": {
+            "energia": { "tipo": "lista", "opciones": ["solar", "carbón", "eólica", "petróleo", "hidráulica", "gas natural", "geotérmica", "nuclear"] }
+          },
+          "respuesta_esperada": ["renovable", "no renovable", "renovable", "no renovable", "renovable", "no renovable", "renovable", "no renovable"],
+          "respuesta": "tipo_energia(energia)",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "ahorro_energetico",
+          "enunciado": "¿Es '{accion}' una medida de ahorro energético? (Sí/No)",
+          "variables": {
+            "accion": { "tipo": "lista", "opciones": [
+              "apagar las luces al salir de una habitación",
+              "dejar el grifo abierto mientras te cepillas",
+              "usar bombillas LED",
+              "poner la calefacción muy alta en invierno",
+              "usar el transporte público"
+            ]}
+          },
+          "respuesta_esperada": [true, false, true, false, true],
+          "respuesta": "es_ahorro(accion)",
+          "dificultad": "facil"
+        }
+      ],
+      "test_templates": [
+        {
+          "tipo": "test_energia_renovable",
+          "enunciado": "¿Cuál de estas es una energía renovable?",
+          "opciones": ["carbón", "petróleo", "solar", "gas natural"],
+          "respuesta": "solar",
+          "dificultad": "facil"
+        }
+      ],
+      "actividades_templates": [
+        {
+          "tipo": "medidas_ahorro_casa",
+          "enunciado": "Escribe 5 medidas de ahorro energético que puedas hacer en tu casa.",
+          "variables": {},
+          "respuesta": "texto_libre_5_medidas",
+          "dificultad": "medio"
+        }
+      ],
+      "fichas_templates": []
+    }
+  ]
+}
