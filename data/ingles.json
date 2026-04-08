@@ -1,54 +1,65 @@
 {
   "asignatura": "Inglés",
   "curso": "4º Primaria",
-  "editorial": "Anaya - Rise & Shine Andalucía 4",
+  "editorial": "Rise and Shine Museum - Pearson / Anaya",
   "comunidad": "Andalucía",
   "version": "2.0",
-  "nota": "Incluye Welcome, 6 unidades, 3 Reviews y Goodbye",
+  "nota": "Incluye Welcome, 6 unidades, 3 Reviews (All about us, Our community, Our world) y Goodbye + Celebrations",
   "unidades": [
     {
       "id_unidad": "ing_01",
       "numero": 1,
-      "titulo": "All about school!",
-      "resumen": "Repasamos el vocabulario del colegio, las asignaturas, los objetos de clase y las rutinas escolares. Practicamos el presente simple para hablar de actividades habituales y los adverbios de frecuencia.",
-      "resumen_simple": "Hablamos del cole en inglés: las asignaturas, los objetos de clase y lo que hacemos cada día. Aprendemos a decir con qué frecuencia hacemos las cosas: always, usually, sometimes, never.",
-      "conceptos_clave": ["school subjects", "classroom objects", "present simple", "adverbs of frequency", "daily routines", "telling the time"],
-      "habilidades": ["nombrar asignaturas y objetos de clase", "usar el presente simple", "usar adverbios de frecuencia", "preguntar y decir la hora"],
+      "titulo": "Who are we?",
+      "resumen": "Describimos personas físicamente (pelo, ojos, rasgos) y hablamos de gustos y posesiones. Trabajamos have got / has got, What does he/she look like, y los likes and dislikes.",
+      "resumen_simple": "Aprendemos a describir cómo es una persona: si tiene el pelo rizado, pecas, bigote... También decimos qué nos gusta y qué no nos gusta, y hablamos de lo que tenemos con 'have got'.",
+      "conceptos_clave": ["describing people", "physical appearance", "have got / has got", "likes and dislikes", "do you like / don't like", "dates and months", "special things"],
+      "habilidades": ["describir el aspecto físico de una persona", "usar have got / has got", "expresar gustos con like/don't like", "preguntar y responder sobre posesiones", "decir fechas y meses"],
       "repaso_clave": [
-        "Present simple: I play / She plays (3ª persona +s)",
-        "Always > Usually > Sometimes > Never",
-        "Do you...? → Yes, I do. / No, I don't.",
-        "Does she/he...? → Yes, she does. / No, he doesn't.",
-        "What time is it? → It's half past three."
+        "He's got (black hair). / She hasn't got (freckles).",
+        "What does he look like? → He's got curly hair and blue eyes.",
+        "I like / don't like + noun/verb-ing",
+        "Do you like...? → Yes, I do. / No, I don't.",
+        "Months: January, February, March, April, May, June, July, August, September, October, November, December"
       ],
       "vocabulario": [
-        { "ingles": "Maths", "español": "Matemáticas" },
-        { "ingles": "Science", "español": "Ciencias / Conocimiento del Medio" },
-        { "ingles": "English", "español": "Inglés" },
-        { "ingles": "Art", "español": "Plástica / Arte" },
-        { "ingles": "Music", "español": "Música" },
-        { "ingles": "PE (Physical Education)", "español": "Educación Física" },
-        { "ingles": "History", "español": "Historia" },
-        { "ingles": "ruler", "español": "regla" },
-        { "ingles": "rubber", "español": "goma de borrar" },
-        { "ingles": "pencil case", "español": "estuche" },
-        { "ingles": "glue stick", "español": "pegamento en barra" },
-        { "ingles": "scissors", "español": "tijeras" },
-        { "ingles": "notebook", "español": "cuaderno" },
-        { "ingles": "backpack", "español": "mochila" },
-        { "ingles": "always", "español": "siempre" },
-        { "ingles": "usually", "español": "normalmente / generalmente" },
-        { "ingles": "sometimes", "español": "a veces" },
-        { "ingles": "never", "español": "nunca" }
+        { "ingles": "beard", "español": "barba" },
+        { "ingles": "moustache", "español": "bigote" },
+        { "ingles": "freckles", "español": "pecas" },
+        { "ingles": "ponytail", "español": "coleta" },
+        { "ingles": "curly hair", "español": "pelo rizado" },
+        { "ingles": "straight hair", "español": "pelo liso" },
+        { "ingles": "wavy hair", "español": "pelo ondulado" },
+        { "ingles": "big eyebrows", "español": "cejas grandes" },
+        { "ingles": "blonde hair", "español": "pelo rubio" },
+        { "ingles": "bracelet", "español": "pulsera" },
+        { "ingles": "necklace", "español": "collar" },
+        { "ingles": "earrings", "español": "pendientes" },
+        { "ingles": "coin", "español": "moneda" },
+        { "ingles": "drum", "español": "tambor" },
+        { "ingles": "camera", "español": "cámara" },
+        { "ingles": "app", "español": "aplicación" },
+        { "ingles": "museum", "español": "museo" },
+        { "ingles": "exhibition", "español": "exposición" }
       ],
       "expresiones": [
-        "What's your favourite subject? → My favourite subject is...",
-        "I always/usually/sometimes/never...",
+        "What does he/she look like? → He's/She's got...",
+        "Has he got (a beard)? → Yes, he has. / No, he hasn't.",
+        "We've got (cameras). We can (take photos).",
+        "I like / don't like (fun games).",
         "Do you like...? → Yes, I do. / No, I don't.",
-        "What time does school start? → It starts at...",
-        "She always does her homework."
+        "We like / don't like (science books)."
       ],
       "ejercicios_templates": [
+        {
+          "tipo": "have_got_has_got",
+          "enunciado": "Complete with have got or has got: {sujeto} ___ {objeto}.",
+          "variables": {
+            "sujeto": { "tipo": "lista", "opciones": ["I", "She", "He", "We", "They", "My friend"] },
+            "objeto": { "tipo": "lista", "opciones": ["curly hair", "a beard", "freckles", "a necklace", "blue eyes", "a camera"] }
+          },
+          "respuesta_esperada": ["have got", "has got", "has got", "have got", "have got", "has got"],
+          "dificultad": "facil"
+        },
         {
           "tipo": "traduccion_vocab",
           "enunciado": "How do you say '{palabra_es}' in English?",
@@ -68,57 +79,61 @@
           "dificultad": "facil"
         },
         {
-          "tipo": "present_simple_3persona",
-          "enunciado": "Write the correct form: {sujeto} {verbo} every day.",
+          "tipo": "descripcion_fisica",
+          "enunciado": "Describe this person using has got: {rasgos}",
           "variables": {
-            "sujeto": { "tipo": "lista", "opciones": ["She", "He", "My teacher", "My friend"] },
-            "verbo": { "tipo": "lista", "opciones": ["play", "study", "watch", "read", "listen", "draw", "run"] }
-          },
-          "respuesta": "verbo + s/es",
-          "dificultad": "medio"
-        },
-        {
-          "tipo": "frecuencia_oracion",
-          "enunciado": "Translate: {sujeto} {frecuencia} {accion}.",
-          "variables": {
-            "sujeto": { "tipo": "lista", "opciones": ["Yo", "Ella", "Mi amigo"] },
-            "frecuencia": { "tipo": "lista", "opciones": ["siempre", "normalmente", "a veces", "nunca"] },
-            "accion": { "tipo": "lista", "opciones": ["hace los deberes", "lee libros", "juega al fútbol", "estudia inglés"] }
+            "rasgos": { "tipo": "lista", "opciones": [
+              "pelo rizado / pecas / ojos marrones",
+              "pelo liso rubio / ojos azules / coleta",
+              "barba / bigote / cejas grandes",
+              "pelo ondulado / pendientes / collar"
+            ]}
           },
           "respuesta": "Ver corrección manual",
           "dificultad": "medio"
         },
         {
-          "tipo": "pregunta_present_simple",
-          "enunciado": "Write the question: ___ {sujeto} {verbo} at school?",
+          "tipo": "like_dont_like",
+          "enunciado": "Translate: '{frase_es}'",
           "variables": {
-            "sujeto": { "tipo": "lista", "opciones": ["you", "she", "he", "they"] },
-            "verbo": { "tipo": "lista", "opciones": ["study Maths", "like Art", "play sport", "have PE"] }
+            "frase_es": { "tipo": "lista", "opciones": [
+              "Me gustan los juegos divertidos.",
+              "No me gustan los libros de ciencias.",
+              "¿Te gustan las fotos?",
+              "A ella no le gusta el museo.",
+              "Nos gustan las exposiciones."
+            ]}
           },
-          "respuesta": "sujeto==you||they ? Do+sujeto+verbo : Does+sujeto+verbo",
+          "respuesta_esperada": [
+            "I like fun games.",
+            "I don't like science books.",
+            "Do you like photos?",
+            "She doesn't like the museum.",
+            "We like exhibitions."
+          ],
           "dificultad": "medio"
         }
       ],
       "test_templates": [
         {
-          "tipo": "test_3persona",
-          "enunciado": "Choose the correct form: She ___ Maths every day.",
-          "opciones": ["study", "studies", "studyes", "studying"],
-          "respuesta": "studies",
-          "dificultad": "medio"
+          "tipo": "test_has_got",
+          "enunciado": "Choose: 'She ___ curly hair.'",
+          "opciones": ["have got", "has got", "got", "have"],
+          "respuesta": "has got",
+          "dificultad": "facil"
         },
         {
-          "tipo": "test_vocab_asignatura",
-          "enunciado": "¿Cómo se dice 'Educación Física' en inglés?",
-          "opciones": ["Music", "Art", "PE", "Science"],
-          "respuesta": "PE",
+          "tipo": "test_vocab_apariencia",
+          "enunciado": "¿Cómo se dice 'pecas' en inglés?",
+          "opciones": ["beard", "freckles", "ponytail", "earrings"],
+          "respuesta": "freckles",
           "dificultad": "facil"
         }
       ],
       "actividades_templates": [
         {
-          "tipo": "my_school_day",
-          "enunciado": "Write 5 sentences about your school day. Use adverbs of frequency (always, usually, sometimes, never).",
+          "tipo": "describe_yourself",
+          "enunciado": "Write a description of yourself: what you look like (use has/have got) and 3 things you like and 2 things you don't like.",
           "variables": {},
           "respuesta": "Ver corrección manual",
           "dificultad": "medio"
@@ -129,113 +144,118 @@
     {
       "id_unidad": "ing_02",
       "numero": 2,
-      "titulo": "Explore our town!",
-      "resumen": "Aprendemos el vocabulario de los lugares de la ciudad, las preposiciones de lugar, there is/there are y cómo pedir y dar direcciones usando el imperativo.",
-      "resumen_simple": "Exploramos nuestra ciudad en inglés. Aprendemos los nombres de los lugares (library, park, museum...) y cómo explicar cómo llegar a un sitio: turn left, go straight on...",
-      "conceptos_clave": ["places in town", "prepositions of place", "there is / there are", "imperatives for directions", "turn left/right", "go straight on"],
-      "habilidades": ["nombrar lugares de la ciudad", "usar there is/there are", "usar preposiciones de lugar", "pedir y dar direcciones"],
+      "titulo": "Let's use it again!",
+      "resumen": "Hablamos de materiales y cosas del hogar. Trabajamos I like/don't like this/that/these/those, cuándo usar this/that/these/those como demostrativos, y los adverbios de frecuencia.",
+      "resumen_simple": "Aprendemos los materiales con los que están hechas las cosas (glass, metal, plastic, wood, rubber, paper) y los objetos del hogar. Usamos this/that/these/those para señalar y describimos nuestra rutina con adverbios de frecuencia.",
+      "conceptos_clave": ["materials", "things at home", "this / that / these / those", "like/don't like + this/that", "adverbs of frequency", "never, sometimes, often, always", "Whose is this?"],
+      "habilidades": ["nombrar materiales y objetos del hogar", "usar this/that/these/those", "preguntar de quién es algo", "usar adverbios de frecuencia", "hacer una descripción de un objeto especial"],
       "repaso_clave": [
-        "There is + singular: There is a park.",
-        "There are + plural: There are two schools.",
-        "next to, opposite, between, near, behind, in front of",
-        "Turn left / Turn right / Go straight on / Take the first left",
-        "Excuse me, where is the...?"
+        "This (singular, cerca) / That (singular, lejos)",
+        "These (plural, cerca) / Those (plural, lejos)",
+        "Whose is this? → It's mine. / It's yours. / It's his/hers.",
+        "This / That is my (bowl). These / Those are my (plates).",
+        "never < sometimes < often < always",
+        "Materials: glass, metal, paper, plastic, rubber, wood"
       ],
       "vocabulario": [
-        { "ingles": "library", "español": "biblioteca" },
-        { "ingles": "museum", "español": "museo" },
-        { "ingles": "sports centre", "español": "polideportivo" },
-        { "ingles": "supermarket", "español": "supermercado" },
-        { "ingles": "chemist", "español": "farmacia" },
-        { "ingles": "bakery", "español": "panadería" },
-        { "ingles": "bus stop", "español": "parada de autobús" },
-        { "ingles": "train station", "español": "estación de tren" },
-        { "ingles": "town hall", "español": "ayuntamiento" },
-        { "ingles": "park", "español": "parque" },
-        { "ingles": "hospital", "español": "hospital" },
-        { "ingles": "cinema", "español": "cine" },
-        { "ingles": "next to", "español": "al lado de" },
-        { "ingles": "opposite", "español": "enfrente de" },
-        { "ingles": "between", "español": "entre" },
-        { "ingles": "near", "español": "cerca de" },
-        { "ingles": "behind", "español": "detrás de" },
-        { "ingles": "in front of", "español": "delante de" }
+        { "ingles": "glass", "español": "vidrio / cristal" },
+        { "ingles": "metal", "español": "metal" },
+        { "ingles": "paper", "español": "papel" },
+        { "ingles": "plastic", "español": "plástico" },
+        { "ingles": "rubber", "español": "goma / caucho" },
+        { "ingles": "wood", "español": "madera" },
+        { "ingles": "bowl", "español": "cuenco / bol" },
+        { "ingles": "box", "español": "caja" },
+        { "ingles": "cup", "español": "taza" },
+        { "ingles": "handbag", "español": "bolso" },
+        { "ingles": "jacket", "español": "chaqueta / cazadora" },
+        { "ingles": "plate", "español": "plato" },
+        { "ingles": "pot", "español": "olla / maceta" },
+        { "ingles": "rug", "español": "alfombra" },
+        { "ingles": "shelf", "español": "estante" },
+        { "ingles": "sweater", "español": "jersey / suéter" },
+        { "ingles": "never", "español": "nunca" },
+        { "ingles": "sometimes", "español": "a veces" },
+        { "ingles": "often", "español": "a menudo / frecuentemente" },
+        { "ingles": "always", "español": "siempre" }
       ],
       "expresiones": [
-        "Excuse me, where is the library?",
-        "Turn left / Turn right at the traffic lights.",
-        "Go straight on for two minutes.",
-        "It's next to / opposite / between...",
-        "Is there a park near here? → Yes, there is. / No, there isn't.",
-        "Are there any shops? → Yes, there are. / No, there aren't."
+        "I like / don't like this (bowl).",
+        "I like / don't like these (plates).",
+        "Whose is this? → This is mine. / These are yours.",
+        "What's it made of? → It's made of (glass/wood/metal).",
+        "never, sometimes, often, always + verb"
       ],
       "ejercicios_templates": [
         {
-          "tipo": "there_is_are",
-          "enunciado": "Complete with 'there is' or 'there are': ___ {cantidad} {lugar}.",
+          "tipo": "this_that_these_those",
+          "enunciado": "Choose this, that, these or those: '___ {objeto}' ({distancia}, {numero})",
           "variables": {
-            "cantidad": { "tipo": "lista", "opciones": ["a", "an old", "two", "three", "a big", "some"] },
-            "lugar": { "tipo": "vocabulario_unidad", "unidad": "ing_02", "campo": "ingles" }
+            "objeto": { "tipo": "lista", "opciones": ["cup", "plates", "jacket", "bowls", "book", "shelves"] },
+            "distancia": { "tipo": "lista", "opciones": ["near", "far", "near", "far", "near", "far"] },
+            "numero": { "tipo": "lista", "opciones": ["singular", "plural", "singular", "plural", "singular", "plural"] }
           },
-          "respuesta": "Ver corrección manual",
+          "respuesta_esperada": ["this cup", "those plates", "this jacket", "those bowls", "this book", "those shelves"],
           "dificultad": "facil"
         },
         {
-          "tipo": "traduccion_lugar",
-          "enunciado": "How do you say '{lugar_es}' in English?",
+          "tipo": "made_of",
+          "enunciado": "What is a '{objeto}' made of? Write a sentence.",
           "variables": {
-            "lugar_es": { "tipo": "vocabulario_unidad", "unidad": "ing_02", "campo": "español" }
-          },
-          "respuesta": "Ver corrección manual",
-          "dificultad": "facil"
-        },
-        {
-          "tipo": "preposicion_lugar",
-          "enunciado": "Translate: '{lugar1}' está {preposicion} '{lugar2}'.",
-          "variables": {
-            "lugar1": { "tipo": "lista", "opciones": ["The library", "The park", "The hospital", "The bakery"] },
-            "preposicion": { "tipo": "lista", "opciones": ["al lado de", "enfrente de", "detrás de", "cerca de", "delante de"] },
-            "lugar2": { "tipo": "lista", "opciones": ["the school", "the supermarket", "the town hall", "the bus stop"] }
+            "objeto": { "tipo": "lista", "opciones": ["cup", "jacket", "plate", "shelf", "rubber duck", "newspaper"] }
           },
           "respuesta": "Ver corrección manual",
           "dificultad": "medio"
         },
         {
-          "tipo": "directions",
-          "enunciado": "Translate these directions: '{instruccion}'",
+          "tipo": "traduccion_material",
+          "enunciado": "How do you say '{material_es}' in English?",
           "variables": {
-            "instruccion": { "tipo": "lista", "opciones": [
-              "Gira a la izquierda en el semáforo.",
-              "Sigue todo recto.",
-              "Gira a la derecha.",
-              "Toma la primera calle a la izquierda.",
-              "Está enfrente del parque."
-            ]}
+            "material_es": { "tipo": "vocabulario_unidad", "unidad": "ing_02", "campo": "español" }
           },
           "respuesta": "Ver corrección manual",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "frecuencia_adverbio",
+          "enunciado": "Translate: '{frase_es}'",
+          "variables": {
+            "frase_es": { "tipo": "lista", "opciones": [
+              "Nunca como plástico.",
+              "A veces reciclamos el papel.",
+              "Siempre uso una taza de madera.",
+              "A menudo llevamos bolsas de tela."
+            ]}
+          },
+          "respuesta_esperada": [
+            "I never eat plastic.",
+            "We sometimes recycle paper.",
+            "I always use a wooden cup.",
+            "We often use fabric bags."
+          ],
           "dificultad": "medio"
         }
       ],
       "test_templates": [
         {
-          "tipo": "test_there_is_are",
-          "enunciado": "Choose: '___ three parks in my town.'",
-          "opciones": ["There is", "There are", "There have", "Is there"],
-          "respuesta": "There are",
+          "tipo": "test_this_these",
+          "enunciado": "Choose: '___ are my plates.' (cerca, plural)",
+          "opciones": ["This", "That", "These", "Those"],
+          "respuesta": "These",
           "dificultad": "facil"
         },
         {
-          "tipo": "test_preposicion",
-          "enunciado": "The school is ___ the library. (está enfrente)",
-          "opciones": ["next to", "behind", "opposite", "between"],
-          "respuesta": "opposite",
-          "dificultad": "medio"
+          "tipo": "test_material",
+          "enunciado": "¿De qué material está hecha normalmente una ventana?",
+          "opciones": ["rubber", "wood", "glass", "paper"],
+          "respuesta": "glass",
+          "dificultad": "facil"
         }
       ],
       "actividades_templates": [
         {
-          "tipo": "describe_your_town",
-          "enunciado": "Write 5 sentences about your town using there is/there are and prepositions of place.",
+          "tipo": "my_special_thing",
+          "enunciado": "Write about a special thing you have at home. What is it? What is it made of? Why is it special? Use this/that and adverbs of frequency.",
           "variables": {},
           "respuesta": "Ver corrección manual",
           "dificultad": "medio"
@@ -246,237 +266,254 @@
     {
       "id_unidad": "ing_03",
       "numero": 3,
-      "titulo": "Let's tell stories!",
-      "resumen": "Aprendemos el pasado simple de los verbos regulares e irregulares más comunes. Contamos historias en pasado usando expresiones de tiempo (yesterday, last week, ago).",
-      "resumen_simple": "El pasado simple nos ayuda a contar historias de cosas que ya ocurrieron. Los verbos regulares añaden -ed (played, walked) y los irregulares cambian de forma (go→went, have→had).",
-      "conceptos_clave": ["past simple regular", "past simple irregular", "time expressions", "yesterday", "last week/month/year", "ago", "was/were", "negative form: didn't", "question form: Did...?"],
-      "habilidades": ["formar el pasado simple regular", "usar verbos irregulares comunes", "hacer preguntas en pasado", "contar una historia en pasado"],
+      "titulo": "City of the future",
+      "resumen": "Aprendemos lugares de la ciudad y cómo dar y pedir direcciones. Trabajamos I like/love going to + place porque + razón, y las preposiciones de lugar para indicar dónde están los sitios.",
+      "resumen_simple": "Exploramos la ciudad del futuro en inglés. Aprendemos los nombres de los lugares (funfair, stadium, theatre, ice rink...) y cómo dar direcciones usando el imperativo: turn right, go straight on, turn left at...",
+      "conceptos_clave": ["places in a city", "giving directions", "I like/love going to + place", "because", "prepositions of place", "turn left/right", "go straight on", "asking for and giving directions"],
+      "habilidades": ["nombrar lugares de una ciudad", "pedir y dar direcciones", "decir por qué te gusta un lugar", "usar preposiciones de lugar correctamente"],
       "repaso_clave": [
-        "Regular verbs: + ed → play→played, walk→walked, dance→danced",
-        "Irregular verbs: go→went, have→had, see→saw, eat→ate, come→came",
-        "Negative: didn't + infinitive → I didn't go.",
-        "Question: Did + subject + infinitive? → Did you go?",
-        "was (singular) / were (plural)"
+        "I like / love going to (the ice rink) because it's (amazing).",
+        "I don't like going to (the ice rink) because it's (boring).",
+        "Excuse me. Where's the (art gallery)?",
+        "Turn right (at the hotel). / Go straight on. / Turn left (at the restaurant).",
+        "The (art gallery) is next to the (hotel).",
+        "Places: funfair, hotel, ice rink, market, restaurant, shopping centre, stadium, swimming pool, theatre"
       ],
       "vocabulario": [
-        { "ingles": "yesterday", "español": "ayer" },
-        { "ingles": "last week", "español": "la semana pasada" },
-        { "ingles": "last month", "español": "el mes pasado" },
-        { "ingles": "last year", "español": "el año pasado" },
-        { "ingles": "ago", "español": "hace (tiempo)" },
-        { "ingles": "once upon a time", "español": "había una vez" },
-        { "ingles": "went", "español": "fue / fui (pasado de go)" },
-        { "ingles": "had", "español": "tuvo / tuve (pasado de have)" },
-        { "ingles": "saw", "español": "vio / vi (pasado de see)" },
-        { "ingles": "ate", "español": "comió / comí (pasado de eat)" },
-        { "ingles": "came", "español": "vino / vine (pasado de come)" },
-        { "ingles": "ran", "español": "corrió / corrí (pasado de run)" },
-        { "ingles": "played", "español": "jugó / jugué (pasado de play)" },
-        { "ingles": "walked", "español": "caminó / caminé (pasado de walk)" },
-        { "ingles": "visited", "español": "visitó / visité (pasado de visit)" },
-        { "ingles": "watched", "español": "vio / vi en TV (pasado de watch)" }
+        { "ingles": "funfair", "español": "parque de atracciones" },
+        { "ingles": "hotel", "español": "hotel" },
+        { "ingles": "ice rink", "español": "pista de hielo" },
+        { "ingles": "market", "español": "mercado" },
+        { "ingles": "restaurant", "español": "restaurante" },
+        { "ingles": "shopping centre", "español": "centro comercial" },
+        { "ingles": "stadium", "español": "estadio" },
+        { "ingles": "swimming pool", "español": "piscina" },
+        { "ingles": "theatre", "español": "teatro" },
+        { "ingles": "art gallery", "español": "galería de arte / museo de arte" },
+        { "ingles": "amazing", "español": "increíble / asombroso" },
+        { "ingles": "boring", "español": "aburrido" },
+        { "ingles": "turn left", "español": "girar a la izquierda" },
+        { "ingles": "turn right", "español": "girar a la derecha" },
+        { "ingles": "go straight on", "español": "seguir todo recto" },
+        { "ingles": "next to", "español": "al lado de" },
+        { "ingles": "opposite", "español": "enfrente de" },
+        { "ingles": "between", "español": "entre" }
       ],
       "expresiones": [
-        "Once upon a time there was/were...",
-        "Yesterday I went to...",
-        "Last week she played...",
-        "Two days ago we had...",
-        "Did you go to school yesterday? → Yes, I did. / No, I didn't.",
-        "What did you do last weekend?"
+        "I like / love going to the (theatre) because it's (exciting).",
+        "I don't like going to the (market) because it's (boring).",
+        "Excuse me, where's the (swimming pool)?",
+        "Turn left at the (hotel). The (pool) is next to the (stadium).",
+        "Go straight on and turn right.",
+        "Ok. Thank you!"
       ],
       "ejercicios_templates": [
         {
-          "tipo": "past_simple_regular",
-          "enunciado": "Write the past simple of: '{verbo}'",
+          "tipo": "like_love_going_to",
+          "enunciado": "Translate: '{frase_es}'",
           "variables": {
-            "verbo": { "tipo": "lista", "opciones": ["play", "walk", "watch", "visit", "jump", "dance", "clean", "cook", "help", "talk"] }
+            "frase_es": { "tipo": "lista", "opciones": [
+              "Me encanta ir al parque de atracciones porque es increíble.",
+              "No me gusta ir al mercado porque es aburrido.",
+              "Le encanta ir a la pista de hielo porque es divertida.",
+              "No le gusta ir al centro comercial porque es ruidoso."
+            ]}
+          },
+          "respuesta_esperada": [
+            "I love going to the funfair because it's amazing.",
+            "I don't like going to the market because it's boring.",
+            "She loves going to the ice rink because it's fun.",
+            "He doesn't like going to the shopping centre because it's noisy."
+          ],
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "traduccion_lugar",
+          "enunciado": "How do you say '{lugar_es}' in English?",
+          "variables": {
+            "lugar_es": { "tipo": "vocabulario_unidad", "unidad": "ing_03", "campo": "español" }
           },
           "respuesta": "Ver corrección manual",
           "dificultad": "facil"
         },
         {
-          "tipo": "past_simple_irregular",
-          "enunciado": "Write the past simple of: '{verbo}'",
+          "tipo": "directions",
+          "enunciado": "Translate these directions: '{instruccion_es}'",
           "variables": {
-            "verbo": { "tipo": "lista", "opciones": ["go", "have", "see", "eat", "come", "run", "make", "take", "get", "give"] }
-          },
-          "respuesta_esperada": ["went", "had", "saw", "ate", "came", "ran", "made", "took", "got", "gave"],
-          "dificultad": "medio"
-        },
-        {
-          "tipo": "negativa_pasado",
-          "enunciado": "Make it negative: '{oracion_positiva}'",
-          "variables": {
-            "oracion_positiva": { "tipo": "lista", "opciones": [
-              "She went to the park.",
-              "They played football.",
-              "He ate a pizza.",
-              "I watched TV yesterday."
+            "instruccion_es": { "tipo": "lista", "opciones": [
+              "Gira a la derecha en el hotel.",
+              "Sigue todo recto.",
+              "Gira a la izquierda en el restaurante.",
+              "La galería está al lado del hotel.",
+              "Perdona, ¿dónde está la piscina?"
             ]}
           },
           "respuesta_esperada": [
-            "She didn't go to the park.",
-            "They didn't play football.",
-            "He didn't eat a pizza.",
-            "I didn't watch TV yesterday."
+            "Turn right at the hotel.",
+            "Go straight on.",
+            "Turn left at the restaurant.",
+            "The gallery is next to the hotel.",
+            "Excuse me, where's the swimming pool?"
           ],
           "dificultad": "medio"
         },
         {
-          "tipo": "traduccion_pasado",
-          "enunciado": "Translate: '{frase_es}'",
+          "tipo": "going_on_a_ride",
+          "enunciado": "Write a sentence about what you like doing in a city: I like / love going to... because...",
           "variables": {
-            "frase_es": { "tipo": "lista", "opciones": [
-              "Ayer fui al colegio.",
-              "La semana pasada ella jugó al fútbol.",
-              "Nosotros comimos pizza.",
-              "¿Fuiste al parque ayer?",
-              "Él no vio la película."
-            ]}
+            "lugar": { "tipo": "lista", "opciones": ["the theatre", "the ice rink", "the funfair", "the swimming pool", "the stadium", "the art gallery"] },
+            "razon": { "tipo": "lista", "opciones": ["it's amazing", "it's exciting", "it's fun", "it's relaxing", "it's interesting"] }
           },
-          "respuesta_esperada": [
-            "Yesterday I went to school.",
-            "Last week she played football.",
-            "We ate pizza.",
-            "Did you go to the park yesterday?",
-            "He didn't see the film."
-          ],
-          "dificultad": "dificil"
+          "respuesta": "Ver corrección manual",
+          "dificultad": "facil"
         }
       ],
       "test_templates": [
         {
-          "tipo": "test_irregular",
-          "enunciado": "What is the past simple of 'go'?",
-          "opciones": ["goed", "went", "gone", "goes"],
-          "respuesta": "went",
+          "tipo": "test_lugar",
+          "enunciado": "¿Cómo se dice 'pista de hielo' en inglés?",
+          "opciones": ["swimming pool", "ice rink", "funfair", "stadium"],
+          "respuesta": "ice rink",
           "dificultad": "facil"
         },
         {
-          "tipo": "test_regular",
-          "enunciado": "What is the past simple of 'play'?",
-          "opciones": ["plaied", "playing", "played", "plays"],
-          "respuesta": "played",
+          "tipo": "test_direccion",
+          "enunciado": "¿Qué significa 'Go straight on'?",
+          "opciones": ["Gira a la derecha", "Gira a la izquierda", "Sigue todo recto", "Para aquí"],
+          "respuesta": "Sigue todo recto",
           "dificultad": "facil"
-        },
-        {
-          "tipo": "test_negativa",
-          "enunciado": "Choose the correct negative: 'She ___ to school yesterday.'",
-          "opciones": ["didn't went", "didn't go", "not went", "don't go"],
-          "respuesta": "didn't go",
-          "dificultad": "medio"
         }
       ],
       "actividades_templates": [
         {
-          "tipo": "my_weekend",
-          "enunciado": "Write a short story (5-6 sentences) about what you did last weekend. Use the past simple.",
+          "tipo": "city_message",
+          "enunciado": "Write a message to a friend about a city visit. Include: 2 places you love going to and why, and directions to get to one of them from your school.",
           "variables": {},
           "respuesta": "Ver corrección manual",
           "dificultad": "dificil"
         }
       ],
-      "fichas_templates": [
-        {
-          "tipo": "ficha_verbos_irregulares",
-          "descripcion": "Tabla con 15 verbos irregulares: infinitivo → pasado simple, para completar y memorizar",
-          "variables": {}
-        }
-      ]
+      "fichas_templates": []
     },
     {
       "id_unidad": "ing_04",
       "numero": 4,
-      "titulo": "Party at the library!",
-      "resumen": "Aprendemos vocabulario de libros, géneros literarios y actividades de tiempo libre. Trabajamos el pasado continuo (was/were + -ing) y lo comparamos con el pasado simple.",
-      "resumen_simple": "¡Fiesta en la biblioteca! Hablamos de libros y de lo que estábamos haciendo en un momento del pasado. El pasado continuo dice qué pasaba mientras ocurría otra cosa: I was reading when she arrived.",
-      "conceptos_clave": ["books and genres", "free time activities", "past continuous", "was/were + -ing", "while / when", "contrast past simple vs past continuous"],
-      "habilidades": ["nombrar géneros literarios", "formar el pasado continuo", "usar while y when correctamente", "contrastar pasado simple y continuo"],
+      "titulo": "Food for everyone!",
+      "resumen": "Aprendemos vocabulario de alimentos y trabajamos some/any con cantidades y recipientes. Usamos there is/there are some/any para hablar de lo que hay o no hay.",
+      "resumen_simple": "Hablamos de comida en inglés. Aprendemos a decir qué hay y qué no hay usando some y any. También aprendemos las palabras para los recipientes: una botella de zumo, una caja de arroz, una bolsa de patatas...",
+      "conceptos_clave": ["food vocabulary", "some / any", "there is / there are", "containers and quantities", "a bottle of / a bag of / a box of / a cup of", "no-waste food", "healthy eating"],
+      "habilidades": ["nombrar alimentos y sus recipientes", "usar some y any correctamente", "usar there is/are some/any", "hablar de una lista de la compra sin desperdicios", "describir cantidades"],
       "repaso_clave": [
-        "Past continuous: was/were + verb-ing",
-        "I was reading. She was sleeping. They were playing.",
-        "while + past continuous: While I was reading, she arrived.",
-        "when + past simple interrupts past continuous",
-        "I was watching TV when the phone rang."
+        "There's some (rice). / There are some (apples).",
+        "There isn't any (bread). / There aren't any (lemons).",
+        "Is there any (honey)? → Yes, there is. / No, there isn't.",
+        "Are there any (apples)? → Yes, there are. / No, there aren't.",
+        "a bottle of juice / a bag of rice / a box of fruit / a cup of hot chocolate / a glass of water / a piece of fruit"
       ],
       "vocabulario": [
-        { "ingles": "adventure story", "español": "historia de aventuras" },
-        { "ingles": "fairy tale", "español": "cuento de hadas" },
-        { "ingles": "comic", "español": "cómic" },
-        { "ingles": "poem", "español": "poema" },
-        { "ingles": "mystery", "español": "misterio" },
-        { "ingles": "science fiction", "español": "ciencia ficción" },
-        { "ingles": "author", "español": "autor/a" },
-        { "ingles": "character", "español": "personaje" },
-        { "ingles": "chapter", "español": "capítulo" },
-        { "ingles": "reading", "español": "leyendo" },
-        { "ingles": "dancing", "español": "bailando" },
-        { "ingles": "singing", "español": "cantando" },
-        { "ingles": "painting", "español": "pintando" },
-        { "ingles": "playing", "español": "jugando" },
-        { "ingles": "swimming", "español": "nadando" },
-        { "ingles": "running", "español": "corriendo" }
+        { "ingles": "apples", "español": "manzanas" },
+        { "ingles": "beans", "español": "judías / alubias" },
+        { "ingles": "flour", "español": "harina" },
+        { "ingles": "grapes", "español": "uvas" },
+        { "ingles": "honey", "español": "miel" },
+        { "ingles": "lemons", "español": "limones" },
+        { "ingles": "pineapples", "español": "piñas" },
+        { "ingles": "potatoes", "español": "patatas" },
+        { "ingles": "rice", "español": "arroz" },
+        { "ingles": "sugar", "español": "azúcar" },
+        { "ingles": "a bottle of", "español": "una botella de" },
+        { "ingles": "a bag of", "español": "una bolsa de" },
+        { "ingles": "a box of", "español": "una caja de" },
+        { "ingles": "a cup of", "español": "una taza de" },
+        { "ingles": "a glass of", "español": "un vaso de" },
+        { "ingles": "a piece of", "español": "un trozo / una pieza de" },
+        { "ingles": "cake", "español": "pastel / tarta" },
+        { "ingles": "chips", "español": "patatas fritas" },
+        { "ingles": "lemonade", "español": "limonada" },
+        { "ingles": "smoothie", "español": "batido de frutas" }
       ],
       "expresiones": [
-        "What were you doing at 5 o'clock? → I was reading.",
-        "While she was dancing, he was singing.",
-        "I was watching TV when my mum came in.",
-        "They were playing in the park when it started to rain.",
-        "What's your favourite type of book?"
+        "There's some (rice) and a lot of (honey).",
+        "There isn't any (bread).",
+        "Is there any (sugar)? → Yes, there is. / No, there isn't.",
+        "Are there any (apples)? → Yes, there are. / No, there aren't.",
+        "How much is a (bottle of juice)? → It's (£2.50).",
+        "How much are (those apples)? → They're (£4)."
       ],
       "ejercicios_templates": [
         {
-          "tipo": "past_continuous_forma",
-          "enunciado": "Write the past continuous: {sujeto} / {verbo}",
+          "tipo": "some_any",
+          "enunciado": "Complete with some or any: 'There {verbo} ___ {alimento}.'",
           "variables": {
-            "sujeto": { "tipo": "lista", "opciones": ["I", "She", "He", "They", "We", "The children"] },
-            "verbo": { "tipo": "lista", "opciones": ["read", "dance", "sing", "paint", "swim", "run", "play", "sleep", "eat", "write"] }
+            "verbo": { "tipo": "lista", "opciones": ["is", "isn't", "are", "aren't"] },
+            "alimento": { "tipo": "lista", "opciones": ["rice", "apples", "honey", "lemons", "bread", "grapes"] }
           },
-          "respuesta": "sujeto + was/were + verbo-ing",
+          "respuesta_esperada": ["some", "any", "some", "any", "some", "any"],
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "contenedor_alimento",
+          "enunciado": "Translate: 'una {contenedor} de {alimento}'",
+          "variables": {
+            "contenedor": { "tipo": "lista", "opciones": ["botella", "bolsa", "caja", "taza", "vaso", "trozo"] },
+            "alimento": { "tipo": "lista", "opciones": ["zumo", "arroz", "fruta", "chocolate caliente", "agua", "pastel"] }
+          },
+          "respuesta_esperada": [
+            "a bottle of juice",
+            "a bag of rice",
+            "a box of fruit",
+            "a cup of hot chocolate",
+            "a glass of water",
+            "a piece of cake"
+          ],
           "dificultad": "medio"
         },
         {
-          "tipo": "while_when",
-          "enunciado": "Translate: '{frase_es}'",
+          "tipo": "traduccion_comida",
+          "enunciado": "How do you say '{alimento_es}' in English?",
           "variables": {
-            "frase_es": { "tipo": "lista", "opciones": [
-              "Mientras ella leía, él bailaba.",
-              "Estaba durmiendo cuando sonó el teléfono.",
-              "Estábamos jugando cuando empezó a llover.",
-              "¿Qué estabas haciendo a las 6?"
-            ]}
-          },
-          "respuesta_esperada": [
-            "While she was reading, he was dancing.",
-            "I was sleeping when the phone rang.",
-            "We were playing when it started to rain.",
-            "What were you doing at 6 o'clock?"
-          ],
-          "dificultad": "dificil"
-        },
-        {
-          "tipo": "vocab_generos",
-          "enunciado": "How do you say '{genero_es}' in English?",
-          "variables": {
-            "genero_es": { "tipo": "vocabulario_unidad", "unidad": "ing_04", "campo": "español" }
+            "alimento_es": { "tipo": "vocabulario_unidad", "unidad": "ing_04", "campo": "español" }
           },
           "respuesta": "Ver corrección manual",
           "dificultad": "facil"
+        },
+        {
+          "tipo": "pregunta_there_is_are",
+          "enunciado": "Translate: '¿Hay {alimento} en la nevera?'",
+          "variables": {
+            "alimento": { "tipo": "lista", "opciones": ["miel", "manzanas", "arroz", "limones", "harina", "uvas"] }
+          },
+          "respuesta_esperada": [
+            "Is there any honey in the fridge?",
+            "Are there any apples in the fridge?",
+            "Is there any rice in the fridge?",
+            "Are there any lemons in the fridge?",
+            "Is there any flour in the fridge?",
+            "Are there any grapes in the fridge?"
+          ],
+          "dificultad": "medio"
         }
       ],
       "test_templates": [
         {
-          "tipo": "test_past_cont",
-          "enunciado": "Choose: 'She ___ (read) at 8 o'clock.'",
-          "opciones": ["read", "was reading", "is reading", "readed"],
-          "respuesta": "was reading",
-          "dificultad": "medio"
+          "tipo": "test_some_any",
+          "enunciado": "Choose: 'There isn't ___ bread.'",
+          "opciones": ["some", "any", "a", "the"],
+          "respuesta": "any",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "test_contenedor",
+          "enunciado": "¿Cómo se dice 'una botella de zumo' en inglés?",
+          "opciones": ["a box of juice", "a bag of juice", "a bottle of juice", "a cup of juice"],
+          "respuesta": "a bottle of juice",
+          "dificultad": "facil"
         }
       ],
       "actividades_templates": [
         {
-          "tipo": "describe_a_scene",
-          "enunciado": "Describe what 4 different people were doing at the library party. Use the past continuous.",
+          "tipo": "no_waste_shopping_list",
+          "enunciado": "Write a no-waste shopping list for a week. Include at least 8 items using containers/quantities (a bag of..., a bottle of...). Say what you have and what you need.",
           "variables": {},
           "respuesta": "Ver corrección manual",
           "dificultad": "dificil"
@@ -487,78 +524,61 @@
     {
       "id_unidad": "ing_05",
       "numero": 5,
-      "titulo": "Let's save our animals!",
-      "resumen": "Aprendemos vocabulario de animales y hábitats. Trabajamos el futuro con 'going to' para hablar de planes e intenciones, y el presente continuo para acciones en este momento.",
-      "resumen_simple": "¡Salvemos a los animales! Hablamos de animales en peligro y sus hábitats. Aprendemos a hablar de planes futuros: I'm going to... También repasamos lo que está pasando ahora mismo: present continuous.",
-      "conceptos_clave": ["animals and habitats", "endangered animals", "going to (future plans)", "present continuous (now)", "can/can't for ability", "should/shouldn't for advice"],
-      "habilidades": ["nombrar animales y hábitats", "usar going to para planes futuros", "usar present continuous para acciones presentes", "dar consejos con should/shouldn't"],
+      "titulo": "Help our oceans!",
+      "resumen": "Aprendemos vocabulario de animales marinos y cuidado de los océanos. Trabajamos el present continuous para describir acciones en curso, y what are they doing / they're (cleaning the beach).",
+      "resumen_simple": "¡Ayudemos a los océanos! Aprendemos los nombres de animales del mar y hablamos de lo que están haciendo las personas para cuidarlos. Usamos el presente continuo: What are they doing? They're picking up rubbish.",
+      "conceptos_clave": ["sea animals", "care for the ocean", "present continuous", "what are they doing?", "they're / she's / he's + verb-ing", "pick up / recycle / clean", "descriptive adjectives for oceans"],
+      "habilidades": ["nombrar animales marinos", "usar el present continuous", "describir acciones en curso", "hablar de acciones de cuidado del medioambiente", "usar adjetivos descriptivos"],
       "repaso_clave": [
-        "going to: I am going to protect animals. (plan/intention)",
-        "Present continuous: The eagle is flying. (happening now)",
-        "can/can't: The dolphin can swim. It can't fly.",
-        "should: We should protect endangered animals.",
-        "shouldn't: We shouldn't pollute the sea."
+        "Present continuous: am/is/are + verb-ing",
+        "What are they doing? → They're (cleaning the beach).",
+        "Are they (picking up rubbish)? → Yes, they are. / No, they aren't.",
+        "What is she doing? → She's (recycling).",
+        "Sea animals: crab, dolphin, jellyfish, octopus, seahorse, seal, shark, snail, starfish, whale",
+        "Adjectives: brilliant, dangerous, terrible, safe"
       ],
       "vocabulario": [
-        { "ingles": "eagle", "español": "águila" },
+        { "ingles": "crab", "español": "cangrejo" },
         { "ingles": "dolphin", "español": "delfín" },
-        { "ingles": "lynx", "español": "lince" },
-        { "ingles": "whale", "español": "ballena" },
-        { "ingles": "polar bear", "español": "oso polar" },
-        { "ingles": "penguin", "español": "pingüino" },
-        { "ingles": "tiger", "español": "tigre" },
+        { "ingles": "jellyfish", "español": "medusa" },
+        { "ingles": "octopus", "español": "pulpo" },
+        { "ingles": "seahorse", "español": "caballito de mar" },
+        { "ingles": "seal", "español": "foca" },
         { "ingles": "shark", "español": "tiburón" },
-        { "ingles": "habitat", "español": "hábitat" },
-        { "ingles": "jungle", "español": "selva" },
-        { "ingles": "ocean", "español": "océano" },
-        { "ingles": "rainforest", "español": "selva tropical" },
-        { "ingles": "desert", "español": "desierto" },
-        { "ingles": "endangered", "español": "en peligro de extinción" },
-        { "ingles": "extinct", "español": "extinto" },
-        { "ingles": "protect", "español": "proteger" },
-        { "ingles": "pollution", "español": "contaminación" },
-        { "ingles": "recycle", "español": "reciclar" }
+        { "ingles": "snail", "español": "caracol" },
+        { "ingles": "starfish", "español": "estrella de mar" },
+        { "ingles": "whale", "español": "ballena" },
+        { "ingles": "clean the ocean", "español": "limpiar el océano" },
+        { "ingles": "have a beach clean up", "español": "hacer una limpieza de playa" },
+        { "ingles": "pick up rubbish", "español": "recoger basura" },
+        { "ingles": "recycle", "español": "reciclar" },
+        { "ingles": "brilliant", "español": "brillante / genial" },
+        { "ingles": "dangerous", "español": "peligroso" },
+        { "ingles": "terrible", "español": "terrible" },
+        { "ingles": "safe", "español": "seguro" },
+        { "ingles": "swimming", "español": "nadando" },
+        { "ingles": "jumping", "español": "saltando" }
       ],
       "expresiones": [
-        "I'm going to help endangered animals.",
-        "What are you going to do? → I'm going to...",
-        "We should protect the rainforest.",
-        "We shouldn't pollute the ocean.",
-        "The lynx is an endangered animal in Spain.",
-        "It can run fast but it can't fly."
+        "The shark is (swimming). It isn't (walking).",
+        "The starfish are (hiding). They aren't (jumping).",
+        "What are they doing? → They're (cleaning the beach).",
+        "Are they (picking up rubbish)? → Yes, they are. / No, they aren't.",
+        "What are you going to do? → I'm going to (play table tennis). I'm not going to (do gymnastics)."
       ],
       "ejercicios_templates": [
         {
-          "tipo": "going_to",
-          "enunciado": "Write a sentence with 'going to': {sujeto} / {plan}",
+          "tipo": "present_continuous_forma",
+          "enunciado": "Write the present continuous: {sujeto} / {verbo}",
           "variables": {
-            "sujeto": { "tipo": "lista", "opciones": ["I", "She", "He", "We", "They"] },
-            "plan": { "tipo": "lista", "opciones": ["protect animals", "recycle more", "visit the zoo", "learn about dolphins", "clean the beach"] }
+            "sujeto": { "tipo": "lista", "opciones": ["The dolphin", "The sharks", "She", "They", "He", "The children"] },
+            "verbo": { "tipo": "lista", "opciones": ["swim", "jump", "clean", "recycle", "pick up rubbish", "hide"] }
           },
-          "respuesta": "sujeto + am/is/are + going to + plan",
+          "respuesta": "sujeto + is/are + verbo-ing",
           "dificultad": "medio"
         },
         {
-          "tipo": "should_shouldnt",
-          "enunciado": "Translate: '{consejo_es}'",
-          "variables": {
-            "consejo_es": { "tipo": "lista", "opciones": [
-              "Deberíamos reciclar más.",
-              "No deberíamos contaminar el mar.",
-              "Deberías aprender sobre animales en peligro.",
-              "No deberíamos cortar los árboles."
-            ]}
-          },
-          "respuesta_esperada": [
-            "We should recycle more.",
-            "We shouldn't pollute the sea.",
-            "You should learn about endangered animals.",
-            "We shouldn't cut down trees."
-          ],
-          "dificultad": "dificil"
-        },
-        {
-          "tipo": "vocab_animales",
+          "tipo": "traduccion_animal_marino",
           "enunciado": "How do you say '{animal_es}' in English?",
           "variables": {
             "animal_es": { "tipo": "vocabulario_unidad", "unidad": "ing_05", "campo": "español" }
@@ -567,169 +587,206 @@
           "dificultad": "facil"
         },
         {
-          "tipo": "can_cant_animal",
-          "enunciado": "Write two sentences about the {animal}: what it can do and what it can't do.",
+          "tipo": "what_are_they_doing",
+          "enunciado": "Translate: '¿Qué están haciendo? Están {accion_es}.'",
           "variables": {
-            "animal": { "tipo": "lista", "opciones": ["eagle", "dolphin", "penguin", "lynx", "whale"] }
+            "accion_es": { "tipo": "lista", "opciones": [
+              "limpiando la playa",
+              "recogiendo basura",
+              "reciclando",
+              "nadando en el océano",
+              "ayudando a los animales marinos"
+            ]}
           },
-          "respuesta": "Ver corrección manual",
+          "respuesta_esperada": [
+            "What are they doing? They're cleaning the beach.",
+            "What are they doing? They're picking up rubbish.",
+            "What are they doing? They're recycling.",
+            "What are they doing? They're swimming in the ocean.",
+            "What are they doing? They're helping sea animals."
+          ],
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "going_to_sports",
+          "enunciado": "Translate: '{frase_es}'",
+          "variables": {
+            "frase_es": { "tipo": "lista", "opciones": [
+              "Voy a jugar al tenis de mesa.",
+              "No voy a hacer gimnasia.",
+              "¿Vas a limpiar la playa?",
+              "Ella va a reciclar."
+            ]}
+          },
+          "respuesta_esperada": [
+            "I'm going to play table tennis.",
+            "I'm not going to do gymnastics.",
+            "Are you going to clean the beach?",
+            "She's going to recycle."
+          ],
           "dificultad": "medio"
         }
       ],
       "test_templates": [
         {
-          "tipo": "test_going_to",
-          "enunciado": "Choose: 'She ___ help endangered animals.'",
-          "opciones": ["go to", "is going to", "going to", "will going to"],
-          "respuesta": "is going to",
-          "dificultad": "medio"
+          "tipo": "test_animal_marino",
+          "enunciado": "¿Cómo se dice 'caballito de mar' en inglés?",
+          "opciones": ["starfish", "seahorse", "jellyfish", "snail"],
+          "respuesta": "seahorse",
+          "dificultad": "facil"
         },
         {
-          "tipo": "test_should",
-          "enunciado": "Choose: 'We ___ pollute the ocean.' (No debemos)",
-          "opciones": ["should", "shouldn't", "can't", "don't"],
-          "respuesta": "shouldn't",
-          "dificultad": "facil"
+          "tipo": "test_present_continuous",
+          "enunciado": "Choose: 'They ___ (clean) the beach.'",
+          "opciones": ["clean", "cleans", "are cleaning", "is cleaning"],
+          "respuesta": "are cleaning",
+          "dificultad": "medio"
         }
       ],
       "actividades_templates": [
         {
-          "tipo": "save_an_animal",
-          "enunciado": "Choose an endangered animal. Write 5 sentences: what it is, where it lives, what it can/can't do, and 2 things we should do to protect it.",
+          "tipo": "beach_clean_poster",
+          "enunciado": "Write a poster about a beach clean up. Include: what people are doing (present continuous), why it's important, and what YOU are going to do to help our oceans.",
           "variables": {},
           "respuesta": "Ver corrección manual",
           "dificultad": "dificil"
         }
       ],
-      "fichas_templates": [
-        {
-          "tipo": "ficha_vocab_animales",
-          "descripcion": "Tarjetas de vocabulario: animales en inglés con su hábitat",
-          "variables": {}
-        }
-      ]
+      "fichas_templates": []
     },
     {
       "id_unidad": "ing_06",
       "numero": 6,
-      "titulo": "Come on an adventure!",
-      "resumen": "Aprendemos vocabulario de aventuras, naturaleza y expediciones. Trabajamos el comparativo y superlativo de adjetivos, y las preposiciones de movimiento.",
-      "resumen_simple": "¡Ven a la aventura! Aprendemos a comparar cosas usando comparativos (bigger than) y superlativos (the biggest). También usamos preposiciones de movimiento: up, down, through, across...",
-      "conceptos_clave": ["adventure vocabulary", "comparatives", "superlatives", "adjectives", "prepositions of movement", "up / down / through / across / along / over / under"],
-      "habilidades": ["formar comparativos y superlativos", "comparar personas, animales y lugares", "usar preposiciones de movimiento", "describir una aventura"],
+      "titulo": "Let's play together!",
+      "resumen": "Aprendemos deportes y actividades de tiempo libre. Trabajamos going to para planes futuros, los adverbios de manera (quickly, slowly, badly, well) y cómo hacer y responder a invitaciones y propuestas para quedar.",
+      "resumen_simple": "¡Juguemos juntos! Aprendemos deportes y actividades para el fin de semana. Usamos going to para hablar de planes: I'm going to play basketball. También aprendemos a quedar con amigos: Would you like to come? I'd love to!",
+      "conceptos_clave": ["sports and activities", "going to (future plans)", "making and responding to invitations", "Would you like to...?", "adverbs of manner", "quickly, slowly, badly, well", "making arrangements"],
+      "habilidades": ["nombrar deportes y actividades", "hacer y aceptar/rechazar invitaciones", "usar going to", "usar adverbios de manera", "organizar un plan con amigos"],
       "repaso_clave": [
-        "Comparative: adjective + er + than (taller than, bigger than)",
-        "Long adjectives: more + adjective + than (more dangerous than)",
-        "Superlative: the + adjective + est (the tallest, the biggest)",
-        "Long adjectives: the most + adjective (the most dangerous)",
-        "Irregular: good→better→the best / bad→worse→the worst",
-        "Prepositions: up the mountain, down the hill, through the forest, across the river"
+        "Would you like to come to (my party)? → Yes, please. I'd love to. / No, thanks. Sorry, I can't.",
+        "I'm going to (play basketball). / I'm not going to (do athletics).",
+        "Adverbs of manner: quickly, slowly, badly, well",
+        "Are you free on (Thursday afternoon)? → Yes, I am! / No, I'm not.",
+        "What time does it start? → It starts at (ten o'clock).",
+        "Where is it? → It's (on Sunny Beach)."
       ],
       "vocabulario": [
-        { "ingles": "adventure", "español": "aventura" },
-        { "ingles": "mountain", "español": "montaña" },
-        { "ingles": "river", "español": "río" },
-        { "ingles": "waterfall", "español": "cascada" },
-        { "ingles": "cave", "español": "cueva" },
-        { "ingles": "forest", "español": "bosque" },
-        { "ingles": "cliff", "español": "acantilado" },
-        { "ingles": "tall", "español": "alto" },
-        { "ingles": "deep", "español": "profundo" },
-        { "ingles": "dangerous", "español": "peligroso" },
-        { "ingles": "exciting", "español": "emocionante" },
-        { "ingles": "difficult", "español": "difícil" },
-        { "ingles": "up", "español": "hacia arriba / subiendo" },
-        { "ingles": "down", "español": "hacia abajo / bajando" },
-        { "ingles": "through", "español": "a través de" },
-        { "ingles": "across", "español": "cruzando / al otro lado de" },
-        { "ingles": "along", "español": "a lo largo de" },
-        { "ingles": "over", "español": "por encima de" }
+        { "ingles": "athletics", "español": "atletismo" },
+        { "ingles": "gymnastics", "español": "gimnasia" },
+        { "ingles": "snowboarding", "español": "snowboard" },
+        { "ingles": "swimming", "español": "natación" },
+        { "ingles": "badminton", "español": "bádminton" },
+        { "ingles": "basketball", "español": "baloncesto" },
+        { "ingles": "baseball", "español": "béisbol" },
+        { "ingles": "hockey", "español": "hockey" },
+        { "ingles": "table tennis", "español": "tenis de mesa / ping-pong" },
+        { "ingles": "volleyball", "español": "voleibol" },
+        { "ingles": "bounce", "español": "botar / rebotar" },
+        { "ingles": "hit", "español": "golpear" },
+        { "ingles": "throw", "español": "lanzar" },
+        { "ingles": "jump hurdles", "español": "saltar vallas" },
+        { "ingles": "run a race", "español": "correr una carrera" },
+        { "ingles": "quickly", "español": "rápidamente" },
+        { "ingles": "slowly", "español": "lentamente" },
+        { "ingles": "badly", "español": "mal" },
+        { "ingles": "well", "español": "bien" }
       ],
       "expresiones": [
-        "The Amazon is longer than the Nile. (El Amazonas es más largo que el Nilo.)",
-        "Mount Everest is the highest mountain in the world.",
-        "This adventure is more exciting than the last one.",
-        "We walked through the forest and across the river.",
-        "It was the best / worst adventure ever!"
+        "Would you like to come to (my party)? → Yes, please. I'd love to. / No, thanks. Sorry, I can't.",
+        "Are you free on (Thursday afternoon)? → Yes, I am. / No, I'm not. Sorry.",
+        "Do you want to (do athletics) with me? → Yes, please! / No, I'm not. Sorry.",
+        "What time does it start? → It starts at (ten o'clock).",
+        "Where is it? → It's (on Sunny Beach).",
+        "See you then! / Ok. Thank you!"
       ],
       "ejercicios_templates": [
         {
-          "tipo": "comparativo",
-          "enunciado": "Write the comparative of '{adjetivo}': ___ than",
+          "tipo": "traduccion_deporte",
+          "enunciado": "How do you say '{deporte_es}' in English?",
           "variables": {
-            "adjetivo": { "tipo": "lista", "opciones": ["tall", "big", "fast", "small", "dangerous", "exciting", "good", "bad", "long", "deep"] }
+            "deporte_es": { "tipo": "vocabulario_unidad", "unidad": "ing_06", "campo": "español" }
           },
-          "respuesta_esperada": ["taller", "bigger", "faster", "smaller", "more dangerous", "more exciting", "better", "worse", "longer", "deeper"],
-          "dificultad": "medio"
+          "respuesta": "Ver corrección manual",
+          "dificultad": "facil"
         },
         {
-          "tipo": "superlativo",
-          "enunciado": "Write the superlative of '{adjetivo}': the ___",
-          "variables": {
-            "adjetivo": { "tipo": "lista", "opciones": ["tall", "big", "fast", "dangerous", "exciting", "good", "bad", "long"] }
-          },
-          "respuesta_esperada": ["tallest", "biggest", "fastest", "most dangerous", "most exciting", "best", "worst", "longest"],
-          "dificultad": "medio"
-        },
-        {
-          "tipo": "comparacion_frase",
+          "tipo": "invitacion_respuesta",
           "enunciado": "Translate: '{frase_es}'",
           "variables": {
             "frase_es": { "tipo": "lista", "opciones": [
-              "El río Nilo es más largo que el Tajo.",
-              "Este libro es más interesante que ese.",
-              "La montaña más alta del mundo es el Everest.",
-              "Los delfines son más inteligentes que los tiburones.",
-              "¿Cuál es el animal más rápido del mundo?"
+              "¿Te gustaría venir a mi partido de baloncesto?",
+              "Sí, por favor. Me encantaría.",
+              "No, gracias. Lo siento, no puedo.",
+              "¿Estás libre el jueves por la tarde?",
+              "¿A qué hora empieza?"
             ]}
           },
           "respuesta_esperada": [
-            "The Nile is longer than the Tagus.",
-            "This book is more interesting than that one.",
-            "The highest mountain in the world is Everest.",
-            "Dolphins are more intelligent than sharks.",
-            "What is the fastest animal in the world?"
+            "Would you like to come to my basketball game?",
+            "Yes, please. I'd love to.",
+            "No, thanks. Sorry, I can't.",
+            "Are you free on Thursday afternoon?",
+            "What time does it start?"
           ],
-          "dificultad": "dificil"
+          "dificultad": "medio"
         },
         {
-          "tipo": "preposicion_movimiento",
-          "enunciado": "Translate: 'Cruzamos {prep_es} {lugar}'",
+          "tipo": "adverbio_manera",
+          "enunciado": "Translate: '{frase_es}'",
           "variables": {
-            "prep_es": { "tipo": "lista", "opciones": ["a través del", "por encima del", "a lo largo del", "cruzando el"] },
-            "lugar": { "tipo": "lista", "opciones": ["bosque", "río", "puente", "acantilado"] }
+            "frase_es": { "tipo": "lista", "opciones": [
+              "Ella corre rápidamente.",
+              "Él juega al baloncesto bien.",
+              "Nosotros nadamos lentamente.",
+              "Ellos juegan al hockey mal."
+            ]}
+          },
+          "respuesta_esperada": [
+            "She runs quickly.",
+            "He plays basketball well.",
+            "We swim slowly.",
+            "They play hockey badly."
+          ],
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "going_to_deporte",
+          "enunciado": "Write a sentence about your sports plans: I'm going to... / I'm not going to...",
+          "variables": {
+            "deporte": { "tipo": "lista", "opciones": ["play volleyball", "do gymnastics", "go snowboarding", "play basketball", "swim", "do athletics"] },
+            "afirmacion": { "tipo": "lista", "opciones": ["going to", "not going to"] }
           },
           "respuesta": "Ver corrección manual",
-          "dificultad": "medio"
+          "dificultad": "facil"
         }
       ],
       "test_templates": [
         {
-          "tipo": "test_comparativo",
-          "enunciado": "Choose the correct comparative: 'An elephant is ___ a cat.'",
-          "opciones": ["big than", "bigger than", "the biggest", "more big than"],
-          "respuesta": "bigger than",
-          "dificultad": "medio"
+          "tipo": "test_invitacion",
+          "enunciado": "¿Cómo aceptas una invitación en inglés?",
+          "opciones": ["No, thanks.", "Sorry, I can't.", "Yes, please. I'd love to.", "I don't want to."],
+          "respuesta": "Yes, please. I'd love to.",
+          "dificultad": "facil"
         },
         {
-          "tipo": "test_superlativo",
-          "enunciado": "Choose: 'It is ___ adventure of my life!'",
-          "opciones": ["the more exciting", "more exciting", "the most exciting", "most exciting"],
-          "respuesta": "the most exciting",
-          "dificultad": "medio"
+          "tipo": "test_adverbio",
+          "enunciado": "¿Cómo se dice 'rápidamente' en inglés?",
+          "opciones": ["slowly", "badly", "well", "quickly"],
+          "respuesta": "quickly",
+          "dificultad": "facil"
         },
         {
-          "tipo": "test_irregular_comp",
-          "enunciado": "What is the comparative of 'good'?",
-          "opciones": ["gooder", "more good", "better", "the best"],
-          "respuesta": "better",
+          "tipo": "test_deporte",
+          "enunciado": "¿Cómo se dice 'bádminton' en inglés?",
+          "opciones": ["baseball", "badminton", "basketball", "volleyball"],
+          "respuesta": "badminton",
           "dificultad": "facil"
         }
       ],
       "actividades_templates": [
         {
-          "tipo": "my_adventure",
-          "enunciado": "Write about an adventure (real or invented). Use comparatives, superlatives and prepositions of movement. Write at least 6 sentences.",
+          "tipo": "sports_weekend_note",
+          "enunciado": "Write a note to a friend about your sports weekend plans. Include: what you are going to do, an invitation, the time and place, and use at least one adverb of manner.",
           "variables": {},
           "respuesta": "Ver corrección manual",
           "dificultad": "dificil"
