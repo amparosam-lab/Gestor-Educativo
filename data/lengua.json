@@ -3,373 +3,343 @@
   "curso": "4º Primaria",
   "editorial": "Anaya - Operación Mundo",
   "comunidad": "Andalucía",
-  "version": "1.0",
+  "version": "2.0",
   "unidades": [
     {
       "id_unidad": "len_01",
       "numero": 1,
-      "titulo": "El texto y sus tipos",
-      "resumen": "Estudiamos qué es un texto, sus características principales (coherencia y cohesión) y los distintos tipos: narrativo, descriptivo, expositivo y dialogado.",
-      "resumen_simple": "Un texto es un grupo de frases que tienen relación entre sí y forman un mensaje completo. Hay textos para contar historias, describir cosas, dar información o mantener conversaciones.",
-      "conceptos_clave": ["texto", "coherencia", "cohesión", "texto narrativo", "texto descriptivo", "texto expositivo", "texto dialogado", "párrafo"],
-      "habilidades": ["identificar el tipo de texto", "reconocer la coherencia textual", "comprender textos de distinto tipo", "producir textos sencillos"],
+      "titulo": "Respeto mi planeta",
+      "resumen": "Estudiamos la comunicación y el texto. Trabajamos la formación de palabras derivadas y compuestas, y la ortografía de palabras agudas, llanas y esdrújulas.",
+      "resumen_simple": "Aprendemos qué es la comunicación y los tipos de texto. También vemos cómo se forman palabras nuevas a partir de otras, y cuándo llevan tilde las palabras según donde cae el golpe de voz.",
+      "conceptos_clave": ["comunicación", "lenguaje verbal y no verbal", "texto", "formación de palabras", "palabras derivadas", "palabras compuestas", "palabras agudas", "palabras llanas", "palabras esdrújulas", "tilde", "acento"],
+      "habilidades": ["identificar tipos de comunicación", "reconocer palabras derivadas y compuestas", "clasificar palabras por su acento", "aplicar las reglas de tildación"],
       "repaso_clave": [
-        "Un texto es coherente si todas las ideas están relacionadas",
-        "El texto narrativo cuenta hechos o historias",
-        "El texto descriptivo explica cómo es algo o alguien",
-        "El texto expositivo informa sobre un tema",
-        "El texto dialogado recoge conversaciones"
+        "Comunicación: emisor → mensaje → receptor",
+        "Lenguaje verbal: palabras. No verbal: gestos, imágenes, señales",
+        "Palabras agudas: acento en la última sílaba (camión, café) → tilde si acaban en n, s o vocal",
+        "Palabras llanas: acento en la penúltima sílaba (mesa, árbol) → tilde si NO acaban en n, s o vocal",
+        "Palabras esdrújulas: acento en la antepenúltima sílaba → SIEMPRE llevan tilde (médico, música)",
+        "Palabra derivada: raíz + prefijo o sufijo (mar → marino)",
+        "Palabra compuesta: dos palabras unidas (paraguas, sacapuntas)"
       ],
       "ejercicios_templates": [
         {
-          "tipo": "identificar_tipo_texto",
-          "enunciado": "Lee el siguiente fragmento y escribe qué tipo de texto es: \"{fragmento}\"",
+          "tipo": "aguda_llana_esdrujula",
+          "enunciado": "Clasifica la palabra '{palabra}': ¿es aguda, llana o esdrújula?",
           "variables": {
-            "fragmento": {
-              "tipo": "lista",
-              "opciones": [
-                "El lobo entró al bosque. De repente escuchó un ruido. Era Caperucita que cantaba.",
-                "El delfín es un mamífero marino. Tiene una aleta dorsal y se comunica con sonidos.",
-                "—Hola, ¿cómo estás? —preguntó María. —Muy bien, gracias —respondió Ana.",
-                "La luna tiene una superficie gris y llena de cráteres. Brilla por la noche."
-              ]
-            }
+            "palabra": { "tipo": "lista", "opciones": ["camión", "mesa", "médico", "café", "árbol", "música", "ratón", "lápiz", "fácil", "corazón", "sílaba", "jardín", "cómodo", "mamá", "examen"] }
           },
-          "respuesta_esperada": ["narrativo", "expositivo", "dialogado", "descriptivo"],
-          "respuesta": "identificar_tipo(fragmento)",
+          "respuesta_esperada": ["aguda", "llana", "esdrújula", "aguda", "llana", "esdrújula", "aguda", "llana", "llana", "aguda", "esdrújula", "aguda", "esdrújula", "aguda", "llana"],
           "dificultad": "medio"
         },
         {
-          "tipo": "ordenar_parrafos",
-          "enunciado": "Ordena las frases para que el texto sea coherente. Escribe los números en orden: 1, 2, 3, 4.",
+          "tipo": "lleva_tilde",
+          "enunciado": "¿Lleva tilde la palabra '{palabra}'? Escribe Sí o No y explica por qué.",
           "variables": {
-            "tema": { "tipo": "lista", "opciones": ["un viaje al cole", "preparar el desayuno", "el ciclo del agua"] }
+            "palabra": { "tipo": "lista", "opciones": ["camion", "mesa", "medico", "cafe", "arbol", "musica", "raton", "lapiz", "facil", "corazon"] }
           },
-          "respuesta": "orden_correcto",
+          "respuesta_esperada": ["Sí (aguda, acaba en n)", "No (llana, acaba en vocal)", "Sí (esdrújula)", "Sí (aguda, acaba en vocal)", "Sí (llana, acaba en l)", "Sí (esdrújula)", "Sí (aguda, acaba en n)", "Sí (llana, acaba en z)", "Sí (llana, acaba en l)", "Sí (aguda, acaba en n)"],
+          "dificultad": "dificil"
+        },
+        {
+          "tipo": "palabra_derivada",
+          "enunciado": "Forma una palabra derivada de '{raiz}' usando el sufijo '{sufijo}'.",
+          "variables": {
+            "raiz": { "tipo": "lista", "opciones": ["mar", "pan", "libro", "tierra", "agua", "flor", "sol"] },
+            "sufijo": { "tipo": "lista", "opciones": ["-ero", "-ero", "-ería", "-azo", "-oso", "-ista", "-ado"] }
+          },
+          "respuesta": "Ver corrección manual",
           "dificultad": "medio"
+        },
+        {
+          "tipo": "palabra_compuesta",
+          "enunciado": "Une estas dos palabras para formar una palabra compuesta: '{palabra1}' + '{palabra2}'",
+          "variables": {
+            "palabra1": { "tipo": "lista", "opciones": ["para", "saca", "lava", "porta", "guarda", "rompe"] },
+            "palabra2": { "tipo": "lista", "opciones": ["aguas", "puntas", "platos", "folios", "bosques", "cabezas"] }
+          },
+          "respuesta": "Ver corrección manual",
+          "dificultad": "facil"
         }
       ],
       "test_templates": [
         {
-          "tipo": "test_tipo_texto",
-          "enunciado": "Un texto que cuenta una historia con personajes y acciones es un texto...",
-          "opciones": ["narrativo", "descriptivo", "expositivo", "dialogado"],
-          "respuesta": "narrativo",
+          "tipo": "test_aguda",
+          "enunciado": "¿Cuál de estas palabras es aguda?",
+          "opciones": ["árbol", "médico", "camión", "mesa"],
+          "respuesta": "camión",
           "dificultad": "facil"
         },
         {
-          "tipo": "test_coherencia",
-          "enunciado": "¿Qué característica tiene un texto cuando todas sus ideas están relacionadas entre sí?",
-          "opciones": ["coherencia", "rima", "vocabulario", "puntuación"],
-          "respuesta": "coherencia",
+          "tipo": "test_esdrujula",
+          "enunciado": "Las palabras esdrújulas...",
+          "opciones": ["nunca llevan tilde", "a veces llevan tilde", "siempre llevan tilde", "llevan tilde si acaban en vocal"],
+          "respuesta": "siempre llevan tilde",
           "dificultad": "facil"
         }
       ],
       "actividades_templates": [
         {
-          "tipo": "produccion_texto_descriptivo",
-          "enunciado": "Escribe 3 frases describiendo {objeto} usando adjetivos.",
-          "variables": {
-            "objeto": { "tipo": "lista", "opciones": ["tu habitación", "tu animal favorito", "el patio del cole", "tu libro preferido"] }
-          },
-          "respuesta": "texto_libre_minimo_3_frases",
-          "dificultad": "medio"
+          "tipo": "glosario_climatico",
+          "enunciado": "Escribe {n} palabras relacionadas con el clima. Para cada una indica si es aguda, llana o esdrújula y si lleva tilde.",
+          "variables": { "n": { "tipo": "numero", "min": 4, "max": 6 } },
+          "respuesta": "Ver corrección manual",
+          "dificultad": "dificil"
         }
       ],
-      "fichas_templates": [
-        {
-          "tipo": "ficha_tipos_texto",
-          "descripcion": "Clasifica 4 fragmentos cortos según el tipo de texto",
-          "variables": {}
-        }
-      ]
+      "fichas_templates": []
     },
     {
       "id_unidad": "len_02",
       "numero": 2,
-      "titulo": "La narración: el cuento",
-      "resumen": "Profundizamos en el texto narrativo a través del cuento. Estudiamos su estructura (planteamiento, nudo y desenlace), los personajes, el narrador y el tiempo verbal de la narración.",
-      "resumen_simple": "Los cuentos tienen tres partes: el inicio (donde se presentan los personajes), el nudo (donde ocurre el problema) y el desenlace (donde se resuelve todo). ¡Aprenderemos a leer y escribir cuentos!",
-      "conceptos_clave": ["cuento", "planteamiento", "nudo", "desenlace", "personaje principal", "personaje secundario", "narrador", "tiempo verbal narrativo"],
-      "habilidades": ["identificar las partes de un cuento", "distinguir personajes principales y secundarios", "reconocer el narrador", "escribir un cuento sencillo"],
+      "titulo": "¡Elegimos reutilizar!",
+      "resumen": "Aprendemos sobre las normas y los textos de la vida cotidiana (instrucciones). Estudiamos el nombre y sus clases, y la ortografía de la tilde.",
+      "resumen_simple": "Los textos de instrucciones nos explican cómo hacer algo paso a paso. En gramática aprendemos los nombres: comunes, propios, individuales, colectivos, concretos y abstractos. Y repasamos la tilde.",
+      "conceptos_clave": ["texto instructivo", "instrucciones", "el nombre", "nombre común", "nombre propio", "nombre individual", "nombre colectivo", "nombre concreto", "nombre abstracto", "género", "número", "la tilde"],
+      "habilidades": ["escribir instrucciones", "clasificar nombres", "aplicar el género y número", "usar la tilde correctamente"],
       "repaso_clave": [
-        "Planteamiento: se presentan personajes y situación",
-        "Nudo: aparece el conflicto o problema",
-        "Desenlace: se resuelve el problema",
-        "El narrador puede ser un personaje (1ª persona) o externo (3ª persona)"
+        "Nombre común: nombra seres o cosas en general (perro, ciudad)",
+        "Nombre propio: nombra seres o cosas concretas, con mayúscula (Sevilla, Carlos)",
+        "Nombre colectivo: nombra un conjunto (bandada, rebaño, enjambre)",
+        "Nombre concreto: se puede tocar o ver (mesa, lluvia)",
+        "Nombre abstracto: no se puede tocar (amor, libertad, alegría)",
+        "La familia de palabras comparte la misma raíz"
       ],
       "ejercicios_templates": [
         {
-          "tipo": "identificar_partes_cuento",
-          "enunciado": "Lee el fragmento y escribe en qué parte del cuento está: planteamiento, nudo o desenlace. \"{fragmento}\"",
+          "tipo": "clasificar_nombre",
+          "enunciado": "Clasifica '{nombre}': ¿es común o propio?",
           "variables": {
-            "fragmento": {
-              "tipo": "lista",
-              "opciones": [
-                "Había una vez un niño llamado Pablo que vivía en un pequeño pueblo.",
-                "De repente, el puente se rompió y Pablo no podía cruzar el río.",
-                "Por fin, con ayuda de sus amigos, Pablo encontró un camino alternativo y llegó a casa."
-              ]
-            }
+            "nombre": { "tipo": "lista", "opciones": ["Madrid", "ciudad", "Lucía", "perro", "río", "Guadalquivir", "mesa", "España", "flor", "Carlos", "montaña", "Everest"] }
           },
-          "respuesta_esperada": ["planteamiento", "nudo", "desenlace"],
-          "respuesta": "identificar_parte(fragmento)",
+          "respuesta_esperada": ["propio", "común", "propio", "común", "común", "propio", "común", "propio", "común", "propio", "común", "propio"],
           "dificultad": "facil"
         },
         {
-          "tipo": "tipo_narrador",
-          "enunciado": "¿En qué persona está narrado? \"{fragmento}\"",
+          "tipo": "nombre_colectivo",
+          "enunciado": "¿Cuál es el nombre colectivo de '{animal_plural}'?",
           "variables": {
-            "fragmento": {
-              "tipo": "lista",
-              "opciones": [
-                "Yo salí de casa muy temprano aquella mañana.",
-                "El niño salió de casa muy temprano aquella mañana."
-              ]
-            }
+            "animal_plural": { "tipo": "lista", "opciones": ["lobos", "ovejas", "pájaros", "peces", "abejas", "árboles", "estrellas", "uvas"] }
           },
-          "respuesta_esperada": ["1ª persona", "3ª persona"],
-          "respuesta": "identificar_persona(fragmento)",
+          "respuesta_esperada": ["manada", "rebaño", "bandada", "banco", "enjambre", "bosque", "constelación", "racimo"],
           "dificultad": "medio"
         },
         {
-          "tipo": "personajes_cuento",
-          "enunciado": "En el cuento de '{titulo_cuento}', ¿quién es el personaje principal?",
+          "tipo": "concreto_abstracto",
+          "enunciado": "¿Es '{nombre}' un nombre concreto o abstracto?",
           "variables": {
-            "titulo_cuento": { "tipo": "lista", "opciones": ["Caperucita Roja", "Los tres cerditos", "La Cenicienta", "Pinocho"] }
+            "nombre": { "tipo": "lista", "opciones": ["mesa", "amor", "piedra", "libertad", "lluvia", "amistad", "árbol", "miedo", "silla", "paz"] }
           },
-          "respuesta": "respuesta_libre",
+          "respuesta_esperada": ["concreto", "abstracto", "concreto", "abstracto", "concreto", "abstracto", "concreto", "abstracto", "concreto", "abstracto"],
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "plural_nombre",
+          "enunciado": "Escribe el plural de '{palabra}'.",
+          "variables": {
+            "palabra": { "tipo": "lista", "opciones": ["árbol", "camión", "ciudad", "luz", "jabalí", "café", "rey", "pez", "voz", "sofá", "crisis", "lunes"] }
+          },
+          "respuesta_esperada": ["árboles", "camiones", "ciudades", "luces", "jabalíes", "cafés", "reyes", "peces", "voces", "sofás", "crisis", "lunes"],
           "dificultad": "facil"
         }
       ],
       "test_templates": [
         {
-          "tipo": "test_estructura_cuento",
-          "enunciado": "¿En qué parte del cuento aparece el problema o conflicto?",
-          "opciones": ["planteamiento", "nudo", "desenlace", "título"],
-          "respuesta": "nudo",
+          "tipo": "test_nombre_colectivo",
+          "enunciado": "¿Cuál es el nombre colectivo de los pájaros?",
+          "opciones": ["manada", "bandada", "rebaño", "enjambre"],
+          "respuesta": "bandada",
           "dificultad": "facil"
+        },
+        {
+          "tipo": "test_abstracto",
+          "enunciado": "¿Cuál de estos es un nombre abstracto?",
+          "opciones": ["piedra", "árbol", "libertad", "mesa"],
+          "respuesta": "libertad",
+          "dificultad": "medio"
         }
       ],
       "actividades_templates": [
         {
-          "tipo": "inventar_final",
-          "enunciado": "Lee este planteamiento y nudo, e inventa un desenlace: Un dragón pequeño quería volar pero tenía miedo. Un día intentó saltar desde una roca...",
-          "variables": {},
-          "respuesta": "texto_libre_desenlace",
-          "dificultad": "medio"
-        },
-        {
-          "tipo": "crear_cuento_guiado",
-          "enunciado": "Escribe un cuento con: personaje: {personaje}, lugar: {lugar}, problema: {problema}.",
+          "tipo": "instrucciones_reutilizar",
+          "enunciado": "Escribe las instrucciones para reutilizar {objeto}. Usa al menos {n} pasos numerados.",
           "variables": {
-            "personaje": { "tipo": "lista", "opciones": ["un robot", "una sirena", "un zorro", "una bruja buena"] },
-            "lugar": { "tipo": "lista", "opciones": ["el fondo del mar", "el espacio", "un bosque mágico", "una ciudad futurista"] },
-            "problema": { "tipo": "lista", "opciones": ["perdió su objeto especial", "tenía que ayudar a alguien", "estaba perdido", "debía resolver un misterio"] }
+            "objeto": { "tipo": "lista", "opciones": ["una botella de plástico", "una caja de cartón", "un frasco de cristal", "una revista vieja"] },
+            "n": { "tipo": "numero", "min": 4, "max": 6 }
           },
-          "respuesta": "texto_libre_cuento",
-          "dificultad": "dificil"
+          "respuesta": "Ver corrección manual",
+          "dificultad": "medio"
         }
       ],
-      "fichas_templates": [
-        {
-          "tipo": "ficha_esquema_cuento",
-          "descripcion": "Esquema en tres columnas para rellenar: planteamiento, nudo, desenlace de un cuento",
-          "variables": {}
-        }
-      ]
+      "fichas_templates": []
     },
     {
       "id_unidad": "len_03",
       "numero": 3,
-      "titulo": "Gramática: el sustantivo y el adjetivo",
-      "resumen": "Estudiamos el sustantivo (común, propio, individual, colectivo) y el adjetivo calificativo. Aprendemos a clasificar sustantivos por su género y número, y a concordar sustantivos y adjetivos.",
-      "resumen_simple": "Los sustantivos son las palabras que nombran personas, animales o cosas. Los adjetivos describen cómo son esas cosas. ¡Ambos tienen que coincidir en género y número!",
-      "conceptos_clave": ["sustantivo", "sustantivo común", "sustantivo propio", "sustantivo individual", "sustantivo colectivo", "adjetivo calificativo", "concordancia", "género", "número"],
-      "habilidades": ["clasificar sustantivos", "identificar adjetivos", "aplicar concordancia", "ampliar expresiones con adjetivos"],
+      "titulo": "¡Disfrutamos de la vida silvestre!",
+      "resumen": "Leemos textos expositivos y practicamos la descripción oral. Estudiamos el adjetivo calificativo y la concordancia, y la ortografía de diptongos y palabras con hiatos.",
+      "resumen_simple": "El texto expositivo informa sobre un tema usando datos y explicaciones. El adjetivo dice cómo es el sustantivo y tiene que concordar con él en género y número. Los diptongos son dos vocales juntas que se pronuncian en una sola sílaba.",
+      "conceptos_clave": ["texto expositivo", "descripción", "adjetivo calificativo", "concordancia", "grado del adjetivo", "diptongo", "hiato", "sinónimos"],
+      "habilidades": ["leer y comprender textos expositivos", "escribir descripciones", "identificar y usar adjetivos", "aplicar concordancia", "reconocer diptongos e hiatos"],
       "repaso_clave": [
-        "Sustantivo propio: nombre concreto de persona o lugar (con mayúscula)",
-        "Sustantivo colectivo: nombra un grupo (bandada, manada, bosque)",
         "El adjetivo concuerda en género y número con el sustantivo",
-        "Plural: añadimos -s o -es"
+        "Grados del adjetivo: positivo (alto), comparativo (más alto que), superlativo (altísimo / el más alto)",
+        "Diptongo: dos vocales juntas en la misma sílaba (ai-re, cau-sa, pei-ne)",
+        "Hiato: dos vocales juntas en sílabas distintas (pa-ís, ma-es-tro)",
+        "Sinónimos: palabras con significado similar (bonito/hermoso)"
       ],
       "ejercicios_templates": [
         {
-          "tipo": "clasificar_sustantivo",
-          "enunciado": "Clasifica este sustantivo: '{sustantivo}' → ¿Es común o propio?",
-          "variables": {
-            "sustantivo": {
-              "tipo": "lista",
-              "opciones": ["Madrid", "ciudad", "Lucía", "perro", "río", "Guadalquivir", "mesa", "España", "flor", "Ana"]
-            }
-          },
-          "respuesta_esperada": ["propio", "común", "propio", "común", "común", "propio", "común", "propio", "común", "propio"],
-          "respuesta": "clasificar_sustantivo(sustantivo)",
-          "dificultad": "facil"
-        },
-        {
-          "tipo": "sustantivo_colectivo",
-          "enunciado": "¿Cuál es el sustantivo colectivo de '{animal_plural}'?",
-          "variables": {
-            "animal_plural": {
-              "tipo": "lista",
-              "opciones": ["lobos", "ovejas", "pájaros", "peces", "abejas", "árbol"]
-            }
-          },
-          "respuesta_esperada": ["manada", "rebaño", "bandada", "banco", "enjambre", "bosque"],
-          "respuesta": "colectivo_de(animal_plural)",
-          "dificultad": "medio"
-        },
-        {
           "tipo": "concordancia_adjetivo",
-          "enunciado": "Elige la forma correcta del adjetivo: La {sustantivo} es muy {adjetivo_a} o {adjetivo_b}?",
+          "enunciado": "Escribe el adjetivo '{adjetivo}' concordando con '{sustantivo}'.",
           "variables": {
-            "sustantivo": { "tipo": "lista", "opciones": ["niña", "niño", "flores", "libro"] },
-            "adjetivo_base": { "tipo": "lista", "opciones": ["alegre", "simpático", "bonito", "grande"] }
+            "sustantivo": { "tipo": "lista", "opciones": ["niña", "niño", "flores", "libro", "casas", "animales", "mariposa", "lobos"] },
+            "adjetivo": { "tipo": "lista", "opciones": ["alegre", "simpático", "bonito", "grande", "pequeño", "salvaje", "colorido", "feroz"] }
           },
-          "respuesta": "concordar(sustantivo, adjetivo_base)",
+          "respuesta": "Ver corrección manual",
           "dificultad": "medio"
         },
         {
-          "tipo": "plural_sustantivo",
-          "enunciado": "Escribe el plural de: '{palabra}'",
+          "tipo": "grado_adjetivo",
+          "enunciado": "Escribe el superlativo de '{adjetivo}'.",
           "variables": {
-            "palabra": { "tipo": "lista", "opciones": ["árbol", "camión", "ciudad", "luz", "jabalí", "café", "rey", "pez", "voz", "sofá"] }
+            "adjetivo": { "tipo": "lista", "opciones": ["alto", "grande", "bueno", "malo", "fácil", "rápido", "pequeño", "fuerte", "suave", "rico"] }
           },
-          "respuesta": "plural(palabra)",
-          "dificultad": "facil"
+          "respuesta_esperada": ["altísimo/el más alto", "grandísimo/el más grande", "óptimo/el mejor", "pésimo/el peor", "facilísimo", "rapidísimo", "pequeñísimo", "fortísimo", "suavísimo", "riquísimo"],
+          "dificultad": "medio"
         },
         {
-          "tipo": "anadir_adjetivos",
-          "enunciado": "Añade dos adjetivos a este sustantivo: 'una {sustantivo} ___ y ___'",
+          "tipo": "diptongo_hiato",
+          "enunciado": "¿Las vocales de '{palabra}' forman un diptongo o un hiato?",
           "variables": {
-            "sustantivo": { "tipo": "lista", "opciones": ["casa", "montaña", "gato", "historia", "flor"] }
+            "palabra": { "tipo": "lista", "opciones": ["aire", "país", "causa", "maíz", "peine", "poeta", "ciudad", "río", "guion", "piano"] }
           },
-          "respuesta": "texto_libre_adjetivos",
-          "dificultad": "facil"
+          "respuesta_esperada": ["diptongo", "hiato", "diptongo", "hiato", "diptongo", "hiato", "diptongo", "hiato", "hiato", "diptongo"],
+          "dificultad": "dificil"
+        },
+        {
+          "tipo": "sinonimos",
+          "enunciado": "Escribe un sinónimo de '{palabra}'.",
+          "variables": {
+            "palabra": { "tipo": "lista", "opciones": ["bonito", "grande", "rápido", "triste", "comenzar", "miedo", "alegre", "difícil", "hablar", "terminar"] }
+          },
+          "respuesta_esperada": ["hermoso/precioso", "enorme/gigante", "veloz/ágil", "melancólico/apesadumbrado", "empezar/iniciar", "terror/pánico", "contento/feliz", "complicado/arduo", "decir/expresar", "acabar/finalizar"],
+          "dificultad": "medio"
         }
       ],
       "test_templates": [
         {
-          "tipo": "test_identificar_sustantivo_propio",
-          "enunciado": "¿Cuál de estas palabras es un sustantivo propio?",
-          "opciones_variables": { "tipo": "lista_mezclada", "propios": ["Sevilla", "Carmen", "Ebro"], "comunes": ["ciudad", "niña", "río"] },
-          "respuesta": "el_sustantivo_propio",
-          "dificultad": "facil"
+          "tipo": "test_diptongo",
+          "enunciado": "¿Cuál de estas palabras tiene un diptongo?",
+          "opciones": ["país", "río", "aire", "maíz"],
+          "respuesta": "aire",
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "test_superlativo",
+          "enunciado": "¿Cuál es el superlativo de 'bueno'?",
+          "opciones": ["buenísimo", "muy bueno", "óptimo", "el más bueno"],
+          "respuesta": "óptimo",
+          "dificultad": "dificil"
         }
       ],
       "actividades_templates": [
         {
-          "tipo": "descripcion_con_adjetivos",
-          "enunciado": "Describe a '{personaje}' usando al menos 4 adjetivos en una oración.",
+          "tipo": "descripcion_animal",
+          "enunciado": "Escribe una descripción de '{animal}' usando al menos {n} adjetivos. Incluye cómo es físicamente y cómo se comporta.",
           "variables": {
-            "personaje": { "tipo": "lista", "opciones": ["tu mejor amigo", "un superhéroe inventado", "tu mascota", "un personaje de libro"] }
+            "animal": { "tipo": "lista", "opciones": ["el lince ibérico", "el delfín", "el águila real", "el oso pardo", "el lobo"] },
+            "n": { "tipo": "numero", "min": 5, "max": 8 }
           },
-          "respuesta": "texto_libre_descripcion",
-          "dificultad": "medio"
+          "respuesta": "Ver corrección manual",
+          "dificultad": "dificil"
         }
       ],
-      "fichas_templates": [
-        {
-          "tipo": "ficha_clasificacion_sustantivos",
-          "descripcion": "Tabla para clasificar 10 palabras en: común/propio e individual/colectivo",
-          "variables": {}
-        }
-      ]
+      "fichas_templates": []
     },
     {
       "id_unidad": "len_04",
       "numero": 4,
-      "titulo": "Gramática: el verbo",
-      "resumen": "Aprendemos los conceptos básicos del verbo: su función en la oración, el infinitivo, la persona y el número, y las tres conjugaciones (-ar, -er, -ir). Trabajamos el presente, pasado y futuro.",
-      "resumen_simple": "Los verbos son palabras de acción o estado: correr, comer, vivir, ser, estar. Los verbos cambian según quién hace la acción y cuándo la hace.",
-      "conceptos_clave": ["verbo", "infinitivo", "conjugación", "persona (1ª, 2ª, 3ª)", "número (singular, plural)", "tiempo verbal", "presente", "pasado", "futuro", "verbos irregulares"],
-      "habilidades": ["identificar verbos en oraciones", "conjugar verbos regulares", "usar correctamente los tiempos verbales", "distinguir infinitivos"],
+      "titulo": "Me gusta leer",
+      "resumen": "Estudiamos los anuncios publicitarios y los recursos literarios. Trabajamos los determinantes (artículos y demostrativos) y la ortografía del punto, la coma y el punto y coma.",
+      "resumen_simple": "Los anuncios intentan convencernos de algo usando recursos especiales. En gramática aprendemos los artículos (el, la, los, las) y los demostrativos (este, ese, aquel). También trabajamos la puntuación: punto, coma y punto y coma.",
+      "conceptos_clave": ["texto publicitario", "recursos literarios", "rima", "comparación", "personificación", "determinantes", "artículos", "demostrativos", "punto", "coma", "punto y coma", "lenguaje coloquial y formal"],
+      "habilidades": ["analizar anuncios publicitarios", "identificar recursos literarios", "usar artículos y demostrativos", "puntuar textos correctamente"],
       "repaso_clave": [
-        "El infinitivo termina en -ar, -er o -ir",
-        "1ª conjugación: verbos en -ar (cantar, saltar)",
-        "2ª conjugación: verbos en -er (comer, beber)",
-        "3ª conjugación: verbos en -ir (vivir, subir)",
-        "El tiempo verbal indica cuándo ocurre la acción"
+        "Artículos determinados: el, la, los, las",
+        "Artículos indeterminados: un, una, unos, unas",
+        "Demostrativos: este/esta/estos/estas (cerca), ese/esa/esos/esas (medio), aquel/aquella/aquellos/aquellas (lejos)",
+        "La coma: separar elementos de una lista, vocativo, aclaración",
+        "El punto y seguido: misma idea, cambia oración",
+        "El punto y aparte: idea nueva"
       ],
       "ejercicios_templates": [
         {
-          "tipo": "identificar_verbo",
-          "enunciado": "Encuentra el verbo en esta oración: '{oracion}'",
+          "tipo": "articulo_correcto",
+          "enunciado": "Escribe el artículo determinado que corresponde: ___ {sustantivo}",
           "variables": {
-            "oracion": {
-              "tipo": "lista",
-              "opciones": [
-                "Los niños juegan en el parque.",
-                "Mi madre preparó una tarta.",
-                "Mañana iremos al cine.",
-                "El perro ladra mucho.",
-                "Ana lee un libro interesante.",
-                "Los pájaros cantan al amanecer."
-              ]
-            }
+            "sustantivo": { "tipo": "lista", "opciones": ["libro", "mesa", "árboles", "flores", "niño", "niña", "animales", "agua", "sol", "luna"] }
           },
-          "respuesta_esperada": ["juegan", "preparó", "iremos", "ladra", "lee", "cantan"],
-          "respuesta": "extraer_verbo(oracion)",
+          "respuesta_esperada": ["el", "la", "los", "las", "el", "la", "los", "el", "el", "la"],
           "dificultad": "facil"
         },
         {
-          "tipo": "conjugar_verbo",
-          "enunciado": "Conjuga el verbo '{infinitivo}' en {persona} del {tiempo}:",
+          "tipo": "demostrativo",
+          "enunciado": "Completa con el demostrativo correcto: '{frase_hueco}' (el objeto está {distancia})",
           "variables": {
-            "infinitivo": { "tipo": "lista", "opciones": ["cantar", "comer", "vivir", "saltar", "beber", "subir"] },
-            "persona": { "tipo": "lista", "opciones": ["1ª persona singular (yo)", "2ª persona singular (tú)", "3ª persona singular (él/ella)", "1ª persona plural (nosotros)"] },
-            "tiempo": { "tipo": "lista", "opciones": ["presente", "pasado (pretérito perfecto simple)", "futuro"] }
+            "sustantivo": { "tipo": "lista", "opciones": ["libro", "mesa", "flores", "árboles"] },
+            "distancia": { "tipo": "lista", "opciones": ["cerca", "a media distancia", "lejos"] }
           },
-          "respuesta": "conjugar(infinitivo, persona, tiempo)",
+          "respuesta": "Ver corrección manual",
           "dificultad": "medio"
         },
         {
-          "tipo": "tiempo_verbal",
-          "enunciado": "¿En qué tiempo está el verbo '{verbo_conjugado}' de esta oración: '{oracion}'?",
+          "tipo": "puntuar_texto",
+          "enunciado": "Añade los signos de puntuación que faltan: '{oracion}'",
           "variables": {
-            "oracion": {
-              "tipo": "lista",
-              "opciones": [
-                "Ayer comí una pizza.",
-                "Mañana jugaré al fútbol.",
-                "Ahora mismo estudio matemáticas."
-              ]
-            }
+            "oracion": { "tipo": "lista", "opciones": [
+              "Ana fue al mercado compró fruta verdura y pan",
+              "Mañana tenemos clase de música piano y natación",
+              "Luis preguntó cuándo llegamos",
+              "Me gustan los libros las películas y la música"
+            ]}
           },
-          "respuesta_esperada": ["pasado", "futuro", "presente"],
-          "respuesta": "identificar_tiempo(oracion)",
+          "respuesta": "Ver corrección manual",
           "dificultad": "medio"
         },
         {
-          "tipo": "infinitivo_del_verbo",
-          "enunciado": "¿Cuál es el infinitivo del verbo '{verbo_conjugado}'?",
+          "tipo": "recurso_literario",
+          "enunciado": "¿Qué recurso literario aparece en '{ejemplo}'?",
           "variables": {
-            "verbo_conjugado": { "tipo": "lista", "opciones": ["cantamos", "comiste", "vivió", "saltarán", "beberemos", "subió", "jugamos", "correrás"] }
+            "ejemplo": { "tipo": "lista", "opciones": [
+              "Sus ojos son dos luceros brillantes.",
+              "El viento susurra canciones.",
+              "Era tan alto como una montaña.",
+              "El mar ruge furioso."
+            ]}
           },
-          "respuesta": "infinitivo(verbo_conjugado)",
-          "dificultad": "facil"
+          "respuesta_esperada": ["comparación/metáfora", "personificación", "comparación", "personificación"],
+          "dificultad": "dificil"
         }
       ],
       "test_templates": [
         {
-          "tipo": "test_conjugacion",
-          "enunciado": "¿Cómo se conjuga '{infinitivo}' en 1ª persona del singular presente?",
-          "variables": {
-            "infinitivo": { "tipo": "lista", "opciones": ["cantar", "comer", "vivir"] }
-          },
-          "respuesta": "yo_canto / yo_como / yo_vivo",
+          "tipo": "test_demostrativo",
+          "enunciado": "¿Qué demostrativo usamos para señalar algo que está lejos?",
+          "opciones": ["este", "ese", "aquel", "el"],
+          "respuesta": "aquel",
           "dificultad": "facil"
         }
       ],
       "actividades_templates": [
         {
-          "tipo": "cuento_con_tiempos",
-          "enunciado": "Escribe 3 oraciones sobre {tema}: una en pasado, una en presente y una en futuro.",
+          "tipo": "anuncio_biblioteca",
+          "enunciado": "Crea un anuncio para animar a tus compañeros a leer más. Usa al menos un recurso literario (comparación, personificación o rima). Escribe entre {min} y {max} palabras.",
           "variables": {
-            "tema": { "tipo": "lista", "opciones": ["las vacaciones", "el deporte", "los animales", "tu familia"] }
+            "min": { "tipo": "numero", "min": 40, "max": 50 },
+            "max": { "tipo": "numero", "min": 70, "max": 80 }
           },
-          "respuesta": "texto_libre_tres_tiempos",
+          "respuesta": "Ver corrección manual",
           "dificultad": "dificil"
         }
       ],
@@ -378,195 +348,722 @@
     {
       "id_unidad": "len_05",
       "numero": 5,
-      "titulo": "Ortografía: reglas fundamentales",
-      "resumen": "Estudiamos las principales reglas ortográficas: uso de mayúsculas, punto, coma, signos de interrogación y exclamación, y las reglas básicas de b/v, g/j, h y ll/y.",
-      "resumen_simple": "La ortografía son las reglas para escribir bien las palabras. Aprenderemos cuándo usar mayúsculas, los signos de puntuación y algunas reglas para no confundir letras parecidas.",
-      "conceptos_clave": ["mayúsculas", "punto", "coma", "signo de interrogación", "signo de exclamación", "regla b/v", "regla g/j", "regla h", "diptongo"],
-      "habilidades": ["usar mayúsculas correctamente", "puntuar textos", "aplicar reglas ortográficas b/v y g/j", "distinguir palabras con h"],
+      "titulo": "Expreso mis emociones",
+      "resumen": "Trabajamos los géneros literarios y escribimos textos sobre emociones. Estudiamos los determinantes posesivos, los numerales e indefinidos, y la ortografía de los dos puntos, puntos suspensivos y comillas.",
+      "resumen_simple": "Los géneros literarios son la narrativa, la poesía y el teatro. Aprendemos también las palabras antónimas (contrarias) y los determinantes posesivos (mi, tu, su...) y numerales (primero, segundo...).",
+      "conceptos_clave": ["géneros literarios", "narrativa", "poesía", "teatro", "emociones", "palabras antónimas", "determinantes posesivos", "determinantes numerales", "determinantes indefinidos", "dos puntos", "puntos suspensivos", "comillas"],
+      "habilidades": ["identificar géneros literarios", "expresar emociones por escrito", "usar determinantes posesivos y numerales", "usar correctamente dos puntos, puntos suspensivos y comillas"],
       "repaso_clave": [
-        "Mayúscula: inicio de oración, nombres propios, después de punto",
-        "Punto y seguido: misma idea, cambia oración",
-        "Punto y aparte: idea nueva, párrafo nuevo",
-        "Se usa b antes de consonante: tabla, blanco",
-        "Se usa v después de ad-, sub-, ob-: advierte, subvención"
+        "Géneros literarios: narrativa (cuentos, novelas), poesía (poemas), teatro (obras de teatro)",
+        "Posesivos: mi/mis, tu/tus, su/sus, nuestro/a/os/as, vuestro/a/os/as",
+        "Numerales ordinales: primero, segundo, tercero, cuarto, quinto...",
+        "Indefinidos: algún, ningún, todo, bastante, varios, cierto",
+        "Dos puntos: antes de una enumeración o una cita",
+        "Puntos suspensivos: duda, emoción, frase incompleta",
+        "Comillas: citas textuales, palabras especiales"
       ],
       "ejercicios_templates": [
-        {
-          "tipo": "b_o_v",
-          "enunciado": "Completa con b o v: {palabra_hueco}",
-          "variables": {
-            "palabra_hueco": {
-              "tipo": "lista",
-              "opciones": [
-                "a__eja", "__arco", "ham__re", "__iola", "nue__o", "ca__allo", "__otella", "pala__ra", "cu__ierto", "ar__ol"
-              ]
-            }
-          },
-          "respuesta_esperada": ["abeja", "barco", "hambre", "viola", "nuevo", "caballo", "botella", "palabra", "cubierto", "árbol"],
-          "respuesta": "completar_b_v(palabra_hueco)",
-          "dificultad": "medio"
-        },
-        {
-          "tipo": "h_muda",
-          "enunciado": "¿Se escribe con h o sin h? '{palabra}'",
-          "variables": {
-            "palabra": { "tipo": "lista", "opciones": ["ombre", "huevo", "ermano", "hielo", "ierba", "hueso", "acer", "hora"] }
-          },
-          "respuesta_esperada": ["hombre", "huevo", "hermano", "hielo", "hierba", "hueso", "hacer", "hora"],
-          "respuesta": "corregir_h(palabra)",
-          "dificultad": "medio"
-        },
-        {
-          "tipo": "puntuacion",
-          "enunciado": "Añade los signos de puntuación que faltan: '{oracion_sin_puntuacion}'",
-          "variables": {
-            "oracion_sin_puntuacion": {
-              "tipo": "lista",
-              "opciones": [
-                "qué hora es",
-                "vaya llueve muchísimo",
-                "ana fue al mercado compró fruta y volvió a casa",
-                "mañana tengo clase de música piano y natación"
-              ]
-            }
-          },
-          "respuesta": "añadir_puntuacion(oracion_sin_puntuacion)",
-          "dificultad": "medio"
-        },
-        {
-          "tipo": "mayusculas",
-          "enunciado": "Corrige las mayúsculas en esta oración: '{oracion_mal}'",
-          "variables": {
-            "oracion_mal": {
-              "tipo": "lista",
-              "opciones": [
-                "mi amigo carlos vive en sevilla.",
-                "el río guadalquivir pasa por andalucía.",
-                "ayer fue lunes. hoy es martes."
-              ]
-            }
-          },
-          "respuesta": "corregir_mayusculas(oracion_mal)",
-          "dificultad": "facil"
-        }
-      ],
-      "test_templates": [
-        {
-          "tipo": "test_regla_b",
-          "enunciado": "La palabra '{palabra}' se escribe con...",
-          "variables": {
-            "palabra": { "tipo": "lista", "opciones": ["árbol", "cueva", "blanco", "vivir"] }
-          },
-          "respuesta": "b_o_v_correcto(palabra)",
-          "dificultad": "facil"
-        }
-      ],
-      "actividades_templates": [
-        {
-          "tipo": "dictado_preparado",
-          "enunciado": "Prepara estas {n} palabras para el dictado. Escríbelas {n} veces cada una.",
-          "variables": {
-            "palabras": { "tipo": "lista_multiple", "fuente": ["abeja", "huevo", "vivir", "árbol", "caballo", "ciudad", "blanco", "nuevo"] },
-            "n": { "tipo": "numero", "min": 5, "max": 8 }
-          },
-          "respuesta": "copia_palabras",
-          "dificultad": "facil"
-        }
-      ],
-      "fichas_templates": [
-        {
-          "tipo": "ficha_ortografia_bv",
-          "descripcion": "10 palabras con huecos para completar con b o v, con reglas de apoyo",
-          "variables": {}
-        }
-      ]
-    },
-    {
-      "id_unidad": "len_06",
-      "numero": 6,
-      "titulo": "Comprensión lectora y vocabulario",
-      "resumen": "Trabajamos estrategias de comprensión lectora (localizar información, inferir, opinar), el uso del diccionario, familias de palabras, sinónimos y antónimos.",
-      "resumen_simple": "Leer bien significa entender lo que leemos, hacernos preguntas sobre el texto y aprender palabras nuevas. ¡Cuantas más palabras conocemos, mejor nos expresamos!",
-      "conceptos_clave": ["comprensión lectora", "idea principal", "idea secundaria", "inferencia", "sinónimo", "antónimo", "familia de palabras", "prefijo", "sufijo"],
-      "habilidades": ["localizar información en textos", "identificar la idea principal", "deducir significados por contexto", "reconocer sinónimos y antónimos", "formar familias de palabras"],
-      "repaso_clave": [
-        "La idea principal es la más importante del párrafo",
-        "Las ideas secundarias apoyan a la principal",
-        "Sinónimos: palabras con significado parecido (bonito/guapo)",
-        "Antónimos: palabras con significado opuesto (frío/caliente)",
-        "Familia de palabras: comparten la misma raíz (libro, librería, librero)"
-      ],
-      "ejercicios_templates": [
-        {
-          "tipo": "sinonimos",
-          "enunciado": "¿Cuál es un sinónimo de '{palabra}'?",
-          "variables": {
-            "palabra": {
-              "tipo": "lista",
-              "opciones": ["alegre", "grande", "rápido", "hablar", "bonito", "difícil", "comenzar", "miedo"]
-            }
-          },
-          "respuesta_esperada": ["contento/feliz", "enorme/gigante", "veloz/ágil", "decir/expresarse", "hermoso/precioso", "complicado/arduo", "empezar/iniciar", "terror/pavor"],
-          "respuesta": "sinonimo(palabra)",
-          "dificultad": "medio"
-        },
         {
           "tipo": "antonimos",
           "enunciado": "¿Cuál es el antónimo de '{palabra}'?",
           "variables": {
-            "palabra": { "tipo": "lista", "opciones": ["frío", "alto", "ruidoso", "triste", "rápido", "antiguo", "lleno", "claro"] }
+            "palabra": { "tipo": "lista", "opciones": ["alegre", "frío", "alto", "ruidoso", "antiguo", "lleno", "claro", "rápido", "valiente", "generoso"] }
           },
-          "respuesta_esperada": ["caliente", "bajo", "silencioso", "alegre", "lento", "moderno/nuevo", "vacío", "oscuro"],
-          "respuesta": "antonimo(palabra)",
+          "respuesta_esperada": ["triste", "caliente", "bajo", "silencioso", "moderno/nuevo", "vacío", "oscuro", "lento", "cobarde", "egoísta"],
           "dificultad": "facil"
         },
         {
-          "tipo": "familia_palabras",
-          "enunciado": "Forma una familia de palabras con la raíz '{raiz}'. Escribe al menos 3 palabras.",
+          "tipo": "posesivo_correcto",
+          "enunciado": "Completa con el posesivo correcto: '{frase_incompleta}'",
           "variables": {
-            "raiz": { "tipo": "lista", "opciones": ["mar", "libro", "agua", "luz", "tierra", "sol", "pan"] }
+            "frase_incompleta": { "tipo": "lista", "opciones": [
+              "___ amigos (de mí) son muy divertidos.",
+              "¿Dónde está ___ libro? (de ti)",
+              "Ella perdió ___ mochila.",
+              "___ clase es muy grande. (de nosotros)"
+            ]}
           },
-          "respuesta": "familia_minimo_3(raiz)",
+          "respuesta_esperada": ["Mis", "tu", "su", "Nuestra"],
           "dificultad": "medio"
         },
         {
-          "tipo": "significado_por_contexto",
-          "enunciado": "En la oración '{oracion}', ¿qué significa la palabra '{palabra_clave}'?",
+          "tipo": "genero_literario",
+          "enunciado": "¿A qué género literario pertenece '{ejemplo}'?",
           "variables": {
-            "oracion": { "tipo": "lista", "opciones": ["El ciclista estaba agotado después de la carrera.", "El niño devoró el bocadillo en segundos.", "La maestra felicitó al alumno por su esfuerzo."] },
-            "palabra_clave": { "tipo": "lista", "opciones": ["agotado", "devoró", "felicitó"] }
+            "ejemplo": { "tipo": "lista", "opciones": [
+              "Un poema con rima y versos",
+              "Una obra con personajes que hablan en el escenario",
+              "Una historia con narrador, personajes y argumento",
+              "Un texto escrito en verso sobre los sentimientos"
+            ]}
           },
-          "respuesta": "significado_contextual",
-          "dificultad": "dificil"
+          "respuesta_esperada": ["poesía", "teatro", "narrativa", "poesía"],
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "puntuacion_especial",
+          "enunciado": "¿Qué signo de puntuación usamos cuando '{situacion}'?",
+          "variables": {
+            "situacion": { "tipo": "lista", "opciones": [
+              "copiamos exactamente lo que dijo alguien",
+              "hacemos una lista después de una presentación",
+              "dejamos la frase sin terminar para crear intriga",
+              "queremos expresar duda o incertidumbre"
+            ]}
+          },
+          "respuesta_esperada": ["comillas", "dos puntos", "puntos suspensivos", "puntos suspensivos"],
+          "dificultad": "medio"
         }
       ],
       "test_templates": [
         {
-          "tipo": "test_sinonimo",
-          "enunciado": "¿Cuál es un sinónimo de 'alegre'?",
-          "opciones": ["triste", "feliz", "enfadado", "cansado"],
-          "respuesta": "feliz",
+          "tipo": "test_posesivo",
+          "enunciado": "¿Cuál es el posesivo de primera persona del plural?",
+          "opciones": ["mi/mis", "tu/tus", "nuestro/nuestra", "su/sus"],
+          "respuesta": "nuestro/nuestra",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "test_genero",
+          "enunciado": "¿En qué género literario los personajes hablan directamente en escena?",
+          "opciones": ["narrativa", "poesía", "teatro", "cómic"],
+          "respuesta": "teatro",
           "dificultad": "facil"
         }
       ],
       "actividades_templates": [
         {
-          "tipo": "resumen_texto",
-          "enunciado": "Lee el texto sobre {tema} y escribe la idea principal en una sola frase.",
+          "tipo": "texto_emocion",
+          "enunciado": "Escribe un texto breve (8-10 líneas) sobre la emoción '{emocion}'. Puedes hacerlo en forma de poema, carta o relato corto.",
           "variables": {
-            "tema": { "tipo": "lista", "opciones": ["los delfines", "el reciclaje", "la alimentación sana", "los volcanes"] }
+            "emocion": { "tipo": "lista", "opciones": ["la alegría", "el miedo", "la amistad", "la sorpresa", "el orgullo"] }
           },
-          "respuesta": "idea_principal_texto_libre",
+          "respuesta": "Ver corrección manual",
           "dificultad": "dificil"
         }
       ],
-      "fichas_templates": [
+      "fichas_templates": []
+    },
+    {
+      "id_unidad": "len_06",
+      "numero": 6,
+      "titulo": "Inventamos maravillas",
+      "resumen": "Aprendemos sobre los pronombres personales y las partes del relato. Trabajamos los neologismos (palabras del mundo digital) y la ortografía del guion, la raya y el paréntesis.",
+      "resumen_simple": "Los pronombres sustituyen al nombre para no repetirlo (yo, tú, él, ella...). En escritura aprendemos las partes de un relato: planteamiento, nudo y desenlace. Y vemos palabras nuevas del mundo digital: neologismos.",
+      "conceptos_clave": ["pronombres personales", "pronombres sujeto", "pronombres complemento", "partes del relato", "planteamiento", "nudo", "desenlace", "neologismos", "mundo digital", "guion", "raya", "paréntesis"],
+      "habilidades": ["identificar y usar pronombres personales", "reconocer las partes de un relato", "comprender neologismos del mundo digital", "usar guion, raya y paréntesis correctamente"],
+      "repaso_clave": [
+        "Pronombres personales sujeto: yo, tú, él, ella, nosotros, vosotros, ellos, ellas",
+        "El pronombre sustituye al nombre para evitar repeticiones",
+        "Planteamiento: se presentan los personajes y la situación inicial",
+        "Nudo: aparece el problema o conflicto",
+        "Desenlace: se resuelve el problema",
+        "Neologismos: palabras nuevas (selfie, hashtag, emoji, blog, podcast)",
+        "La raya: en diálogos, para introducir lo que dice un personaje"
+      ],
+      "ejercicios_templates": [
         {
-          "tipo": "ficha_sinonimos_antonimos",
-          "descripcion": "Tabla con 8 palabras para completar con su sinónimo y antónimo",
-          "variables": {}
+          "tipo": "pronombre_sustituto",
+          "enunciado": "Sustituye el sujeto por el pronombre personal: '{oracion}'",
+          "variables": {
+            "oracion": { "tipo": "lista", "opciones": [
+              "María va al parque todos los días.",
+              "Pedro y Luis juegan al fútbol.",
+              "Ana y yo estudiamos juntas.",
+              "El perro ladra muy fuerte.",
+              "Los niños corren en el patio."
+            ]}
+          },
+          "respuesta_esperada": ["Ella va al parque todos los días.", "Ellos juegan al fútbol.", "Nosotras estudiamos juntas.", "Él ladra muy fuerte.", "Ellos corren en el patio."],
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "parte_del_relato",
+          "enunciado": "Lee el fragmento e indica si es el planteamiento, el nudo o el desenlace: '{fragmento}'",
+          "variables": {
+            "fragmento": { "tipo": "lista", "opciones": [
+              "Había una vez un inventor que vivía en un pequeño pueblo.",
+              "De repente, su mejor invento dejó de funcionar justo antes del concurso.",
+              "Gracias a la ayuda de sus amigos, el inventor encontró la solución y ganó el primer premio."
+            ]}
+          },
+          "respuesta_esperada": ["planteamiento", "nudo", "desenlace"],
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "neologismo_significado",
+          "enunciado": "¿Qué significa el neologismo '{neologismo}'?",
+          "variables": {
+            "neologismo": { "tipo": "lista", "opciones": ["selfie", "emoji", "blog", "podcast", "hashtag", "streaming"] }
+          },
+          "respuesta_esperada": [
+            "fotografía que uno se hace a sí mismo",
+            "símbolo o imagen que expresa una emoción en mensajes",
+            "diario o página web donde se publican textos",
+            "programa de audio que se puede escuchar cuando quieras",
+            "etiqueta con # para clasificar contenidos en redes",
+            "emisión de audio o vídeo por internet en tiempo real"
+          ],
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "uso_raya_dialogo",
+          "enunciado": "Reescribe este diálogo usando correctamente la raya: {dialogo_sin_formato}",
+          "variables": {
+            "dialogo_sin_formato": { "tipo": "lista", "opciones": [
+              "Luis dijo que tenía una idea genial. María preguntó cuál era.",
+              "Ana dijo que había inventado algo increíble. Su amigo quiso saber qué era."
+            ]}
+          },
+          "respuesta": "Ver corrección manual",
+          "dificultad": "dificil"
         }
-      ]
+      ],
+      "test_templates": [
+        {
+          "tipo": "test_pronombre",
+          "enunciado": "¿Qué pronombre sustituye a 'Pedro y Ana'?",
+          "opciones": ["él", "ella", "ellos", "nosotros"],
+          "respuesta": "ellos",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "test_partes_relato",
+          "enunciado": "¿En qué parte del relato aparece el problema o conflicto?",
+          "opciones": ["planteamiento", "nudo", "desenlace", "título"],
+          "respuesta": "nudo",
+          "dificultad": "facil"
+        }
+      ],
+      "actividades_templates": [
+        {
+          "tipo": "relato_invencion",
+          "enunciado": "Escribe un relato corto sobre un invento maravilloso. Debe tener planteamiento, nudo y desenlace. Usa pronombres personales para evitar repetir los nombres.",
+          "variables": {},
+          "respuesta": "Ver corrección manual",
+          "dificultad": "dificil"
+        }
+      ],
+      "fichas_templates": []
+    },
+    {
+      "id_unidad": "len_07",
+      "numero": 7,
+      "titulo": "Protegemos el mar",
+      "resumen": "Leemos leyendas y estudiamos el cómic como género. Aprendemos el verbo y sus formas verbales, y la ortografía de m antes de p y b, y las diferencias entre r y rr.",
+      "resumen_simple": "Las leyendas son historias antiguas que mezclan realidad y fantasía. El cómic cuenta historias con viñetas e imágenes. En gramática trabajamos el verbo: infinitivo, conjugación, persona y número.",
+      "conceptos_clave": ["leyenda", "cómic", "viñeta", "bocadillo", "verbo", "infinitivo", "conjugación verbal", "persona", "número", "tiempo verbal", "m antes de p y b", "r y rr"],
+      "habilidades": ["leer y comprender leyendas", "identificar elementos del cómic", "conjugar verbos", "identificar persona, número y tiempo del verbo", "aplicar reglas ortográficas m/p/b y r/rr"],
+      "repaso_clave": [
+        "El verbo expresa acciones, estados o procesos",
+        "Infinitivo termina en -ar, -er, -ir",
+        "Tiempo verbal: presente (canto), pasado (canté), futuro (cantaré)",
+        "Antes de p y b siempre se escribe m: campo, cambio, tampoco",
+        "Rr entre vocales: carro, tierra, error",
+        "R inicial o tras consonante suena fuerte: rosa, alrededor",
+        "Los refranes son frases con una enseñanza popular"
+      ],
+      "ejercicios_templates": [
+        {
+          "tipo": "m_antes_pb",
+          "enunciado": "Completa con m o n: '{palabra_hueco}'",
+          "variables": {
+            "palabra_hueco": { "tipo": "lista", "opciones": [
+              "ca__po", "ta__bién", "sie__pre", "co__bate", "ti__po", "ca__bio", "ham__re", "em__ezar", "com__añero", "oto__o"
+            ]}
+          },
+          "respuesta_esperada": ["campo", "también", "siempre", "combate", "tiempo", "cambio", "hambre", "empezar", "compañero", "otoño"],
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "r_o_rr",
+          "enunciado": "Completa con r o rr: '{palabra_hueco}'",
+          "variables": {
+            "palabra_hueco": { "tipo": "lista", "opciones": [
+              "ca__o", "al__ededor", "__osa", "pe__o", "tie__a", "ho__or", "__atón", "ca__etera", "ba__io", "ma__avilla"
+            ]}
+          },
+          "respuesta_esperada": ["carro", "alrededor", "rosa", "perro", "tierra", "horror", "ratón", "carretera", "barrio", "maravilla"],
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "conjugar_verbo",
+          "enunciado": "Conjuga el verbo '{infinitivo}' en {persona} del {tiempo}:",
+          "variables": {
+            "infinitivo": { "tipo": "lista", "opciones": ["cantar", "comer", "vivir", "saltar", "beber", "subir", "correr", "escribir"] },
+            "persona": { "tipo": "lista", "opciones": ["1ª persona singular (yo)", "2ª persona singular (tú)", "3ª persona singular (él/ella)", "1ª persona plural (nosotros/as)"] },
+            "tiempo": { "tipo": "lista", "opciones": ["presente", "pretérito perfecto simple", "futuro"] }
+          },
+          "respuesta": "Ver corrección manual",
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "tiempo_verbal",
+          "enunciado": "¿En qué tiempo está el verbo de esta oración: '{oracion}'?",
+          "variables": {
+            "oracion": { "tipo": "lista", "opciones": [
+              "Ayer comí una pizza enorme.",
+              "Mañana jugaremos al fútbol.",
+              "Ahora mismo estudio para el examen.",
+              "El verano pasado fuimos a la playa.",
+              "La semana que viene irá al dentista."
+            ]}
+          },
+          "respuesta_esperada": ["pasado", "futuro", "presente", "pasado", "futuro"],
+          "dificultad": "medio"
+        }
+      ],
+      "test_templates": [
+        {
+          "tipo": "test_m_pb",
+          "enunciado": "¿Qué letra va antes de p y b?",
+          "opciones": ["n", "m", "ñ", "cualquiera de las dos"],
+          "respuesta": "m",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "test_infinitivo",
+          "enunciado": "¿Cuál es el infinitivo del verbo 'cantamos'?",
+          "opciones": ["canto", "cantando", "cantar", "cantad"],
+          "respuesta": "cantar",
+          "dificultad": "facil"
+        }
+      ],
+      "actividades_templates": [
+        {
+          "tipo": "comic_mar",
+          "enunciado": "Crea un cómic de {viñetas} viñetas sobre proteger el mar. Incluye bocadillos con lo que dicen los personajes y al menos un verbo en cada tiempo (presente, pasado y futuro).",
+          "variables": {
+            "viñetas": { "tipo": "numero", "min": 4, "max": 6 }
+          },
+          "respuesta": "Ver corrección manual",
+          "dificultad": "dificil"
+        }
+      ],
+      "fichas_templates": []
+    },
+    {
+      "id_unidad": "len_08",
+      "numero": 8,
+      "titulo": "Defendemos la igualdad",
+      "resumen": "Estudiamos la biografía como tipo de texto y escribimos un diario. Aprendemos el tiempo verbal y la conjugación verbal completa, y la ortografía de palabras con c/qu y c/z.",
+      "resumen_simple": "La biografía cuenta la vida de una persona real. El diario es un texto en el que escribimos lo que nos pasa cada día. En gramática aprendemos todos los tiempos verbales y las reglas de c/qu y c/z.",
+      "conceptos_clave": ["biografía", "autobiografía", "diario", "tiempo verbal", "pretérito imperfecto", "pretérito perfecto compuesto", "futuro simple", "condicional", "c antes de e/i", "qu antes de e/i", "c/z"],
+      "habilidades": ["leer y escribir biografías", "escribir entradas de diario", "identificar tiempos verbales complejos", "aplicar reglas ortográficas c/qu y c/z"],
+      "repaso_clave": [
+        "Biografía: escrita por otra persona. Autobiografía: escrita por uno mismo",
+        "El diario: relato personal en 1ª persona, con fecha, de los hechos del día",
+        "c + a, o, u: casa, color, cubo",
+        "qu + e, i: queso, quinto (la u no suena)",
+        "c + e, i: cena, ciudad (suena z/s)",
+        "z + a, o, u: zapato, zona, zumo",
+        "Campo semántico: palabras relacionadas con el mismo tema"
+      ],
+      "ejercicios_templates": [
+        {
+          "tipo": "c_qu_z",
+          "enunciado": "Completa con c, qu o z: '{palabra_hueco}'",
+          "variables": {
+            "palabra_hueco": { "tipo": "lista", "opciones": [
+              "__eso", "__apato", "__iudad", "bar__o", "__ena", "ra__o", "bra__o", "__inta", "mari__osa", "fe__"
+            ]}
+          },
+          "respuesta_esperada": ["queso", "zapato", "ciudad", "barco", "cena", "rayo", "brazo", "quinta", "mariposa", "fez"],
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "campo_semantico",
+          "enunciado": "¿A qué campo semántico pertenecen estas palabras: {palabras}?",
+          "variables": {
+            "palabras": { "tipo": "lista", "opciones": [
+              "violín, piano, guitarra, flauta",
+              "rosa, tulipán, clavel, margarita",
+              "camión, bicicleta, avión, barco",
+              "cuchillo, tenedor, cuchara, plato"
+            ]}
+          },
+          "respuesta_esperada": ["instrumentos musicales", "flores", "medios de transporte", "cubiertos/vajilla"],
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "tipo_texto",
+          "enunciado": "¿Es '{fragmento}' una biografía, una autobiografía o un diario?",
+          "variables": {
+            "fragmento": { "tipo": "lista", "opciones": [
+              "Querido diario: hoy ha sido un día muy emocionante...",
+              "Marie Curie nació en Polonia en 1867. Fue la primera mujer en ganar el Premio Nobel.",
+              "Nací en Sevilla hace diez años. Me llamo Ana y me encanta la música."
+            ]}
+          },
+          "respuesta_esperada": ["diario", "biografía", "autobiografía"],
+          "dificultad": "medio"
+        }
+      ],
+      "test_templates": [
+        {
+          "tipo": "test_c_qu",
+          "enunciado": "¿Cómo se escribe 'queso': con c o con qu?",
+          "opciones": ["ceso", "queso", "gueso", "keso"],
+          "respuesta": "queso",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "test_biografia",
+          "enunciado": "¿Cuál es la diferencia entre biografía y autobiografía?",
+          "opciones": [
+            "No hay diferencia",
+            "La biografía la escribe otro, la autobiografía la escribe uno mismo",
+            "La autobiografía es de un famoso, la biografía no",
+            "La biografía es más larga"
+          ],
+          "respuesta": "La biografía la escribe otro, la autobiografía la escribe uno mismo",
+          "dificultad": "medio"
+        }
+      ],
+      "actividades_templates": [
+        {
+          "tipo": "biografia_mujer",
+          "enunciado": "Escribe una biografía breve de una mujer importante para ti (puede ser histórica, científica, artista o alguien de tu vida). Incluye: dónde y cuándo nació, qué hizo y por qué es importante.",
+          "variables": {},
+          "respuesta": "Ver corrección manual",
+          "dificultad": "dificil"
+        }
+      ],
+      "fichas_templates": []
+    },
+    {
+      "id_unidad": "len_09",
+      "numero": 9,
+      "titulo": "Usamos energías renovables",
+      "resumen": "Leemos poesía y aprendemos a escribir poemas. Estudiamos los adverbios, las preposiciones y las conjunciones, y la ortografía de palabras con h.",
+      "resumen_simple": "La poesía usa el verso, la rima y el ritmo para expresar sentimientos e ideas. En gramática aprendemos los adverbios (muy, bien, aquí...), las preposiciones (de, con, para...) y las conjunciones (y, pero, porque...). Y practicamos las palabras con h.",
+      "conceptos_clave": ["poesía", "verso", "estrofa", "rima consonante", "rima asonante", "caligrama", "adverbio", "preposición", "conjunción", "palabras invariables", "h muda", "palabras con h"],
+      "habilidades": ["leer y comprender poemas", "identificar rima y estrofas", "escribir un poema o caligrama", "identificar adverbios, preposiciones y conjunciones", "escribir correctamente palabras con h"],
+      "repaso_clave": [
+        "Verso: cada línea de un poema",
+        "Estrofa: grupo de versos",
+        "Rima consonante: coinciden vocales y consonantes desde la última vocal tónica",
+        "Rima asonante: solo coinciden las vocales",
+        "Adverbio: modifica al verbo (bien, mal, aquí, ayer, muy)",
+        "Preposición: relaciona palabras (a, de, con, en, para, por, sin, sobre...)",
+        "Conjunción: une palabras u oraciones (y, o, pero, porque, aunque)",
+        "Palabras con h: huevo, hueso, hombre, hora, hacer, hablar, hermano, hielo"
+      ],
+      "ejercicios_templates": [
+        {
+          "tipo": "h_muda",
+          "enunciado": "¿Se escribe con h o sin h?: '{palabra}'",
+          "variables": {
+            "palabra": { "tipo": "lista", "opciones": ["ombre", "uevo", "ermano", "ielo", "ierba", "ueso", "acer", "ora", "ablar", "umano"] }
+          },
+          "respuesta_esperada": ["hombre", "huevo", "hermano", "hielo", "hierba", "hueso", "hacer", "hora", "hablar", "humano"],
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "tipo_palabra_invariable",
+          "enunciado": "¿Es '{palabra}' un adverbio, una preposición o una conjunción?",
+          "variables": {
+            "palabra": { "tipo": "lista", "opciones": ["pero", "aquí", "de", "muy", "porque", "con", "ayer", "y", "sobre", "bien"] }
+          },
+          "respuesta_esperada": ["conjunción", "adverbio", "preposición", "adverbio", "conjunción", "preposición", "adverbio", "conjunción", "preposición", "adverbio"],
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "rima_tipo",
+          "enunciado": "¿La rima entre '{verso1}' y '{verso2}' es consonante o asonante?",
+          "variables": {
+            "verso1": { "tipo": "lista", "opciones": ["canción", "corazón", "viento", "campo"] },
+            "verso2": { "tipo": "lista", "opciones": ["calor", "amor", "cuento", "canto"] }
+          },
+          "respuesta_esperada": ["asonante", "consonante", "consonante", "consonante"],
+          "dificultad": "dificil"
+        }
+      ],
+      "test_templates": [
+        {
+          "tipo": "test_adverbio",
+          "enunciado": "¿Cuál de estas palabras es un adverbio?",
+          "opciones": ["pero", "con", "muy", "de"],
+          "respuesta": "muy",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "test_h",
+          "enunciado": "¿Cuál de estas palabras se escribe con h?",
+          "opciones": ["ombre", "uevo", "ierba", "todas llevan h"],
+          "respuesta": "todas llevan h",
+          "dificultad": "facil"
+        }
+      ],
+      "actividades_templates": [
+        {
+          "tipo": "poema_energia",
+          "enunciado": "Escribe un poema de {estrofas} estrofas de 4 versos cada una sobre las energías renovables. Intenta que rimen los versos pares.",
+          "variables": {
+            "estrofas": { "tipo": "numero", "min": 2, "max": 3 }
+          },
+          "respuesta": "Ver corrección manual",
+          "dificultad": "dificil"
+        }
+      ],
+      "fichas_templates": []
+    },
+    {
+      "id_unidad": "len_10",
+      "numero": 10,
+      "titulo": "Aprendo a estudiar",
+      "resumen": "Estudiamos la reseña como tipo de texto y aprendemos a escribir teatro en verso. Trabajamos la oración: sujeto y predicado, y la ortografía de palabras terminadas en -d y -z.",
+      "resumen_simple": "La reseña es un texto que valora una película, un libro o un espectáculo. En gramática aprendemos a identificar el sujeto (quién hace la acción) y el predicado (qué hace). Y practicamos palabras terminadas en -d y -z.",
+      "conceptos_clave": ["reseña", "teatro en verso", "dramatización", "oración", "sujeto", "predicado", "núcleo del sujeto", "núcleo del predicado", "palabras terminadas en -d", "palabras terminadas en -z"],
+      "habilidades": ["escribir una reseña", "identificar sujeto y predicado", "encontrar el núcleo del sujeto y del predicado", "aplicar ortografía de -d y -z final"],
+      "repaso_clave": [
+        "Oración: tiene sujeto y predicado",
+        "Sujeto: de quién habla la oración (responde a ¿quién? o ¿qué?)",
+        "Predicado: lo que se dice del sujeto (incluye el verbo)",
+        "Núcleo del sujeto: el nombre o pronombre principal",
+        "Núcleo del predicado: el verbo",
+        "Palabras en -d: ciudad, verdad, bondad, libertad",
+        "Palabras en -z: pez, vez, luz, lápiz, voz (su plural cambia a -ces)"
+      ],
+      "ejercicios_templates": [
+        {
+          "tipo": "sujeto_predicado",
+          "enunciado": "Separa el sujeto y el predicado de: '{oracion}'",
+          "variables": {
+            "oracion": { "tipo": "lista", "opciones": [
+              "Los niños juegan en el patio.",
+              "Mi perro ladra mucho por las noches.",
+              "La maestra explica la lección.",
+              "Todos los alumnos estudian mucho.",
+              "El sol brilla con fuerza."
+            ]}
+          },
+          "respuesta_esperada": [
+            "S: Los niños / P: juegan en el patio",
+            "S: Mi perro / P: ladra mucho por las noches",
+            "S: La maestra / P: explica la lección",
+            "S: Todos los alumnos / P: estudian mucho",
+            "S: El sol / P: brilla con fuerza"
+          ],
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "plural_z_ces",
+          "enunciado": "Escribe el plural de '{palabra_z}'.",
+          "variables": {
+            "palabra_z": { "tipo": "lista", "opciones": ["pez", "luz", "voz", "lápiz", "vez", "nariz", "actriz", "raíz", "juez", "nuez"] }
+          },
+          "respuesta_esperada": ["peces", "luces", "voces", "lápices", "veces", "narices", "actrices", "raíces", "jueces", "nueces"],
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "d_o_z_final",
+          "enunciado": "¿Termina en -d o en -z?: '{palabra}'",
+          "variables": {
+            "palabra": { "tipo": "lista", "opciones": ["ciudad", "luz", "verdad", "pez", "bondad", "voz", "libertad", "lápiz", "salud", "nariz"] }
+          },
+          "respuesta_esperada": ["-d", "-z", "-d", "-z", "-d", "-z", "-d", "-z", "-d", "-z"],
+          "dificultad": "facil"
+        }
+      ],
+      "test_templates": [
+        {
+          "tipo": "test_sujeto",
+          "enunciado": "¿A qué pregunta responde el sujeto de una oración?",
+          "opciones": ["¿Cómo?", "¿Cuándo?", "¿Quién?", "¿Dónde?"],
+          "respuesta": "¿Quién?",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "test_plural_z",
+          "enunciado": "¿Cuál es el plural de 'pez'?",
+          "opciones": ["pezs", "pezas", "peces", "pezes"],
+          "respuesta": "peces",
+          "dificultad": "facil"
+        }
+      ],
+      "actividades_templates": [
+        {
+          "tipo": "resena_libro",
+          "enunciado": "Escribe una reseña de un libro que hayas leído. Incluye: título y autor, de qué trata, qué te ha gustado y qué recomendarías. Mínimo {n} oraciones.",
+          "variables": { "n": { "tipo": "numero", "min": 6, "max": 8 } },
+          "respuesta": "Ver corrección manual",
+          "dificultad": "dificil"
+        }
+      ],
+      "fichas_templates": []
+    },
+    {
+      "id_unidad": "len_11",
+      "numero": 11,
+      "titulo": "Convivimos con mucho arte",
+      "resumen": "Trabajamos el texto dialogado y el debate. Estudiamos las clases de oraciones (enunciativa, interrogativa, exclamativa, imperativa y dubitativa) y la ortografía de palabras con x.",
+      "resumen_simple": "El diálogo es una conversación entre personas. El debate es un diálogo donde se defienden distintas opiniones. En gramática aprendemos los tipos de oraciones según la intención del hablante. Y practicamos palabras con x.",
+      "conceptos_clave": ["texto dialogado", "debate", "oración enunciativa", "oración interrogativa", "oración exclamativa", "oración imperativa", "oración dubitativa", "palabras polisémicas", "palabras con x"],
+      "habilidades": ["participar en un debate", "escribir un texto dialogado", "clasificar oraciones por la intención", "comprender palabras polisémicas", "escribir correctamente palabras con x"],
+      "repaso_clave": [
+        "Oración enunciativa: afirma o niega (El cielo es azul.)",
+        "Oración interrogativa: hace una pregunta (¿Dónde vas?)",
+        "Oración exclamativa: expresa una emoción (¡Qué bonito!)",
+        "Oración imperativa: da una orden o consejo (Ven aquí.)",
+        "Oración dubitativa: expresa duda (Quizás llueva.)",
+        "Palabra polisémica: tiene varios significados (banco: mueble / entidad financiera)",
+        "Palabras con x: exacto, ejemplo, éxito, examen, explorar, exterior"
+      ],
+      "ejercicios_templates": [
+        {
+          "tipo": "tipo_oracion",
+          "enunciado": "¿Qué tipo de oración es?: '{oracion}'",
+          "variables": {
+            "oracion": { "tipo": "lista", "opciones": [
+              "El arte es muy importante en nuestra vida.",
+              "¿Te gusta pintar?",
+              "¡Qué cuadro tan bonito!",
+              "Escucha esta canción.",
+              "Quizás ganemos el concurso.",
+              "Hoy no tenemos clase de música."
+            ]}
+          },
+          "respuesta_esperada": ["enunciativa afirmativa", "interrogativa", "exclamativa", "imperativa", "dubitativa", "enunciativa negativa"],
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "palabras_x",
+          "enunciado": "Completa con x: 'e__amen', 'é__ito', 'e__acto', 'e__plorar', 'e__terior'",
+          "variables": {},
+          "respuesta": "examen, éxito, exacto, explorar, exterior",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "polisemia",
+          "enunciado": "Escribe dos significados distintos de la palabra '{palabra_polisemica}'.",
+          "variables": {
+            "palabra_polisemica": { "tipo": "lista", "opciones": ["banco", "bota", "gato", "copa", "manga", "sierra", "pluma"] }
+          },
+          "respuesta": "Ver corrección manual",
+          "dificultad": "dificil"
+        }
+      ],
+      "test_templates": [
+        {
+          "tipo": "test_tipo_oracion",
+          "enunciado": "¿Qué tipo de oración es '¡Qué tarde es!'?",
+          "opciones": ["interrogativa", "imperativa", "exclamativa", "dubitativa"],
+          "respuesta": "exclamativa",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "test_x",
+          "enunciado": "¿Cuál de estas palabras se escribe con x?",
+          "opciones": ["esamen", "ejemplo", "esacto", "esplorar"],
+          "respuesta": "ejemplo",
+          "dificultad": "facil"
+        }
+      ],
+      "actividades_templates": [
+        {
+          "tipo": "dialogo_arte",
+          "enunciado": "Escribe un diálogo de {intervenciones} intervenciones entre dos personas que debaten sobre si el arte es importante en el colegio. Uno está a favor y otro en contra.",
+          "variables": { "intervenciones": { "tipo": "numero", "min": 6, "max": 8 } },
+          "respuesta": "Ver corrección manual",
+          "dificultad": "dificil"
+        }
+      ],
+      "fichas_templates": []
+    },
+    {
+      "id_unidad": "len_12",
+      "numero": 12,
+      "titulo": "Valoramos las tradiciones",
+      "resumen": "Aprendemos el reportaje y la noticia como textos periodísticos. Estudiamos las lenguas de España y el andaluz, y la ortografía de palabras con ll e y.",
+      "resumen_simple": "La noticia informa de un hecho real y reciente. El reportaje es más extenso y profundo. En España se hablan varias lenguas: castellano, catalán, gallego, euskera y valenciano. El andaluz tiene características especiales. Y practicamos ll e y.",
+      "conceptos_clave": ["noticia", "reportaje", "texto periodístico", "siglas", "abreviaturas", "lenguas de España", "castellano", "catalán", "gallego", "euskera", "valenciano", "el andaluz", "palabras con ll", "palabras con y"],
+      "habilidades": ["distinguir noticia de reportaje", "usar siglas y abreviaturas", "conocer las lenguas de España", "entender el andaluz como variedad del castellano", "escribir correctamente ll e y"],
+      "repaso_clave": [
+        "Noticia: título, lead (resumen), cuerpo (desarrollo), fuente",
+        "Reportaje: más extenso, incluye opiniones, contexto e imágenes",
+        "Siglas: iniciales de varias palabras (ONG, UE, ONCE)",
+        "Abreviaturas: versión reducida de una palabra (Sr., Dra., pág.)",
+        "Lenguas cooficiales de España: catalán, gallego, euskera, valenciano",
+        "Palabras con ll: llave, lluvia, calle, gallina, silla",
+        "Palabras con y: ayer, yo, yema, ayuda, maya, rayo"
+      ],
+      "ejercicios_templates": [
+        {
+          "tipo": "ll_o_y",
+          "enunciado": "Completa con ll o y: '{palabra_hueco}'",
+          "variables": {
+            "palabra_hueco": { "tipo": "lista", "opciones": [
+              "__uvia", "a__er", "ca__e", "__ema", "si__a", "ra__o", "ga__ina", "a__uda", "to__a", "__ave"
+            ]}
+          },
+          "respuesta_esperada": ["lluvia", "ayer", "calle", "yema", "silla", "rayo", "gallina", "ayuda", "tolla→toalla", "llave"],
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "sigla_significado",
+          "enunciado": "¿Qué significa la sigla '{sigla}'?",
+          "variables": {
+            "sigla": { "tipo": "lista", "opciones": ["ONG", "UE", "OMS", "RAE", "DNA", "ONCE"] }
+          },
+          "respuesta_esperada": [
+            "Organización No Gubernamental",
+            "Unión Europea",
+            "Organización Mundial de la Salud",
+            "Real Academia Española",
+            "Ácido Desoxirribonucleico",
+            "Organización Nacional de Ciegos Españoles"
+          ],
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "lengua_comunidad",
+          "enunciado": "¿Qué lengua cooficial se habla en '{comunidad}', además del castellano?",
+          "variables": {
+            "comunidad": { "tipo": "lista", "opciones": ["Cataluña", "Galicia", "País Vasco", "Comunidad Valenciana", "Andalucía"] }
+          },
+          "respuesta_esperada": ["catalán", "gallego", "euskera", "valenciano", "solo castellano (con variedad andaluza)"],
+          "dificultad": "medio"
+        },
+        {
+          "tipo": "noticia_reportaje",
+          "enunciado": "¿Es '{descripcion}' una noticia o un reportaje?",
+          "variables": {
+            "descripcion": { "tipo": "lista", "opciones": [
+              "Un texto breve que informa de que ayer hubo un incendio en el bosque.",
+              "Un texto largo con entrevistas, datos y fotos sobre los incendios forestales en Andalucía."
+            ]}
+          },
+          "respuesta_esperada": ["noticia", "reportaje"],
+          "dificultad": "facil"
+        }
+      ],
+      "test_templates": [
+        {
+          "tipo": "test_ll_y",
+          "enunciado": "¿Cuál de estas palabras se escribe con y?",
+          "opciones": ["lluvia", "calle", "ayer", "silla"],
+          "respuesta": "ayer",
+          "dificultad": "facil"
+        },
+        {
+          "tipo": "test_lenguas_espana",
+          "enunciado": "¿Cuántas lenguas cooficiales hay en España además del castellano?",
+          "opciones": ["2", "3", "4", "5"],
+          "respuesta": "4",
+          "dificultad": "medio"
+        }
+      ],
+      "actividades_templates": [
+        {
+          "tipo": "noticia_tradicion",
+          "enunciado": "Escribe una noticia sobre una tradición cultural de tu localidad o provincia de Andalucía. Incluye: titular, dónde y cuándo ocurre, en qué consiste y por qué es importante.",
+          "variables": {},
+          "respuesta": "Ver corrección manual",
+          "dificultad": "dificil"
+        }
+      ],
+      "fichas_templates": []
     }
   ]
 }
